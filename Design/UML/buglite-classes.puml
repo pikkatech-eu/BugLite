@@ -4,76 +4,208 @@ skinparam defaultFontName Consolas
 skinparam defaultFontSize 16
 skinparam DefaultTextAlignment left
 skinparam PackageTitleAlignment left
-hide footbox
+' hide footbox
 skinparam dpi 120
 skinparam LifelineStrategy solid
 skinparam linetype ortho
 skinparam ClassBackgroundColor white
+'skinparam left to right direction
 
-title BugLite: DomaEnumerations and Classes
+title BugLite: Enumerations and Classes
 
-+enum Priority
+package Enumerations
 {
-    +None
-    +Low
-    +Normal
-    +High
-    +Urgent
-    +Immediate
+    +enum Priority
+    {
+        +None
+        +Low
+        +Normal
+        +High
+        +Urgent
+        +Immediate
+    }
+
+    +enum Severity
+    {
+        +Feature
+        +Trivial
+        +Tweak
+        +Minor
+        +Major
+        +Crash
+    }
+
+    +enum Reproducibility
+    {
+        +Unknown
+        +Sometimes
+        +Random
+        +Always
+    }
+
+    +enum IssueStatus
+    {
+        +New
+        +Assigned
+        +Resolved
+        +Closed
+    }
+
+    +enum IssueResolution
+    {
+        +Open
+        +Fixed
+        +Unreproducible
+        +Unfixable
+        +NoChangeRequired
+        +WontFix
+    }
+    +enum ProjectStatus
+    {
+        +Development
+        +Release
+        +Stable
+    }
+
+    +enum UserLevel
+    {
+        +Viewer
+        +Reporter
+        +Developer
+        +Administrator
+    }
 }
 
-+enum Severity
+package Domain
 {
-    +Feature
-    +Trivial
-    +Tweak
-    +Minor
-    +Major
-    +Crash
+    +class Issue
+    {
+        +IssueId: int
+        +ProjectId: int
+        +SubmitterId: int
+        +AssignedToId: int?
+        +SubmittedOn: DateTime
+        +LastUpdated: DateTime?
+        +Priority: Priority
+        +Severity: Severity
+        +Reproducibility: Reproducibility
+        +Status: IssueStatus
+        +Summary: string
+        +Description: string
+        +StetsToReproduce: string
+        +AdditionalInfo: string
+        +Notes: List<IssueNote>
+    }
+
+    +class IssueNote
+    {
+        +SubmittedOn: DateTime
+        +SubmitterId: int
+        +Text: string
+    }
+
+    +class Project
+    {
+        +ProjectId: int
+        +Name: string
+        +Description: string
+        +SubmittedOn: DateTime
+        +SubmitterId: int
+        +Issues: Dictionary<int, Issue>
+    }
+
+    +class User
+    {
+        +UserId: int
+        +Name: string
+        +Email: string
+        +Description: string
+        +UserLevel: UserLevel
+    }
 }
 
-+enum Reproducibility
+package Management
 {
-    +Unknown
-    +Sometimes
-    +Random
-    +Always
+    +class TrackerManager
+    {
+        +Projects: Dictionary<int, Project>
+        +Users: Dictionary<int, User>
+        ---- User Management ----
+        +AddUser() : void
+        +EditUser() : void
+        +DeleteUser() : void
+        +SaveUsers() : void
+        +LoadUsers() : void
+        ---- Project Management ----
+        +AddProject() : void
+        +EditProject() : void
+        +DeleteProject() : void
+        +SaveProjects() : void
+        +LoadProjects() : void
+        ---- Issue Management ----
+        +AddIssue() : void
+        +EditIssue() : void
+        +DeleteIssue() : void
+    }
 }
 
-+enum IssueStatus
+package Gui
 {
-    +New
-    +Assigned
-    +Resolved
-    +Closed
+    package Controls
+    {
+        +class IssueControl
+        {
+
+        }
+
+        +class ProjectControl
+        {
+            
+        }
+
+        +class UserControl
+        {
+            
+        }
+
+        +class ProjectCollectionControl
+        {
+
+        }
+
+        +class IssueCollectionControl
+        {
+
+        }
+
+        +class UserCollectionControl
+        {
+
+        }
+    }
+
+    package Dialogs
+    {
+        +class IssueDialog
+        {
+
+        }
+
+        +class ProjectDialog
+        {
+            
+        }
+
+        +class UserDialog
+        {
+            
+        }
+
+        +class UserCollectionDialog
+        {
+
+        }
+    }     
 }
 
-+enum IssueResolution
-{
-    +Open
-    +Fixed
-    +Unreproducible
-    +Unfixable
-    +NoChangeRequired
-    +WontFix
-}
-
-+class Issue
-{
-    +IssueId: int
-    +ProjectId: int
-    +SubmitterId: int
-    +AssignedToIf: int?
-    +SubmittedOn: DateTime
-    +LastUpdated: DateTime?
-    +Priority: Priority
-    +Severity: Severity
-    +Reproducibility: Reproducibility
-    +Status: IssueStatus
-    +Summary: string
-    +Description: string
-    +StetsToReproduce: string
-    +AdditionalInfo: string
-    +Notes: List<IssueNote>
-}
 @enduml
