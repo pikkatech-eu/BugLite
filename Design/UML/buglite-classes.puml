@@ -1,0 +1,79 @@
+@startuml
+
+skinparam defaultFontName Consolas
+skinparam defaultFontSize 16
+skinparam DefaultTextAlignment left
+skinparam PackageTitleAlignment left
+hide footbox
+skinparam dpi 120
+skinparam LifelineStrategy solid
+skinparam linetype ortho
+skinparam ClassBackgroundColor white
+
+title BugLite: DomaEnumerations and Classes
+
++enum Priority
+{
+    +None
+    +Low
+    +Normal
+    +High
+    +Urgent
+    +Immediate
+}
+
++enum Severity
+{
+    +Feature
+    +Trivial
+    +Tweak
+    +Minor
+    +Major
+    +Crash
+}
+
++enum Reproducibility
+{
+    +Unknown
+    +Sometimes
+    +Random
+    +Always
+}
+
++enum IssueStatus
+{
+    +New
+    +Assigned
+    +Resolved
+    +Closed
+}
+
++enum IssueResolution
+{
+    +Open
+    +Fixed
+    +Unreproducible
+    +Unfixable
+    +NoChangeRequired
+    +WontFix
+}
+
++class Issue
+{
+    +IssueId: int
+    +ProjectId: int
+    +SubmitterId: int
+    +AssignedToIf: int?
+    +SubmittedOn: DateTime
+    +LastUpdated: DateTime?
+    +Priority: Priority
+    +Severity: Severity
+    +Reproducibility: Reproducibility
+    +Status: IssueStatus
+    +Summary: string
+    +Description: string
+    +StetsToReproduce: string
+    +AdditionalInfo: string
+    +Notes: List<IssueNote>
+}
+@enduml
