@@ -44,6 +44,9 @@ namespace BugLite.Library.Management
 		/// LeanCore: disabled.
 		/// </summary>
 		void DeleteProject();
+
+		void LoadProject(string fileName);
+		void SaveProject(string fileName);
 		#endregion
 
 		#region Issue Management

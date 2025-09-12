@@ -18,6 +18,9 @@ namespace BugLite.Library.Gui.Controls
 		public IssueCollectionControl()
 		{
 			InitializeComponent();
+
+			JsonBugLiteManager.Instance.LoadProject(Settings.ProjectRepository);
+			this.Display(JsonBugLiteManager.Instance.CurrentProject.Issues.Values);
 		}
 
 		public void Display(IEnumerable<Issue> issues)

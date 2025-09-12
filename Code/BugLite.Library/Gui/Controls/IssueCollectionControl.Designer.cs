@@ -46,17 +46,16 @@
 			// 
 			// _tlpUserControl
 			// 
-			this._tlpUserControl.ColumnCount = 2;
-			this._tlpUserControl.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
-			this._tlpUserControl.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 80F));
-			this._tlpUserControl.Controls.Add(this._lvIssues, 1, 0);
+			this._tlpUserControl.ColumnCount = 1;
+			this._tlpUserControl.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+			this._tlpUserControl.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
+			this._tlpUserControl.Controls.Add(this._lvIssues, 0, 0);
 			this._tlpUserControl.Dock = DockStyle.Fill;
 			this._tlpUserControl.Location = new Point(0, 0);
 			this._tlpUserControl.Margin = new Padding(0);
 			this._tlpUserControl.Name = "_tlpUserControl";
 			this._tlpUserControl.RowCount = 1;
 			this._tlpUserControl.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-			this._tlpUserControl.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
 			this._tlpUserControl.Size = new Size(638, 400);
 			this._tlpUserControl.TabIndex = 0;
 			// 
@@ -66,9 +65,9 @@
 			this._lvIssues.ContextMenuStrip = this._cmsIssues;
 			this._lvIssues.Dock = DockStyle.Fill;
 			this._lvIssues.FullRowSelect = true;
-			this._lvIssues.Location = new Point(130, 3);
+			this._lvIssues.Location = new Point(3, 3);
 			this._lvIssues.Name = "_lvIssues";
-			this._lvIssues.Size = new Size(505, 394);
+			this._lvIssues.Size = new Size(632, 394);
 			this._lvIssues.TabIndex = 2;
 			this._lvIssues.UseCompatibleStateImageBehavior = false;
 			this._lvIssues.View = View.Details;
@@ -99,26 +98,26 @@
 			this._cmsIssues.ImageScalingSize = new Size(20, 20);
 			this._cmsIssues.Items.AddRange(new ToolStripItem[] { this.newIssueToolStripMenuItem, this.editIssueToolStripMenuItem, this.deleteIssueToolStripMenuItem });
 			this._cmsIssues.Name = "_cmsIssues";
-			this._cmsIssues.Size = new Size(211, 104);
+			this._cmsIssues.Size = new Size(187, 76);
 			// 
 			// newIssueToolStripMenuItem
 			// 
 			this.newIssueToolStripMenuItem.Name = "newIssueToolStripMenuItem";
-			this.newIssueToolStripMenuItem.Size = new Size(210, 24);
+			this.newIssueToolStripMenuItem.Size = new Size(186, 24);
 			this.newIssueToolStripMenuItem.Text = "&New Issue";
 			this.newIssueToolStripMenuItem.Click += this.OnIssueNew;
 			// 
 			// editIssueToolStripMenuItem
 			// 
 			this.editIssueToolStripMenuItem.Name = "editIssueToolStripMenuItem";
-			this.editIssueToolStripMenuItem.Size = new Size(210, 24);
+			this.editIssueToolStripMenuItem.Size = new Size(186, 24);
 			this.editIssueToolStripMenuItem.Text = "&Edit Issue";
 			this.editIssueToolStripMenuItem.Click += this.OnIssueEdit;
 			// 
 			// deleteIssueToolStripMenuItem
 			// 
 			this.deleteIssueToolStripMenuItem.Name = "deleteIssueToolStripMenuItem";
-			this.deleteIssueToolStripMenuItem.Size = new Size(210, 24);
+			this.deleteIssueToolStripMenuItem.Size = new Size(186, 24);
 			this.deleteIssueToolStripMenuItem.Text = "&Delete Issue";
 			this.deleteIssueToolStripMenuItem.Click += this.OnIssueDelete;
 			// 

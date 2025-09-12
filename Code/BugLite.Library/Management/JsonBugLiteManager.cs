@@ -7,11 +7,6 @@
 * Copyright:    pikkatech.eu (www.pikkatech.eu)                                    *
 ***********************************************************************************/
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using BugLite.Library.Domain;
 using BugLite.Library.Gui.Dialogs;
 
@@ -28,6 +23,8 @@ namespace BugLite.Library.Management
 		{
 			this.Projects.Add(this._defaultProject);
 			this.CurrentProject	= this._defaultProject;
+
+			this.LoadProject(Settings.ProjectRepository);
 		}
 		#endregion
 
@@ -43,7 +40,7 @@ namespace BugLite.Library.Management
 
 			set
 			{
-				// TODO: In V2 (Multi-Project)
+				this._defaultProject = value;
 			}
 		}
 
@@ -74,6 +71,31 @@ namespace BugLite.Library.Management
 			// throw new NotImplementedException();
 		}
 
+		public void LoadProject(string fileName)
+		{
+			try
+			{
+				using (StreamReader reader = new StreamReader(fileName))
+				{
+					string json = reader.ReadToEnd();
+					this.CurrentProject	= Project.FromJson(json);;
+				}
+			}
+			catch (Exception)
+			{
+			}
+		}
+
+		public void SaveProject(string fileName)
+		{
+			using (StreamWriter writer = new StreamWriter(fileName))
+			{
+				string json = this.CurrentProject.ToJson();
+
+				writer.Write(json);
+			}
+		}
+
 		/// <summary>
 		/// Adds a new issue to the current project
 		/// </summary>
@@ -101,6 +123,7 @@ namespace BugLite.Library.Management
 				}
 
 				this.CurrentProject.Issues.Add(issue.IssueId, issue);
+				this.SaveProject(Settings.ProjectRepository);
 			}
 		}
 
