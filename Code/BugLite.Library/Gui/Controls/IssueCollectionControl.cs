@@ -66,8 +66,15 @@ namespace BugLite.Library.Gui.Controls
 
 		private void OnIssueNew(object sender, EventArgs e)
 		{
-			JsonBugLiteManager.Instance.AddIssue();
-			this.Display(JsonBugLiteManager.Instance.CurrentProject.Issues.Values);
+			try
+			{
+				JsonBugLiteManager.Instance.AddIssue();
+				this.Display(JsonBugLiteManager.Instance.CurrentProject.Issues.Values);
+			}
+			catch (NullReferenceException nex)
+			{
+				MessageBox.Show(nex.Message, "Create or open project", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+			}
 		}
 
 		private void OnIssueEdit(object sender, EventArgs e)

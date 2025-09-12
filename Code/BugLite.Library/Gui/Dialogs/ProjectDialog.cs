@@ -7,23 +7,31 @@
 * Copyright:    pikkatech.eu (www.pikkatech.eu)                                    *
 ***********************************************************************************/
 
-using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+using BugLite.Library.Domain;
+using BugLite.Library.Gui.Interfaces;
 
 namespace BugLite.Library.Gui.Dialogs
 {
-	public partial class ProjectDialog : Form
+	public partial class ProjectDialog : Form, IProjectDevice
 	{
 		public ProjectDialog()
 		{
 			InitializeComponent();
+		}
+
+		[DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+		public Project Project
+		{
+			get
+			{
+				return this._ctrlProject.Project;
+			}
+
+			set
+			{
+				this._ctrlProject.Project = value;
+			}
 		}
 	}
 }

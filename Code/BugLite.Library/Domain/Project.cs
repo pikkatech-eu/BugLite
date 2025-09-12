@@ -19,11 +19,6 @@ namespace BugLite.Library.Domain
 	{
 		#region Properties
 		/// <summary>
-		/// The ID of the project.
-		/// </summary>
-		public int ProjectId	{get;set;}	= 0;
-
-		/// <summary>
 		/// The name of the project.
 		/// </summary>
 		public string Name	{get;set;}	= "Default";

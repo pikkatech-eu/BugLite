@@ -43,7 +43,7 @@ namespace BugLite.Library.Management
 		/// Delete a selected project.
 		/// LeanCore: disabled.
 		/// </summary>
-		void DeleteProject();
+		void CloseProject();
 
 		void LoadProject(string fileName);
 		void SaveProject(string fileName);

@@ -37,7 +37,12 @@ namespace BugLite.Library.Management
 		/// <exception cref="NotImplementedException"></exception>
 		public void NewProject()
 		{
-			// throw new NotImplementedException();
+			ProjectDialog dialog = new ProjectDialog();
+
+			if (dialog.ShowDialog() == DialogResult.OK)
+			{
+				this.CurrentProject	= dialog.Project;
+			}
 		}
 
 		/// <summary>
@@ -46,16 +51,23 @@ namespace BugLite.Library.Management
 		/// <exception cref="NotImplementedException"></exception>
 		public void EditProject()
 		{
-			// throw new NotImplementedException();
+			ProjectDialog dialog	= new ProjectDialog();
+			dialog.Project			= this.CurrentProject;
+
+			if (dialog.ShowDialog() == DialogResult.OK)
+			{
+				this.CurrentProject	= dialog.Project;
+			}
 		}
 
 		/// <summary>
 		/// TODO: In V2 (Multi-Project)
 		/// </summary>
 		/// <exception cref="NotImplementedException"></exception>
-		public void DeleteProject()
+		public void CloseProject()
 		{
-			// throw new NotImplementedException();
+			this.CurrentProject = null;
+			this.ProjectPath = "";
 		}
 
 		public void LoadProject(string fileName)
