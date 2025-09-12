@@ -14,35 +14,19 @@ namespace BugLite.Library.Management
 {
 	public class JsonBugLiteManager : IBugLiteManager
 	{
-		private Project _defaultProject = new Project();
-
 		#region Singletonium
 		private static readonly Lazy<JsonBugLiteManager> _instance = new Lazy<JsonBugLiteManager>(() => new JsonBugLiteManager());
 		public static JsonBugLiteManager Instance => _instance.Value;
 		private JsonBugLiteManager() 
 		{
-			this.Projects.Add(this._defaultProject);
-			this.CurrentProject	= this._defaultProject;
 
-			this.LoadProject(Settings.ProjectRepository);
 		}
 		#endregion
 
-		public List<Project> Projects	{get;set;} = new List<Project>();
+		public string ProjectPath	{get;set;} = "";
 
+		public Project CurrentProject	{get;set;} = null;
 
-		public Project CurrentProject
-		{
-			get
-			{
-				return this._defaultProject;
-			}
-
-			set
-			{
-				this._defaultProject = value;
-			}
-		}
 
 		/// <summary>
 		/// TODO: In V2 (Multi-Project)
@@ -123,7 +107,7 @@ namespace BugLite.Library.Management
 				}
 
 				this.CurrentProject.Issues.Add(issue.IssueId, issue);
-				this.SaveProject(Settings.ProjectRepository);
+				this.SaveProject(this.ProjectPath);
 			}
 		}
 
@@ -132,7 +116,7 @@ namespace BugLite.Library.Management
 			if (this.CurrentProject.Issues.ContainsKey(issue.IssueId))
 			{
 				this.CurrentProject.Issues[issue.IssueId]	= issue;
-				this.SaveProject(Settings.ProjectRepository);
+				this.SaveProject(this.ProjectPath);
 			}
 		}
 
@@ -141,7 +125,7 @@ namespace BugLite.Library.Management
 			if (this.CurrentProject.Issues.ContainsKey(issueId))
 			{
 				this.CurrentProject.Issues.Remove(issueId);
-				this.SaveProject(Settings.ProjectRepository);
+				this.SaveProject(this.ProjectPath);
 			}
 		}
 	}

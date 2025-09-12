@@ -15,15 +15,12 @@ namespace BugLite.Library.Management
 	{
 		#region Properties
 		/// <summary>
-		/// LeanCore: auto initialized with one default project.
-		/// </summary>
-		List<Project>	Projects	{get;set;}
-
-		/// <summary>
 		/// Project currently in work.
 		/// LeanCore: the auto initialized default project.
 		/// </summary>
 		Project	CurrentProject		{get;set;}
+
+		string ProjectPath	{get;set;}
 		#endregion
 
 		#region Project Management
