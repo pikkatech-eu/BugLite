@@ -16,4 +16,5 @@ Section "Files"
   File /r ".\Debug\net9.0-windows\BugLite.dll"
   File /r ".\Debug\net9.0-windows\BugLite.exe"
   File /r ".\Debug\net9.0-windows\*.json"
+  File /r ".\Debug\net9.0-windows\*.ico"
 SectionEnd ; end the section

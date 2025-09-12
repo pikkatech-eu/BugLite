@@ -1,3 +1,4 @@
+!define /date MyTIMESTAMP "%Y-%m-%d@%H-%M"
 Name "BugLite"
 OutFile "BugLite_Setup-${MyTIMESTAMP}.exe"
 InstallDir "$DESKTOP\BugLite"
@@ -16,4 +17,5 @@ Section "Files"
   File /r ".\Release\net9.0-windows\BugLite.dll"
   File /r ".\Release\net9.0-windows\BugLite.exe"
   File /r ".\Release\net9.0-windows\*.json"
+  File /r ".\Release\net9.0-windows\*.ico"
 SectionEnd ; end the section
