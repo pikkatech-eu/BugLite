@@ -42,6 +42,23 @@ namespace BugLite.Library.Gui.Controls
 				ListViewItem lvi = new ListViewItem(itemStrings);
 				lvi.Tag = issue;
 
+				switch (issue.Status)
+				{
+					case Domain.Enumerations.IssueStatus.Open:
+						lvi.ForeColor = Color.Red;
+						break;
+
+					case Domain.Enumerations.IssueStatus.InProgress:
+						lvi.ForeColor = Color.Blue;
+						break;
+
+					case Domain.Enumerations.IssueStatus.Closed:
+						lvi.ForeColor = Color.Green;
+						break;
+					default:
+						break;
+				}
+
 				this._lvIssues.Items.Add(lvi);
 			}
 
@@ -64,12 +81,12 @@ namespace BugLite.Library.Gui.Controls
 				int issueID = issue.IssueId;
 
 				IssueDialog dialog = new IssueDialog();
-				dialog.Issue	= issue;
+				dialog.Issue = issue;
 
 				if (dialog.ShowDialog() == DialogResult.OK)
 				{
 					issue = dialog.Issue;
-					issue.IssueId	= issueID;
+					issue.IssueId = issueID;
 
 					JsonBugLiteManager.Instance.ReplaceIssue(issue);
 					this.Display(JsonBugLiteManager.Instance.CurrentProject.Issues.Values);
@@ -91,6 +108,11 @@ namespace BugLite.Library.Gui.Controls
 					this.Display(JsonBugLiteManager.Instance.CurrentProject.Issues.Values);
 				}
 			}
+		}
+
+		private void OnListViewDoubleclicked(object sender, EventArgs e)
+		{
+			this.OnIssueEdit(sender, e);
 		}
 	}
 }

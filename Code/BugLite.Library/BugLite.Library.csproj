@@ -6,6 +6,7 @@
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
     <BaseOutputPath>C:\pikkatech.eu\Projects\BugLite\Binary</BaseOutputPath>
+    <Win32Resource></Win32Resource>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

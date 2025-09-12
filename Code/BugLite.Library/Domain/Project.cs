@@ -44,7 +44,8 @@ namespace BugLite.Library.Domain
 		#region Serialization
 		public string ToJson()
 		{
-			return JsonSerializer.Serialize<Project>(this);
+			var options = new JsonSerializerOptions { WriteIndented = true };
+			return JsonSerializer.Serialize<Project>(this, options);
 		}
 
 		public static Project FromJson(string json)

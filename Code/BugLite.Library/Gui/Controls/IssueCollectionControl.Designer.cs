@@ -65,12 +65,15 @@
 			this._lvIssues.ContextMenuStrip = this._cmsIssues;
 			this._lvIssues.Dock = DockStyle.Fill;
 			this._lvIssues.FullRowSelect = true;
-			this._lvIssues.Location = new Point(3, 3);
+			this._lvIssues.GridLines = true;
+			this._lvIssues.Location = new Point(0, 0);
+			this._lvIssues.Margin = new Padding(0);
 			this._lvIssues.Name = "_lvIssues";
-			this._lvIssues.Size = new Size(632, 394);
+			this._lvIssues.Size = new Size(638, 400);
 			this._lvIssues.TabIndex = 2;
 			this._lvIssues.UseCompatibleStateImageBehavior = false;
 			this._lvIssues.View = View.Details;
+			this._lvIssues.DoubleClick += this.OnListViewDoubleclicked;
 			// 
 			// IssueId
 			// 
