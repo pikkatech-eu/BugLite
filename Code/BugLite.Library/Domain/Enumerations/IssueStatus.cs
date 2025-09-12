@@ -10,24 +10,20 @@
 namespace BugLite.Library.Domain.Enumerations
 {
 	/// <summary>
-	/// Temporal stage of an issue's evolution.
+	/// Stage of an issue's evolution.
+	/// Lean Core version.
 	/// </summary>
 	public enum IssueStatus
 	{
 		/// <summary>
 		/// The issue is new.
 		/// </summary>
-		New,
+		Open,
 
 		/// <summary>
 		/// The issue has been assigned to a developer.
 		/// </summary>
-        Assigned,
-
-		/// <summary>
-		/// The issue has been resolved.
-		/// </summary>
-        Resolved,
+        InProgress,
 
 		/// <summary>
 		/// The issue is closed (resolved or not).
