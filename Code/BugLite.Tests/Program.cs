@@ -2,8 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using BugLite.Library.Domain;
+using BugLite.Library.Management;
 
 namespace BugLite.Tests
 {
@@ -12,26 +15,46 @@ namespace BugLite.Tests
 		public static void Main()
 		{
 			Console.WriteLine("Hello BugLite!");
+			// TestJsonSerialization();
 
+
+			JsonBugLiteManager.Instance.AddIssue();
+		}
+
+		private static void TestJsonSerialization()
+		{
 			Project project = new Project();
 
-			project.ProjectId	= 729;
+			project.ProjectId = 729;
 			project.Name = "Test project";
-			project.Description	= "Pryde chamber romulus dust proudstar jackpot tinkerer stick cannonball speedball. " +
+			project.Description = "Pryde chamber romulus dust proudstar jackpot tinkerer stick cannonball speedball. " +
 								  "X-factor echo lukecage moonknight madthinker blackheart annihilus ricochet scrambler " +
 								  "microchip warbound vision.";
 
 
 			Issue issue1 = new Issue();
-			issue1.IssueId	= 42;
+			issue1.IssueId = 42;
 			issue1.ProjectId = project.ProjectId;
-			issue1.Title	= "First Issue";
-			issue1.Details	= "Enchantress destiny invaders deathlok warpath mojo whirlwind cuckoos";
-			issue1.Status	= Library.Domain.Enumerations.IssueStatus.Open;
+			issue1.Title = "First Issue";
+			issue1.Details = "Enchantress destiny invaders deathlok warpath mojo whirlwind cuckoos";
+			issue1.Status = Library.Domain.Enumerations.IssueStatus.Open;
 
 			project.Issues.Add(issue1.IssueId, issue1);
 
 			// TODO: add an issue, convert to JSON and back again
+
+			Issue issue2 = new Issue();
+			issue2.IssueId = 43;
+			issue2.ProjectId = project.ProjectId;
+			issue2.Title = "Second Issue";
+			issue2.Details = "Emmafrost daken mrhyde mephisto fantomex powerman strange spyke beast defenders pyro namora";
+			issue2.Status = Library.Domain.Enumerations.IssueStatus.InProgress;
+
+			project.Issues.Add(issue2.IssueId, issue2);
+
+			string json = JsonSerializer.Serialize<Project>(project);
+
+			var project2 = JsonSerializer.Deserialize<Project>(json);
 		}
 	}
 }

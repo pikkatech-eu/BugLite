@@ -25,11 +25,4 @@
     <Compile Remove="Domain\Enumerations\UserLevel.cs" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Gui\Interfaces\" />
-    <Folder Include="Gui\Controls\" />
-    <Folder Include="Gui\Dialogs\" />
-    <Folder Include="Management\" />
-  </ItemGroup>
-
 </Project>

@@ -7,6 +7,8 @@
 * Copyright:    pikkatech.eu (www.pikkatech.eu)                                    *
 ***********************************************************************************/
 
+using System.Text.Json;
+
 namespace BugLite.Library.Domain
 {
 	/// <summary>
@@ -37,6 +39,18 @@ namespace BugLite.Library.Domain
 		public DateTime SubmittedOn	{get;set;} = DateTime.Now;
 
 		public Dictionary<int, Issue> Issues	{get;set;} = new Dictionary<int, Issue>();
+		#endregion
+
+		#region Serialization
+		public string ToJson()
+		{
+			return JsonSerializer.Serialize<Project>(this);
+		}
+
+		public static Project FromJson(string json)
+		{
+			return JsonSerializer.Deserialize<Project>(json);
+		}
 		#endregion
 	}
 }
