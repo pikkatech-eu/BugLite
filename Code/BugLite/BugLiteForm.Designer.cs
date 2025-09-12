@@ -50,8 +50,10 @@
 			this._lblProjectInfo = new ToolStripLabel();
 			this.statusStrip1 = new StatusStrip();
 			this._tlpBugLite = new TableLayoutPanel();
+			this._ctrlIssueCollection = new BugLite.Library.Gui.Controls.IssueCollectionControl();
 			this._msBugLite.SuspendLayout();
 			this._tsBugLite.SuspendLayout();
+			this._tlpBugLite.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// _msBugLite
@@ -76,52 +78,52 @@
 			// newToolStripMenuItem
 			// 
 			this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-			this.newToolStripMenuItem.Size = new Size(224, 28);
+			this.newToolStripMenuItem.Size = new Size(171, 28);
 			this.newToolStripMenuItem.Text = "&New";
 			this.newToolStripMenuItem.Click += this.OnProjectNew;
 			// 
 			// editToolStripMenuItem
 			// 
 			this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-			this.editToolStripMenuItem.Size = new Size(224, 28);
+			this.editToolStripMenuItem.Size = new Size(171, 28);
 			this.editToolStripMenuItem.Text = "&Edit";
 			this.editToolStripMenuItem.Click += this.OnProjectEdit;
 			// 
 			// closeToolStripMenuItem
 			// 
 			this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-			this.closeToolStripMenuItem.Size = new Size(224, 28);
+			this.closeToolStripMenuItem.Size = new Size(171, 28);
 			this.closeToolStripMenuItem.Text = "&Close";
 			this.closeToolStripMenuItem.Click += this.OnProjectClose;
 			// 
 			// toolStripSeparator1
 			// 
 			this.toolStripSeparator1.Name = "toolStripSeparator1";
-			this.toolStripSeparator1.Size = new Size(221, 6);
+			this.toolStripSeparator1.Size = new Size(168, 6);
 			// 
 			// loadToolStripMenuItem
 			// 
 			this.loadToolStripMenuItem.Name = "loadToolStripMenuItem";
-			this.loadToolStripMenuItem.Size = new Size(224, 28);
+			this.loadToolStripMenuItem.Size = new Size(171, 28);
 			this.loadToolStripMenuItem.Text = "&Load";
 			this.loadToolStripMenuItem.Click += this.OnProjectLoad;
 			// 
 			// saveAsToolStripMenuItem
 			// 
 			this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-			this.saveAsToolStripMenuItem.Size = new Size(224, 28);
+			this.saveAsToolStripMenuItem.Size = new Size(171, 28);
 			this.saveAsToolStripMenuItem.Text = "Save &As";
 			this.saveAsToolStripMenuItem.Click += this.OnProjectSaveAs;
 			// 
 			// toolStripSeparator2
 			// 
 			this.toolStripSeparator2.Name = "toolStripSeparator2";
-			this.toolStripSeparator2.Size = new Size(221, 6);
+			this.toolStripSeparator2.Size = new Size(168, 6);
 			// 
 			// quitToolStripMenuItem
 			// 
 			this.quitToolStripMenuItem.Name = "quitToolStripMenuItem";
-			this.quitToolStripMenuItem.Size = new Size(224, 28);
+			this.quitToolStripMenuItem.Size = new Size(171, 28);
 			this.quitToolStripMenuItem.Text = "&Quit";
 			this.quitToolStripMenuItem.Click += this.OnProjectQuit;
 			// 
@@ -135,21 +137,21 @@
 			// newToolStripMenuItem1
 			// 
 			this.newToolStripMenuItem1.Name = "newToolStripMenuItem1";
-			this.newToolStripMenuItem1.Size = new Size(224, 28);
+			this.newToolStripMenuItem1.Size = new Size(160, 28);
 			this.newToolStripMenuItem1.Text = "&New";
 			this.newToolStripMenuItem1.Click += this.OnIssueNew;
 			// 
 			// editToolStripMenuItem1
 			// 
 			this.editToolStripMenuItem1.Name = "editToolStripMenuItem1";
-			this.editToolStripMenuItem1.Size = new Size(224, 28);
+			this.editToolStripMenuItem1.Size = new Size(160, 28);
 			this.editToolStripMenuItem1.Text = "&Edit";
 			this.editToolStripMenuItem1.Click += this.OnIssueEdit;
 			// 
 			// deleteToolStripMenuItem
 			// 
 			this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-			this.deleteToolStripMenuItem.Size = new Size(224, 28);
+			this.deleteToolStripMenuItem.Size = new Size(160, 28);
 			this.deleteToolStripMenuItem.Text = "&Delete";
 			this.deleteToolStripMenuItem.Click += this.OnIssueDelete;
 			// 
@@ -163,7 +165,7 @@
 			// settingsToolStripMenuItem
 			// 
 			this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-			this.settingsToolStripMenuItem.Size = new Size(224, 28);
+			this.settingsToolStripMenuItem.Size = new Size(182, 28);
 			this.settingsToolStripMenuItem.Text = "&Settings";
 			this.settingsToolStripMenuItem.Click += this.OnToolsSettings;
 			// 
@@ -177,7 +179,7 @@
 			// aboutToolStripMenuItem
 			// 
 			this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-			this.aboutToolStripMenuItem.Size = new Size(224, 28);
+			this.aboutToolStripMenuItem.Size = new Size(149, 28);
 			this.aboutToolStripMenuItem.Text = "&About";
 			this.aboutToolStripMenuItem.Click += this.OnHelpAbout;
 			// 
@@ -214,6 +216,7 @@
 			this._tlpBugLite.ColumnCount = 1;
 			this._tlpBugLite.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
 			this._tlpBugLite.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
+			this._tlpBugLite.Controls.Add(this._ctrlIssueCollection, 0, 0);
 			this._tlpBugLite.Dock = DockStyle.Fill;
 			this._tlpBugLite.Location = new Point(0, 72);
 			this._tlpBugLite.Name = "_tlpBugLite";
@@ -221,6 +224,18 @@
 			this._tlpBugLite.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
 			this._tlpBugLite.Size = new Size(1115, 482);
 			this._tlpBugLite.TabIndex = 3;
+			// 
+			// _ctrlIssueCollection
+			// 
+			this._ctrlIssueCollection.BackColor = Color.FromArgb(0, 48, 96);
+			this._ctrlIssueCollection.Dock = DockStyle.Fill;
+			this._ctrlIssueCollection.Font = new Font("Consolas", 10F);
+			this._ctrlIssueCollection.ForeColor = Color.White;
+			this._ctrlIssueCollection.Location = new Point(0, 0);
+			this._ctrlIssueCollection.Margin = new Padding(0);
+			this._ctrlIssueCollection.Name = "_ctrlIssueCollection";
+			this._ctrlIssueCollection.Size = new Size(1115, 482);
+			this._ctrlIssueCollection.TabIndex = 0;
 			// 
 			// BugLiteForm
 			// 
@@ -240,6 +255,7 @@
 			this._msBugLite.PerformLayout();
 			this._tsBugLite.ResumeLayout(false);
 			this._tsBugLite.PerformLayout();
+			this._tlpBugLite.ResumeLayout(false);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}
@@ -250,7 +266,7 @@
 		private ToolStrip _tsBugLite;
 		private StatusStrip statusStrip1;
 		private TableLayoutPanel _tlpBugLite;
-		private Library.Gui.Controls.IssueCollectionControl _ctrlIssueCollection;
+		// private Library.Gui.Controls.IssueCollectionControl _ctrlIssueCollection;
 		private ToolStripLabel _lblProjectInfo;
 		private ToolStripMenuItem projectToolStripMenuItem;
 		private ToolStripMenuItem newToolStripMenuItem;
@@ -269,5 +285,6 @@
 		private ToolStripMenuItem settingsToolStripMenuItem;
 		private ToolStripMenuItem helpToolStripMenuItem;
 		private ToolStripMenuItem aboutToolStripMenuItem;
+		private Library.Gui.Controls.IssueCollectionControl _ctrlIssueCollection;
 	}
 }

@@ -9,6 +9,7 @@
 
 using BugLite.Library.Domain;
 using BugLite.Library.Gui.Dialogs;
+using BugLite.Library.Gui.Interfaces;
 
 namespace BugLite.Library.Management
 {
@@ -27,12 +28,14 @@ namespace BugLite.Library.Management
 
 		public Project CurrentProject	{get;set;} = null;
 
+		public IIssueCollectionDevice	IssueCollectionDevice	{get;set;}
+
 
 		/// <summary>
 		/// TODO: In V2 (Multi-Project)
 		/// </summary>
 		/// <exception cref="NotImplementedException"></exception>
-		public void AddProject()
+		public void NewProject()
 		{
 			// throw new NotImplementedException();
 		}
@@ -61,8 +64,9 @@ namespace BugLite.Library.Management
 			{
 				using (StreamReader reader = new StreamReader(fileName))
 				{
+					this.ProjectPath = fileName;
 					string json = reader.ReadToEnd();
-					this.CurrentProject	= Project.FromJson(json);;
+					this.CurrentProject	= Project.FromJson(json);
 				}
 			}
 			catch (Exception)

@@ -8,6 +8,8 @@ namespace BugLite
 		{
 			InitializeComponent();
 
+			// this._ctrlIssueCollection = new Library.Gui.Controls.IssueCollectionControl();
+
 			Icon icon = Icon.ExtractAssociatedIcon("bugLite.ico");
 
 			this.Icon = icon;
@@ -15,6 +17,9 @@ namespace BugLite
 
 		protected override void OnLoad(EventArgs e)
 		{
+			base.OnLoad(e);
+
+			// JsonBugLiteManager.Instance.IssueCollectionDevice	= this._ctrlIssueCollection;
 		}
 
 		private void OnProjectNew(object sender, EventArgs e)
@@ -43,6 +48,8 @@ namespace BugLite
 				string fileName = dialog.FileName;
 
 				JsonBugLiteManager.Instance.LoadProject(fileName);
+
+				this._ctrlIssueCollection.Display(JsonBugLiteManager.Instance.CurrentProject.Issues.Values);
 			}
 		}
 

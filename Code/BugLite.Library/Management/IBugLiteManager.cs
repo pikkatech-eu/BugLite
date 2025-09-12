@@ -8,6 +8,7 @@
 ***********************************************************************************/
 
 using BugLite.Library.Domain;
+using BugLite.Library.Gui.Interfaces;
 
 namespace BugLite.Library.Management
 {
@@ -21,6 +22,8 @@ namespace BugLite.Library.Management
 		Project	CurrentProject		{get;set;}
 
 		string ProjectPath	{get;set;}
+
+		IIssueCollectionDevice	IssueCollectionDevice	{get;set;}
 		#endregion
 
 		#region Project Management
@@ -28,7 +31,7 @@ namespace BugLite.Library.Management
 		/// Adds a new project.
 		/// LeanCore: disabled.
 		/// </summary>
-		void AddProject();
+		void NewProject();
 
 		/// <summary>
 		/// Edits a selected project.
