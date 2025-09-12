@@ -8,6 +8,7 @@
 ***********************************************************************************/
 
 using BugLite.Library.Domain;
+using BugLite.Library.Gui.Dialogs;
 using BugLite.Library.Gui.Interfaces;
 using BugLite.Library.Management;
 
@@ -56,12 +57,40 @@ namespace BugLite.Library.Gui.Controls
 
 		private void OnIssueEdit(object sender, EventArgs e)
 		{
+			if (this._lvIssues.SelectedItems.Count == 1)
+			{
+				Issue issue = this._lvIssues.SelectedItems[0].Tag as Issue;
 
+				int issueID = issue.IssueId;
+
+				IssueDialog dialog = new IssueDialog();
+				dialog.Issue	= issue;
+
+				if (dialog.ShowDialog() == DialogResult.OK)
+				{
+					issue = dialog.Issue;
+					issue.IssueId	= issueID;
+
+					JsonBugLiteManager.Instance.ReplaceIssue(issue);
+					this.Display(JsonBugLiteManager.Instance.CurrentProject.Issues.Values);
+				}
+			}
 		}
 
 		private void OnIssueDelete(object sender, EventArgs e)
 		{
+			if (this._lvIssues.SelectedItems.Count == 1)
+			{
+				Issue issue = this._lvIssues.SelectedItems[0].Tag as Issue;
 
+				int issueID = issue.IssueId;
+
+				if (MessageBox.Show($"Delete issue {issueID}?", "Geolocation about to be deleted", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+				{
+					JsonBugLiteManager.Instance.DeleteIssue(issueID);
+					this.Display(JsonBugLiteManager.Instance.CurrentProject.Issues.Values);
+				}
+			}
 		}
 	}
 }

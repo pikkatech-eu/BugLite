@@ -127,14 +127,22 @@ namespace BugLite.Library.Management
 			}
 		}
 
-		public void EditIssue()
+		public void ReplaceIssue(Issue issue)
 		{
-			throw new NotImplementedException();
+			if (this.CurrentProject.Issues.ContainsKey(issue.IssueId))
+			{
+				this.CurrentProject.Issues[issue.IssueId]	= issue;
+				this.SaveProject(Settings.ProjectRepository);
+			}
 		}
 
-		public void DeleteIssue()
+		public void DeleteIssue(int issueId)
 		{
-			throw new NotImplementedException();
+			if (this.CurrentProject.Issues.ContainsKey(issueId))
+			{
+				this.CurrentProject.Issues.Remove(issueId);
+				this.SaveProject(Settings.ProjectRepository);
+			}
 		}
 	}
 }

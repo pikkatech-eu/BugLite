@@ -58,12 +58,12 @@ namespace BugLite.Library.Management
 		/// <summary>
 		/// Edits a selected issue.
 		/// </summary>
-		void EditIssue();
+		void ReplaceIssue(Issue issue);
 
 		/// <summary>
 		/// Delete a selected issue.
 		/// </summary>
-		void DeleteIssue();
+		void DeleteIssue(int issueId);
 		#endregion
 	}
 }
