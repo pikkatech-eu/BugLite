@@ -7,6 +7,8 @@
 * Copyright:    pikkatech.eu (www.pikkatech.eu)                                    *
 ***********************************************************************************/
 
+using BugLite.Library.Domain.Enumerations;
+
 namespace BugLite.Library.Domain
 {
 	/// <summary>
@@ -40,6 +42,8 @@ namespace BugLite.Library.Domain
 		/// Date/Time of first submittance.
 		/// </summary>
 		public DateTime SubmittedOn	{get;set;} = DateTime.Now;
+
+		public IssueStatus	Status	{get;set;}	= IssueStatus.Open;
 
 		/// <summary>
 		/// Date/Time of last submittance.
