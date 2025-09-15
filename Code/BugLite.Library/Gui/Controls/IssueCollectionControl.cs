@@ -31,7 +31,6 @@ namespace BugLite.Library.Gui.Controls
 				string[] itemStrings =
 										{
 											issue.IssueId.ToString(),
-											issue.ProjectId.ToString(),
 											issue.Status.ToString(),
 											issue.Title,
 											issue.Details
@@ -62,6 +61,11 @@ namespace BugLite.Library.Gui.Controls
 
 			this._lvIssues.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
 			this._lvIssues.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+		}
+
+		public void Clear()
+		{
+			this._lvIssues.Items.Clear();
 		}
 
 		private void OnIssueNew(object sender, EventArgs e)

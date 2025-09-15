@@ -32,7 +32,6 @@
 			this._tlpUserControl = new TableLayoutPanel();
 			this._lvIssues = new ListView();
 			this.IssueId = new ColumnHeader();
-			this.ProjectName = new ColumnHeader();
 			this.IssueStatus = new ColumnHeader();
 			this.IssueTitle = new ColumnHeader();
 			this.IssueDetails = new ColumnHeader();
@@ -61,7 +60,7 @@
 			// 
 			// _lvIssues
 			// 
-			this._lvIssues.Columns.AddRange(new ColumnHeader[] { this.IssueId, this.ProjectName, this.IssueStatus, this.IssueTitle, this.IssueDetails });
+			this._lvIssues.Columns.AddRange(new ColumnHeader[] { this.IssueId, this.IssueStatus, this.IssueTitle, this.IssueDetails });
 			this._lvIssues.ContextMenuStrip = this._cmsIssues;
 			this._lvIssues.Dock = DockStyle.Fill;
 			this._lvIssues.FullRowSelect = true;
@@ -78,10 +77,6 @@
 			// IssueId
 			// 
 			this.IssueId.Text = "ID";
-			// 
-			// ProjectName
-			// 
-			this.ProjectName.Text = "Project";
 			// 
 			// IssueStatus
 			// 
@@ -145,7 +140,6 @@
 		private TableLayoutPanel _tlpUserControl;
 		private ListView _lvIssues;
 		private ColumnHeader IssueId;
-		private ColumnHeader ProjectName;
 		private ColumnHeader IssueTitle;
 		private ColumnHeader IssueDetails;
 		private ColumnHeader IssueStatus;

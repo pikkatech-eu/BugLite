@@ -14,5 +14,7 @@ namespace BugLite.Library.Gui.Interfaces
 	public interface IIssueCollectionDevice
 	{
 		void Display(IEnumerable<Issue> issues);
+
+		void Clear();
 	}
 }

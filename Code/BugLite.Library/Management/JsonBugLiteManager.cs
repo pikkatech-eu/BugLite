@@ -42,6 +42,8 @@ namespace BugLite.Library.Management
 			if (dialog.ShowDialog() == DialogResult.OK)
 			{
 				this.CurrentProject	= dialog.Project;
+
+				this.SaveProject(this.ProjectPath);
 			}
 		}
 
@@ -57,6 +59,8 @@ namespace BugLite.Library.Management
 			if (dialog.ShowDialog() == DialogResult.OK)
 			{
 				this.CurrentProject	= dialog.Project;
+
+				this.SaveProject(this.ProjectPath);
 			}
 		}
 

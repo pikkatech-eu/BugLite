@@ -70,7 +70,7 @@
 			// 
 			// projectToolStripMenuItem
 			// 
-			this.projectToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { this.newToolStripMenuItem, this.editToolStripMenuItem, this.closeToolStripMenuItem, this.toolStripSeparator1, this.loadToolStripMenuItem, this.saveAsToolStripMenuItem, this.toolStripSeparator2, this.quitToolStripMenuItem });
+			this.projectToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { this.newToolStripMenuItem, this.loadToolStripMenuItem, this.saveAsToolStripMenuItem, this.closeToolStripMenuItem, this.toolStripSeparator1, this.editToolStripMenuItem, this.toolStripSeparator2, this.quitToolStripMenuItem });
 			this.projectToolStripMenuItem.Name = "projectToolStripMenuItem";
 			this.projectToolStripMenuItem.Size = new Size(101, 28);
 			this.projectToolStripMenuItem.Text = "&Project";
@@ -78,52 +78,52 @@
 			// newToolStripMenuItem
 			// 
 			this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-			this.newToolStripMenuItem.Size = new Size(171, 28);
+			this.newToolStripMenuItem.Size = new Size(224, 28);
 			this.newToolStripMenuItem.Text = "&New";
 			this.newToolStripMenuItem.Click += this.OnProjectNew;
 			// 
 			// editToolStripMenuItem
 			// 
 			this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-			this.editToolStripMenuItem.Size = new Size(171, 28);
+			this.editToolStripMenuItem.Size = new Size(224, 28);
 			this.editToolStripMenuItem.Text = "&Edit";
 			this.editToolStripMenuItem.Click += this.OnProjectEdit;
 			// 
 			// closeToolStripMenuItem
 			// 
 			this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-			this.closeToolStripMenuItem.Size = new Size(171, 28);
+			this.closeToolStripMenuItem.Size = new Size(224, 28);
 			this.closeToolStripMenuItem.Text = "&Close";
 			this.closeToolStripMenuItem.Click += this.OnProjectClose;
 			// 
 			// toolStripSeparator1
 			// 
 			this.toolStripSeparator1.Name = "toolStripSeparator1";
-			this.toolStripSeparator1.Size = new Size(168, 6);
+			this.toolStripSeparator1.Size = new Size(221, 6);
 			// 
 			// loadToolStripMenuItem
 			// 
 			this.loadToolStripMenuItem.Name = "loadToolStripMenuItem";
-			this.loadToolStripMenuItem.Size = new Size(171, 28);
+			this.loadToolStripMenuItem.Size = new Size(224, 28);
 			this.loadToolStripMenuItem.Text = "&Load";
 			this.loadToolStripMenuItem.Click += this.OnProjectLoad;
 			// 
 			// saveAsToolStripMenuItem
 			// 
 			this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-			this.saveAsToolStripMenuItem.Size = new Size(171, 28);
+			this.saveAsToolStripMenuItem.Size = new Size(224, 28);
 			this.saveAsToolStripMenuItem.Text = "Save &As";
 			this.saveAsToolStripMenuItem.Click += this.OnProjectSaveAs;
 			// 
 			// toolStripSeparator2
 			// 
 			this.toolStripSeparator2.Name = "toolStripSeparator2";
-			this.toolStripSeparator2.Size = new Size(168, 6);
+			this.toolStripSeparator2.Size = new Size(221, 6);
 			// 
 			// quitToolStripMenuItem
 			// 
 			this.quitToolStripMenuItem.Name = "quitToolStripMenuItem";
-			this.quitToolStripMenuItem.Size = new Size(171, 28);
+			this.quitToolStripMenuItem.Size = new Size(224, 28);
 			this.quitToolStripMenuItem.Text = "&Quit";
 			this.quitToolStripMenuItem.Click += this.OnProjectQuit;
 			// 

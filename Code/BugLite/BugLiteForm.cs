@@ -56,6 +56,7 @@ namespace BugLite
 		{
 			JsonBugLiteManager.Instance.NewProject();
 			this._lblProjectInfo.Text	= JsonBugLiteManager.Instance.CurrentProject.Name;
+			this._ctrlIssueCollection.Clear();
 			this.OnProjectSaveAs(sender, e);
 		}
 
@@ -69,6 +70,8 @@ namespace BugLite
 		private void OnProjectClose(object sender, EventArgs e)
 		{
 			JsonBugLiteManager.Instance.CloseProject();
+			this._lblProjectInfo.Text	= "";
+			this._ctrlIssueCollection.Clear();
 		}
 
 		private void OnProjectLoad(object sender, EventArgs e)
@@ -82,6 +85,8 @@ namespace BugLite
 				string fileName = dialog.FileName;
 
 				JsonBugLiteManager.Instance.LoadProject(fileName);
+
+				this._lblProjectInfo.Text	= JsonBugLiteManager.Instance.CurrentProject.Name;
 
 				this._ctrlIssueCollection.Display(JsonBugLiteManager.Instance.CurrentProject.Issues.Values);
 			}
