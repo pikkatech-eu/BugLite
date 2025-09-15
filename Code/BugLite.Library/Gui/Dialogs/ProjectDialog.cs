@@ -13,13 +13,25 @@ using BugLite.Library.Gui.Interfaces;
 
 namespace BugLite.Library.Gui.Dialogs
 {
+	/// <summary>
+	/// Implements a GUI dialog to handle instances of Project.
+	/// </summary>
 	public partial class ProjectDialog : Form, IProjectDevice
 	{
+		#region Construction
+		/// <summary>
+		/// Default constructor.
+		/// </summary>
 		public ProjectDialog()
 		{
 			InitializeComponent();
-		}
+		} 
+		#endregion
 
+		#region IProjectDevice
+		/// <summary>
+		/// Gets an instance of Project from GUI and sets it to GUI.
+		/// </summary>
 		[DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
 		public Project Project
 		{
@@ -33,5 +45,6 @@ namespace BugLite.Library.Gui.Dialogs
 				this._ctrlProject.Project = value;
 			}
 		}
+		#endregion
 	}
 }

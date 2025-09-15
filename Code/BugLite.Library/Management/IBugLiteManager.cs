@@ -12,40 +12,54 @@ using BugLite.Library.Gui.Interfaces;
 
 namespace BugLite.Library.Management
 {
+	/// <summary>
+	/// Defines properties and featureas of a BugLite manager.
+	/// </summary>
 	public interface IBugLiteManager
 	{
 		#region Properties
 		/// <summary>
 		/// Project currently in work.
-		/// LeanCore: the auto initialized default project.
 		/// </summary>
 		Project	CurrentProject		{get;set;}
 
+		/// <summary>
+		/// The path to the project currently in work.
+		/// </summary>
 		string ProjectPath	{get;set;}
 
+		/// <summary>
+		/// Instance of IIssueCollectionDevice responsible for display of issues and interaction with the manager.
+		/// </summary>
 		IIssueCollectionDevice	IssueCollectionDevice	{get;set;}
 		#endregion
 
 		#region Project Management
 		/// <summary>
-		/// Adds a new project.
-		/// LeanCore: disabled.
+		/// Creates a new project.
 		/// </summary>
 		void NewProject();
 
 		/// <summary>
 		/// Edits a selected project.
-		/// LeanCore: disabled.
 		/// </summary>
 		void EditProject();
 
 		/// <summary>
-		/// Delete a selected project.
-		/// LeanCore: disabled.
+		/// Closes the current project.
 		/// </summary>
 		void CloseProject();
 
+		/// <summary>
+		/// Loads a project.
+		/// </summary>
+		/// <param name="fileName">The name of the file to load from.</param>
 		void LoadProject(string fileName);
+
+		/// <summary>
+		/// Saves the current project.
+		/// </summary>
+		/// <param name="fileName">The name of the file to save to.</param>
 		void SaveProject(string fileName);
 		#endregion
 

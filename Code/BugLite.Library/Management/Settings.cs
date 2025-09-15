@@ -11,15 +11,5 @@ namespace BugLite.Library.Management
 {
 	public static class Settings
 	{
-		//private static readonly string DEFAULT_PROJECT_REPOSITORY	= "default_project.xml";
-
-		//public static string ProjectRepository
-		//{
-		//	get
-		//	{
-		//		return DEFAULT_PROJECT_REPOSITORY;
-		//	}
-		//}
-
 	}
 }

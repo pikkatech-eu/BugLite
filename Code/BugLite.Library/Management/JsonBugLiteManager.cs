@@ -13,28 +13,53 @@ using BugLite.Library.Gui.Interfaces;
 
 namespace BugLite.Library.Management
 {
+	/// <summary>
+	/// Realization of BugLite manager based upon JSON serialization.
+	/// </summary>
 	public class JsonBugLiteManager : IBugLiteManager
 	{
 		#region Singletonium
+		/// <summary>
+		/// Static instance of JsonBugLiteManager to expose.
+		/// </summary>
 		private static readonly Lazy<JsonBugLiteManager> _instance = new Lazy<JsonBugLiteManager>(() => new JsonBugLiteManager());
+
+		/// <summary>
+		/// Gets the exposed instance of JsonBugLiteManager.
+		/// </summary>
 		public static JsonBugLiteManager Instance => _instance.Value;
+
+		/// <summary>
+		/// Private constructor.
+		/// All initialization goes here.
+		/// </summary>
 		private JsonBugLiteManager() 
 		{
 
 		}
 		#endregion
 
+		#region Properties
+		/// <summary>
+		/// The path to the project currently in work.
+		/// </summary>
 		public string ProjectPath	{get;set;} = "";
 
+		/// <summary>
+		/// Project currently in work.
+		/// </summary>
 		public Project CurrentProject	{get;set;} = null;
 
-		public IIssueCollectionDevice	IssueCollectionDevice	{get;set;}
-
-
 		/// <summary>
-		/// TODO: In V2 (Multi-Project)
+		/// Instance of IIssueCollectionDevice responsible for display of issues and interaction with the manager.
 		/// </summary>
-		/// <exception cref="NotImplementedException"></exception>
+		public IIssueCollectionDevice	IssueCollectionDevice	{get;set;}
+		#endregion
+
+		#region Project Management
+		/// <summary>
+		/// Creates a new project.
+		/// </summary>
 		public void NewProject()
 		{
 			ProjectDialog dialog = new ProjectDialog();
@@ -48,9 +73,8 @@ namespace BugLite.Library.Management
 		}
 
 		/// <summary>
-		/// TODO: In V2 (Multi-Project)
+		/// Edits a selected project.
 		/// </summary>
-		/// <exception cref="NotImplementedException"></exception>
 		public void EditProject()
 		{
 			ProjectDialog dialog	= new ProjectDialog();
@@ -65,15 +89,18 @@ namespace BugLite.Library.Management
 		}
 
 		/// <summary>
-		/// TODO: In V2 (Multi-Project)
+		/// Closes the current project.
 		/// </summary>
-		/// <exception cref="NotImplementedException"></exception>
 		public void CloseProject()
 		{
 			this.CurrentProject = null;
 			this.ProjectPath = "";
 		}
 
+		/// <summary>
+		/// Loads a project.
+		/// </summary>
+		/// <param name="fileName">The name of the file to load from.</param>
 		public void LoadProject(string fileName)
 		{
 			try
@@ -81,8 +108,7 @@ namespace BugLite.Library.Management
 				using (StreamReader reader = new StreamReader(fileName))
 				{
 					this.ProjectPath = fileName;
-					string json = reader.ReadToEnd();
-					this.CurrentProject	= Project.FromJson(json);
+					this.CurrentProject = Project.Load(this.ProjectPath);
 				}
 			}
 			catch (Exception)
@@ -90,20 +116,20 @@ namespace BugLite.Library.Management
 			}
 		}
 
+		/// <summary>
+		/// Saves the current project.
+		/// </summary>
+		/// <param name="fileName">The name of the file to save to.</param>
 		public void SaveProject(string fileName)
 		{
-			using (StreamWriter writer = new StreamWriter(fileName))
-			{
-				string json = this.CurrentProject.ToJson();
-
-				writer.Write(json);
-			}
+			this.CurrentProject.Save(fileName);
 		}
+		#endregion
 
+		#region Issue Management
 		/// <summary>
 		/// Adds a new issue to the current project
 		/// </summary>
-		/// <exception cref="NotImplementedException"></exception>
 		public void AddIssue()
 		{
 			if (this.CurrentProject == null)
@@ -131,6 +157,9 @@ namespace BugLite.Library.Management
 			}
 		}
 
+		/// <summary>
+		/// Edits a selected issue.
+		/// </summary>
 		public void ReplaceIssue(Issue issue)
 		{
 			if (this.CurrentProject.Issues.ContainsKey(issue.IssueId))
@@ -140,6 +169,9 @@ namespace BugLite.Library.Management
 			}
 		}
 
+		/// <summary>
+		/// Delete a selected issue.
+		/// </summary>
 		public void DeleteIssue(int issueId)
 		{
 			if (this.CurrentProject.Issues.ContainsKey(issueId))
@@ -148,5 +180,6 @@ namespace BugLite.Library.Management
 				this.SaveProject(this.ProjectPath);
 			}
 		}
+		#endregion
 	}
 }

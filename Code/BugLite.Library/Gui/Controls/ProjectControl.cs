@@ -13,13 +13,25 @@ using System.ComponentModel;
 
 namespace BugLite.Library.Gui.Controls
 {
+	/// <summary>
+	/// Implements a GUI control to handle instances of Project.
+	/// </summary>
 	public partial class ProjectControl : UserControl, IProjectDevice
 	{
+		#region Construction
+		/// <summary>
+		/// Default constructor.
+		/// </summary>
 		public ProjectControl()
 		{
 			InitializeComponent();
-		}
+		} 
+		#endregion
 
+		#region IProjectDevice
+		/// <summary>
+		/// Gets an instance of Project from GUI and sets it to GUI.
+		/// </summary>
 		[DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
 		public Project Project
 		{
@@ -38,5 +50,6 @@ namespace BugLite.Library.Gui.Controls
 				this._txDescription.Text	= value.Description;
 			}
 		}
+		#endregion
 	}
 }

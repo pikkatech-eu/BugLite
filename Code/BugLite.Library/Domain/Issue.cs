@@ -24,11 +24,6 @@ namespace BugLite.Library.Domain
 		public int IssueId	{get;set;}	= 0;
 
 		/// <summary>
-		/// The ID of the project.
-		/// </summary>
-		public int ProjectId	{get;set;}	= 0;
-
-		/// <summary>
 		/// Short description
 		/// </summary>
 		public string Title	{get;set;}	= "";
@@ -43,6 +38,9 @@ namespace BugLite.Library.Domain
 		/// </summary>
 		public DateTime SubmittedOn	{get;set;} = DateTime.Now;
 
+		/// <summary>
+		/// The status of the issue.
+		/// </summary>
 		public IssueStatus	Status	{get;set;}	= IssueStatus.Open;
 
 		/// <summary>

@@ -11,8 +11,14 @@ using BugLite.Library.Domain;
 
 namespace BugLite.Library.Gui.Interfaces
 {
+	/// <summary>
+	/// Defines a GUI device (control or dialog) to handle instances of Issue.
+	/// </summary>
 	public interface IIssueDevice
 	{
+		/// <summary>
+		/// Gets an instance of Issue from GUI and sets it to GUI.
+		/// </summary>
 		Issue Issue{get;set;}
 	}
 }

@@ -14,14 +14,26 @@ using BugLite.Library.Management;
 
 namespace BugLite.Library.Gui.Controls
 {
+	/// <summary>
+	/// Defines a GUI device (control or dialog) to handle instances of collections of type Issue.
+	/// </summary>
 	public partial class IssueCollectionControl : UserControl, IIssueCollectionDevice
 	{
+		#region Construction
+		/// <summary>
+		/// Default constructor.
+		/// </summary>
 		public IssueCollectionControl()
 		{
 			InitializeComponent();
-
 		}
+		#endregion
 
+		#region IIssueCollectionDevice
+		/// <summary>
+		/// Displays a collections of Issues.
+		/// </summary>
+		/// <param name="issues">Collection of Issues to display.</param>
 		public void Display(IEnumerable<Issue> issues)
 		{
 			this._lvIssues.Items.Clear();
@@ -63,11 +75,22 @@ namespace BugLite.Library.Gui.Controls
 			this._lvIssues.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
 		}
 
+		/// <summary>
+		/// Clears the displayed collection of Issue.
+		/// </summary>
 		public void Clear()
 		{
 			this._lvIssues.Items.Clear();
 		}
+		#endregion
 
+		#region Private Auxiliary
+		/// <summary>
+		/// Handles context menu event "New issue".
+		/// Creates an Issue dialog, causes JsonBugLiteManager to add the Issue from the dialog, and displays all issues anew.
+		/// </summary>
+		/// <param name="sender">Not used.</param>
+		/// <param name="e">Not used.</param>
 		private void OnIssueNew(object sender, EventArgs e)
 		{
 			try
@@ -81,6 +104,13 @@ namespace BugLite.Library.Gui.Controls
 			}
 		}
 
+		/// <summary>
+		/// Handles context menu event "Edit issue".
+		/// Creates an Issue dialog, sets the value of Issue in it with the issue selected in the ListView,
+		/// causes JsonBugLiteManager to edit the Issue from the dialog, and displays all issues anew.
+		/// </summary>
+		/// <param name="sender">Not used.</param>
+		/// <param name="e">Not used.</param>
 		private void OnIssueEdit(object sender, EventArgs e)
 		{
 			if (this._lvIssues.SelectedItems.Count == 1)
@@ -103,6 +133,13 @@ namespace BugLite.Library.Gui.Controls
 			}
 		}
 
+		/// <summary>
+		/// Handles context menu event "Delete issue".
+		/// Asks the user if she really wants the selected issue to be deleted; if OK, 
+		/// causes JsonBugLiteManager to delete the Issue, and displays all issues anew.
+		/// </summary>
+		/// <param name="sender">Not used.</param>
+		/// <param name="e">Not used.</param>
 		private void OnIssueDelete(object sender, EventArgs e)
 		{
 			if (this._lvIssues.SelectedItems.Count == 1)
@@ -119,9 +156,16 @@ namespace BugLite.Library.Gui.Controls
 			}
 		}
 
+		/// <summary>
+		/// Handles GUI event "Doubleclik on ListView".
+		/// Added for convenience. Does exactly the same thing as OnIssueEdit().
+		/// </summary>
+		/// <param name="sender">Not used.</param>
+		/// <param name="e">Not used.</param>
 		private void OnListViewDoubleclicked(object sender, EventArgs e)
 		{
 			this.OnIssueEdit(sender, e);
 		}
+		#endregion
 	}
 }
