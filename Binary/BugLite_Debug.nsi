@@ -17,4 +17,6 @@ Section "Files"
   File /r ".\Debug\net9.0-windows\BugLite.exe"
   File /r ".\Debug\net9.0-windows\*.json"
   File /r ".\Debug\net9.0-windows\*.ico"
+  
+  File "..\*.toml"
 SectionEnd ; end the section
