@@ -65,7 +65,6 @@ namespace BugLite.Library.Gui.Controls
 			{
 				this._lblIssue.Text				= value.IssueId.ToString();
 
-				this._lblProject.Text			= "*"; 
 				this._cxStatus.SelectedItem		= value.Status;
 				this._cxSeverity.SelectedItem	= value.Severity;
 				this._cxPriority.SelectedItem	= value.Priority;
