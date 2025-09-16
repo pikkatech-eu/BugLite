@@ -76,6 +76,25 @@ namespace BugLite.Library.Gui.Controls
 						break;
 				}
 
+				switch (issue.Severity)
+				{
+					case Domain.Enumerations.Severity.Feature:
+						lvi.ImageKey	= "feature";
+						break;
+
+					case Domain.Enumerations.Severity.Minor:
+						lvi.ImageKey	= "bug_minor";
+						break;
+
+					case Domain.Enumerations.Severity.Major:
+						lvi.ImageKey	= "bug_major";
+						break;
+
+					default:
+						break;
+				}
+
+
 				this._lvIssues.Items.Add(lvi);
 			}
 

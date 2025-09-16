@@ -29,19 +29,21 @@
 		private void InitializeComponent()
 		{
 			this.components = new System.ComponentModel.Container();
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IssueCollectionControl));
 			this._tlpUserControl = new TableLayoutPanel();
 			this._lvIssues = new ListView();
 			this.IssueId = new ColumnHeader();
 			this.SubmittedOn = new ColumnHeader();
 			this.IssueStatus = new ColumnHeader();
+			this.Severity = new ColumnHeader();
+			this.Priority = new ColumnHeader();
 			this.IssueTitle = new ColumnHeader();
 			this.IssueDetails = new ColumnHeader();
 			this._cmsIssues = new ContextMenuStrip(this.components);
 			this.newIssueToolStripMenuItem = new ToolStripMenuItem();
 			this.editIssueToolStripMenuItem = new ToolStripMenuItem();
 			this.deleteIssueToolStripMenuItem = new ToolStripMenuItem();
-			this.Severity = new ColumnHeader();
-			this.Priority = new ColumnHeader();
+			this._ilIssues = new ImageList(this.components);
 			this._tlpUserControl.SuspendLayout();
 			this._cmsIssues.SuspendLayout();
 			this.SuspendLayout();
@@ -68,10 +70,13 @@
 			this._lvIssues.Dock = DockStyle.Fill;
 			this._lvIssues.FullRowSelect = true;
 			this._lvIssues.GridLines = true;
+			this._lvIssues.LargeImageList = this._ilIssues;
 			this._lvIssues.Location = new Point(0, 0);
 			this._lvIssues.Margin = new Padding(0);
 			this._lvIssues.Name = "_lvIssues";
 			this._lvIssues.Size = new Size(638, 400);
+			this._lvIssues.SmallImageList = this._ilIssues;
+			this._lvIssues.StateImageList = this._ilIssues;
 			this._lvIssues.TabIndex = 2;
 			this._lvIssues.UseCompatibleStateImageBehavior = false;
 			this._lvIssues.View = View.Details;
@@ -88,6 +93,14 @@
 			// IssueStatus
 			// 
 			this.IssueStatus.Text = "Status";
+			// 
+			// Severity
+			// 
+			this.Severity.Text = "Severity";
+			// 
+			// Priority
+			// 
+			this.Priority.Text = "Priority";
 			// 
 			// IssueTitle
 			// 
@@ -126,13 +139,14 @@
 			this.deleteIssueToolStripMenuItem.Text = "&Delete Issue";
 			this.deleteIssueToolStripMenuItem.Click += this.OnIssueDelete;
 			// 
-			// Severity
+			// _ilIssues
 			// 
-			this.Severity.Text = "Severity";
-			// 
-			// Priority
-			// 
-			this.Priority.Text = "Priority";
+			this._ilIssues.ColorDepth = ColorDepth.Depth32Bit;
+			this._ilIssues.ImageStream = (ImageListStreamer)resources.GetObject("_ilIssues.ImageStream");
+			this._ilIssues.TransparentColor = Color.Transparent;
+			this._ilIssues.Images.SetKeyName(0, "bug_major");
+			this._ilIssues.Images.SetKeyName(1, "bug_minor");
+			this._ilIssues.Images.SetKeyName(2, "feature");
 			// 
 			// IssueCollectionControl
 			// 
@@ -165,5 +179,6 @@
 		private ColumnHeader SubmittedOn;
 		private ColumnHeader Severity;
 		private ColumnHeader Priority;
+		private ImageList _ilIssues;
 	}
 }
