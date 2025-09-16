@@ -79,15 +79,6 @@ namespace BugLite
 			}
 		}
 
-		internal void LoadProject(string fileName)
-		{
-			JsonBugLiteManager.Instance.LoadProject(fileName);
-
-			this._lblProjectInfo.Text = JsonBugLiteManager.Instance.CurrentProject.Name;
-
-			this._ctrlIssueCollection.Display(JsonBugLiteManager.Instance.CurrentProject.Issues.Values);
-		}
-
 		private void OnProjectSaveAs(object sender, EventArgs e)
 		{
 			SaveFileDialog dialog	= new SaveFileDialog();
@@ -129,5 +120,16 @@ namespace BugLite
 		{
 
 		}
+
+		#region Internal Auxiliary
+		internal void LoadProject(string fileName)
+		{
+			JsonBugLiteManager.Instance.LoadProject(fileName);
+
+			this._lblProjectInfo.Text = JsonBugLiteManager.Instance.CurrentProject.Name;
+
+			this._ctrlIssueCollection.Display(JsonBugLiteManager.Instance.CurrentProject.Issues.Values);
+		}
+		#endregion
 	}
 }

@@ -2,5 +2,14 @@
   "Name": "BugLite",
   "Description": "A lightweight, portable issue tracker designed for small projects and personal use. Focuse on simplicity: record issues, track their status, and organize them by project.",
   "SubmittedOn": "2025-09-16T09:50:27.3187575+02:00",
-  "Issues": {}
+  "Issues": {
+    "1": {
+      "IssueId": 1,
+      "Title": "Program does not start with attached file",
+      "Details": "It does only if the jissue file is in the same directory as .exe\r\nNOTE: use a logger to sort out what happens.",
+      "SubmittedOn": "2025-09-16T11:21:58.1324085+02:00",
+      "Status": 0,
+      "LastUpdated": "2025-09-16T11:21:58.1324414+02:00"
+    }
+  }
 }

@@ -39,6 +39,7 @@
 			this.newIssueToolStripMenuItem = new ToolStripMenuItem();
 			this.editIssueToolStripMenuItem = new ToolStripMenuItem();
 			this.deleteIssueToolStripMenuItem = new ToolStripMenuItem();
+			this.SubmittedOn = new ColumnHeader();
 			this._tlpUserControl.SuspendLayout();
 			this._cmsIssues.SuspendLayout();
 			this.SuspendLayout();
@@ -60,7 +61,7 @@
 			// 
 			// _lvIssues
 			// 
-			this._lvIssues.Columns.AddRange(new ColumnHeader[] { this.IssueId, this.IssueStatus, this.IssueTitle, this.IssueDetails });
+			this._lvIssues.Columns.AddRange(new ColumnHeader[] { this.IssueId, this.IssueStatus, this.SubmittedOn, this.IssueTitle, this.IssueDetails });
 			this._lvIssues.ContextMenuStrip = this._cmsIssues;
 			this._lvIssues.Dock = DockStyle.Fill;
 			this._lvIssues.FullRowSelect = true;
@@ -119,6 +120,10 @@
 			this.deleteIssueToolStripMenuItem.Text = "&Delete Issue";
 			this.deleteIssueToolStripMenuItem.Click += this.OnIssueDelete;
 			// 
+			// SubmittedOn
+			// 
+			this.SubmittedOn.Text = "Submitted On";
+			// 
 			// IssueCollectionControl
 			// 
 			this.AutoScaleDimensions = new SizeF(9F, 20F);
@@ -147,5 +152,6 @@
 		private ToolStripMenuItem newIssueToolStripMenuItem;
 		private ToolStripMenuItem editIssueToolStripMenuItem;
 		private ToolStripMenuItem deleteIssueToolStripMenuItem;
+		private ColumnHeader SubmittedOn;
 	}
 }

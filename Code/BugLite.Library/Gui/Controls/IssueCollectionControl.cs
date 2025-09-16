@@ -44,6 +44,7 @@ namespace BugLite.Library.Gui.Controls
 										{
 											issue.IssueId.ToString(),
 											issue.Status.ToString(),
+											issue.SubmittedOn.ToString("yyyy-MM-dd HH:mm"),
 											issue.Title,
 											issue.Details
 										};
