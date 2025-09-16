@@ -20,16 +20,6 @@ namespace BugLite.Library.Domain.Enumerations
 		Feature,
 
 		/// <summary>
-		/// A trivial bug (typo etc.)
-		/// </summary>
-		Trivial,
-
-		/// <summary>
-		/// Light changes needed.
-		/// </summary>
-		Tweak,
-
-		/// <summary>
 		/// Bug of minor severity,
 		/// </summary>
 		Minor,
@@ -37,11 +27,6 @@ namespace BugLite.Library.Domain.Enumerations
 		/// <summary>
 		/// Bug of major severity,
 		/// </summary>
-		Major,
-
-		/// <summary>
-		/// Bug produces crashes.
-		/// </summary>
-		Crash
+		Major
 	}
 }

@@ -28,8 +28,14 @@ namespace BugLite.Library.Gui.Controls
 		{
 			InitializeComponent();
 
-			this._cxStatus.DataSource	= Enum.GetValues(typeof(IssueStatus));
-			this._cxStatus.SelectedItem	= IssueStatus.Open;
+			this._cxStatus.DataSource		= Enum.GetValues(typeof(IssueStatus));
+			this._cxStatus.SelectedItem		= IssueStatus.Open;
+
+			this._cxSeverity.DataSource		= Enum.GetValues(typeof(Severity));
+			this._cxSeverity.SelectedItem	= Severity.Major;
+
+			this._cxPriority.DataSource		= Enum.GetValues(typeof(Priority));
+			this._cxPriority.SelectedItem	= Priority.Normal;
 		}
 		#endregion
 
@@ -47,6 +53,8 @@ namespace BugLite.Library.Gui.Controls
 
 				issue.LastUpdated	= DateTime.Now;
 				issue.Status		= (IssueStatus)this._cxStatus.SelectedItem;
+				issue.Severity		= (Severity)this._cxSeverity.SelectedItem;
+				issue.Priority		= (Priority)this._cxPriority.SelectedItem;
 				issue.Title			= this._txTitle.Text;	
 				issue.Details		= this._txDescription.Text;
 
@@ -55,12 +63,14 @@ namespace BugLite.Library.Gui.Controls
 
 			set
 			{
-				this._lblIssue.Text			= value.IssueId.ToString();
+				this._lblIssue.Text				= value.IssueId.ToString();
 
-				this._lblProject.Text		= "*"; 
-				this._cxStatus.SelectedItem	= value.Status;
-				this._txTitle.Text			= value.Title;
-				this._txDescription.Text	= value.Details;
+				this._lblProject.Text			= "*"; 
+				this._cxStatus.SelectedItem		= value.Status;
+				this._cxSeverity.SelectedItem	= value.Severity;
+				this._cxPriority.SelectedItem	= value.Priority;
+				this._txTitle.Text				= value.Title;
+				this._txDescription.Text		= value.Details;
 			}
 		}
 		#endregion

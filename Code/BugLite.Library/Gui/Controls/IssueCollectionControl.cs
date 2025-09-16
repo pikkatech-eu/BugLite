@@ -43,8 +43,10 @@ namespace BugLite.Library.Gui.Controls
 				string[] itemStrings =
 										{
 											issue.IssueId.ToString(),
-											issue.Status.ToString(),
 											issue.SubmittedOn.ToString("yyyy-MM-dd HH:mm"),
+											issue.Status.ToString(),
+											issue.Severity.ToString(),
+											issue.Priority.ToString(),
 											issue.Title,
 											issue.Details
 										};

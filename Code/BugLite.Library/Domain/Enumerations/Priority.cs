@@ -32,16 +32,6 @@ namespace BugLite.Library.Domain.Enumerations
 		/// <summary>
 		/// Issue of high priority.
 		/// </summary>
-        High,
-
-		/// <summary>
-		/// Issue of highest priority.
-		/// </summary>
-        Urgent,
-
-		/// <summary>
-		/// Issue of highrst priority, to be dealt with immediately.
-		/// </summary>
-        Immediate
+        High
 	}
 }

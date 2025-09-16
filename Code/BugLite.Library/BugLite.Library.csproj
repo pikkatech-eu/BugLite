@@ -19,10 +19,8 @@
 
   <ItemGroup>
     <Compile Remove="Domain\Enumerations\IssueResolution.cs" />
-    <Compile Remove="Domain\Enumerations\Priority.cs" />
     <Compile Remove="Domain\Enumerations\ProjectStatus.cs" />
     <Compile Remove="Domain\Enumerations\Reproducibility.cs" />
-    <Compile Remove="Domain\Enumerations\Severity.cs" />
     <Compile Remove="Domain\Enumerations\UserLevel.cs" />
   </ItemGroup>
 

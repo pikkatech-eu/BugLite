@@ -32,6 +32,7 @@
 			this._tlpUserControl = new TableLayoutPanel();
 			this._lvIssues = new ListView();
 			this.IssueId = new ColumnHeader();
+			this.SubmittedOn = new ColumnHeader();
 			this.IssueStatus = new ColumnHeader();
 			this.IssueTitle = new ColumnHeader();
 			this.IssueDetails = new ColumnHeader();
@@ -39,7 +40,8 @@
 			this.newIssueToolStripMenuItem = new ToolStripMenuItem();
 			this.editIssueToolStripMenuItem = new ToolStripMenuItem();
 			this.deleteIssueToolStripMenuItem = new ToolStripMenuItem();
-			this.SubmittedOn = new ColumnHeader();
+			this.Severity = new ColumnHeader();
+			this.Priority = new ColumnHeader();
 			this._tlpUserControl.SuspendLayout();
 			this._cmsIssues.SuspendLayout();
 			this.SuspendLayout();
@@ -61,7 +63,7 @@
 			// 
 			// _lvIssues
 			// 
-			this._lvIssues.Columns.AddRange(new ColumnHeader[] { this.IssueId, this.IssueStatus, this.SubmittedOn, this.IssueTitle, this.IssueDetails });
+			this._lvIssues.Columns.AddRange(new ColumnHeader[] { this.IssueId, this.SubmittedOn, this.IssueStatus, this.Severity, this.Priority, this.IssueTitle, this.IssueDetails });
 			this._lvIssues.ContextMenuStrip = this._cmsIssues;
 			this._lvIssues.Dock = DockStyle.Fill;
 			this._lvIssues.FullRowSelect = true;
@@ -78,6 +80,10 @@
 			// IssueId
 			// 
 			this.IssueId.Text = "ID";
+			// 
+			// SubmittedOn
+			// 
+			this.SubmittedOn.Text = "Submitted On";
 			// 
 			// IssueStatus
 			// 
@@ -120,9 +126,13 @@
 			this.deleteIssueToolStripMenuItem.Text = "&Delete Issue";
 			this.deleteIssueToolStripMenuItem.Click += this.OnIssueDelete;
 			// 
-			// SubmittedOn
+			// Severity
 			// 
-			this.SubmittedOn.Text = "Submitted On";
+			this.Severity.Text = "Severity";
+			// 
+			// Priority
+			// 
+			this.Priority.Text = "Priority";
 			// 
 			// IssueCollectionControl
 			// 
@@ -153,5 +163,7 @@
 		private ToolStripMenuItem editIssueToolStripMenuItem;
 		private ToolStripMenuItem deleteIssueToolStripMenuItem;
 		private ColumnHeader SubmittedOn;
+		private ColumnHeader Severity;
+		private ColumnHeader Priority;
 	}
 }

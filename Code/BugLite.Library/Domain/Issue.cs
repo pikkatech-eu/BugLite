@@ -43,6 +43,10 @@ namespace BugLite.Library.Domain
 		/// </summary>
 		public IssueStatus	Status	{get;set;}	= IssueStatus.Open;
 
+		public Severity		Severity	{get;set;}	= Severity.Major;
+
+		public Priority		Priority	{get;set;}	= Priority.Normal;
+
 		/// <summary>
 		/// Date/Time of last submittance.
 		/// </summary>
