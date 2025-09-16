@@ -28,14 +28,15 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BugLiteForm));
 			this._msBugLite = new MenuStrip();
 			this.projectToolStripMenuItem = new ToolStripMenuItem();
 			this.newToolStripMenuItem = new ToolStripMenuItem();
-			this.editToolStripMenuItem = new ToolStripMenuItem();
-			this.closeToolStripMenuItem = new ToolStripMenuItem();
-			this.toolStripSeparator1 = new ToolStripSeparator();
 			this.loadToolStripMenuItem = new ToolStripMenuItem();
 			this.saveAsToolStripMenuItem = new ToolStripMenuItem();
+			this.closeToolStripMenuItem = new ToolStripMenuItem();
+			this.toolStripSeparator1 = new ToolStripSeparator();
+			this.editToolStripMenuItem = new ToolStripMenuItem();
 			this.toolStripSeparator2 = new ToolStripSeparator();
 			this.quitToolStripMenuItem = new ToolStripMenuItem();
 			this.issueToolStripMenuItem = new ToolStripMenuItem();
@@ -78,52 +79,52 @@
 			// newToolStripMenuItem
 			// 
 			this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-			this.newToolStripMenuItem.Size = new Size(224, 28);
+			this.newToolStripMenuItem.Size = new Size(171, 28);
 			this.newToolStripMenuItem.Text = "&New";
 			this.newToolStripMenuItem.Click += this.OnProjectNew;
-			// 
-			// editToolStripMenuItem
-			// 
-			this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-			this.editToolStripMenuItem.Size = new Size(224, 28);
-			this.editToolStripMenuItem.Text = "&Edit";
-			this.editToolStripMenuItem.Click += this.OnProjectEdit;
-			// 
-			// closeToolStripMenuItem
-			// 
-			this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-			this.closeToolStripMenuItem.Size = new Size(224, 28);
-			this.closeToolStripMenuItem.Text = "&Close";
-			this.closeToolStripMenuItem.Click += this.OnProjectClose;
-			// 
-			// toolStripSeparator1
-			// 
-			this.toolStripSeparator1.Name = "toolStripSeparator1";
-			this.toolStripSeparator1.Size = new Size(221, 6);
 			// 
 			// loadToolStripMenuItem
 			// 
 			this.loadToolStripMenuItem.Name = "loadToolStripMenuItem";
-			this.loadToolStripMenuItem.Size = new Size(224, 28);
+			this.loadToolStripMenuItem.Size = new Size(171, 28);
 			this.loadToolStripMenuItem.Text = "&Load";
 			this.loadToolStripMenuItem.Click += this.OnProjectLoad;
 			// 
 			// saveAsToolStripMenuItem
 			// 
 			this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-			this.saveAsToolStripMenuItem.Size = new Size(224, 28);
+			this.saveAsToolStripMenuItem.Size = new Size(171, 28);
 			this.saveAsToolStripMenuItem.Text = "Save &As";
 			this.saveAsToolStripMenuItem.Click += this.OnProjectSaveAs;
+			// 
+			// closeToolStripMenuItem
+			// 
+			this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
+			this.closeToolStripMenuItem.Size = new Size(171, 28);
+			this.closeToolStripMenuItem.Text = "&Close";
+			this.closeToolStripMenuItem.Click += this.OnProjectClose;
+			// 
+			// toolStripSeparator1
+			// 
+			this.toolStripSeparator1.Name = "toolStripSeparator1";
+			this.toolStripSeparator1.Size = new Size(168, 6);
+			// 
+			// editToolStripMenuItem
+			// 
+			this.editToolStripMenuItem.Name = "editToolStripMenuItem";
+			this.editToolStripMenuItem.Size = new Size(171, 28);
+			this.editToolStripMenuItem.Text = "&Edit";
+			this.editToolStripMenuItem.Click += this.OnProjectEdit;
 			// 
 			// toolStripSeparator2
 			// 
 			this.toolStripSeparator2.Name = "toolStripSeparator2";
-			this.toolStripSeparator2.Size = new Size(221, 6);
+			this.toolStripSeparator2.Size = new Size(168, 6);
 			// 
 			// quitToolStripMenuItem
 			// 
 			this.quitToolStripMenuItem.Name = "quitToolStripMenuItem";
-			this.quitToolStripMenuItem.Size = new Size(224, 28);
+			this.quitToolStripMenuItem.Size = new Size(171, 28);
 			this.quitToolStripMenuItem.Text = "&Quit";
 			this.quitToolStripMenuItem.Click += this.OnProjectQuit;
 			// 
@@ -199,8 +200,7 @@
 			this._lblProjectInfo.Font = new Font("Consolas", 14F, FontStyle.Bold);
 			this._lblProjectInfo.ForeColor = Color.MediumBlue;
 			this._lblProjectInfo.Name = "_lblProjectInfo";
-			this._lblProjectInfo.Size = new Size(103, 37);
-			this._lblProjectInfo.Text = "";
+			this._lblProjectInfo.Size = new Size(0, 37);
 			// 
 			// statusStrip1
 			// 
@@ -247,6 +247,7 @@
 			this.Controls.Add(this._tsBugLite);
 			this.Controls.Add(this._msBugLite);
 			this.Font = new Font("Consolas", 10F);
+			this.Icon = (Icon)resources.GetObject("$this.Icon");
 			this.MainMenuStrip = this._msBugLite;
 			this.Name = "BugLiteForm";
 			this.Text = "Bug Lite (LeanCore) 1.0.0.0";

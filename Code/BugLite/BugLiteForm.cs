@@ -9,12 +9,6 @@ namespace BugLite
 		{
 			InitializeComponent();
 
-			// this._ctrlIssueCollection = new Library.Gui.Controls.IssueCollectionControl();
-
-			Icon icon = Icon.ExtractAssociatedIcon("bugLite.ico");
-
-			this.Icon = icon;
-
 			this.SetTitle();
 		}
 
@@ -57,7 +51,6 @@ namespace BugLite
 			JsonBugLiteManager.Instance.NewProject();
 			this._lblProjectInfo.Text	= JsonBugLiteManager.Instance.CurrentProject.Name;
 			this._ctrlIssueCollection.Clear();
-			// this.OnProjectSaveAs(sender, e);
 		}
 
 		private void OnProjectEdit(object sender, EventArgs e)
@@ -82,14 +75,17 @@ namespace BugLite
 
 			if (dialog.ShowDialog() == DialogResult.OK)
 			{
-				string fileName = dialog.FileName;
-
-				JsonBugLiteManager.Instance.LoadProject(fileName);
-
-				this._lblProjectInfo.Text	= JsonBugLiteManager.Instance.CurrentProject.Name;
-
-				this._ctrlIssueCollection.Display(JsonBugLiteManager.Instance.CurrentProject.Issues.Values);
+				this.LoadProject(dialog.FileName);
 			}
+		}
+
+		internal void LoadProject(string fileName)
+		{
+			JsonBugLiteManager.Instance.LoadProject(fileName);
+
+			this._lblProjectInfo.Text = JsonBugLiteManager.Instance.CurrentProject.Name;
+
+			this._ctrlIssueCollection.Display(JsonBugLiteManager.Instance.CurrentProject.Issues.Values);
 		}
 
 		private void OnProjectSaveAs(object sender, EventArgs e)
