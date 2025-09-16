@@ -21,7 +21,7 @@ namespace BugLite.Library.Domain
 		/// <summary>
 		/// The name of the project.
 		/// </summary>
-		public string Name	{get;set;}	= "Default";
+		public string Name	{get;set;}	= "";
 
 		/// <summary>
 		/// A longer description.

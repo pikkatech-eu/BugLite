@@ -200,7 +200,7 @@
 			this._lblProjectInfo.ForeColor = Color.MediumBlue;
 			this._lblProjectInfo.Name = "_lblProjectInfo";
 			this._lblProjectInfo.Size = new Size(103, 37);
-			this._lblProjectInfo.Text = "Default";
+			this._lblProjectInfo.Text = "";
 			// 
 			// statusStrip1
 			// 

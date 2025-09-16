@@ -57,7 +57,7 @@ namespace BugLite
 			JsonBugLiteManager.Instance.NewProject();
 			this._lblProjectInfo.Text	= JsonBugLiteManager.Instance.CurrentProject.Name;
 			this._ctrlIssueCollection.Clear();
-			this.OnProjectSaveAs(sender, e);
+			// this.OnProjectSaveAs(sender, e);
 		}
 
 		private void OnProjectEdit(object sender, EventArgs e)

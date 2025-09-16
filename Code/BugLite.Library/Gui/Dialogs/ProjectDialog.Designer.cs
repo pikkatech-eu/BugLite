@@ -46,6 +46,7 @@
 			this._btOK.TabIndex = 0;
 			this._btOK.Text = "OK";
 			this._btOK.UseVisualStyleBackColor = false;
+			this._btOK.Click += this.OnOk;
 			// 
 			// _btCancel
 			// 

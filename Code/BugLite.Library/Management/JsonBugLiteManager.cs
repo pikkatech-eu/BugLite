@@ -68,7 +68,15 @@ namespace BugLite.Library.Management
 			{
 				this.CurrentProject	= dialog.Project;
 
-				this.SaveProject(this.ProjectPath);
+				SaveFileDialog sfd	= new SaveFileDialog();
+				
+				sfd.Filter			= "BugLite issue files (*.jissue)|*.jissue|JSON files (*.json)|*.json";
+				
+				if (sfd.ShowDialog() == DialogResult.OK)
+				{
+					JsonBugLiteManager.Instance.ProjectPath = sfd.FileName;
+					JsonBugLiteManager.Instance.SaveProject(JsonBugLiteManager.Instance.ProjectPath);
+				}
 			}
 		}
 

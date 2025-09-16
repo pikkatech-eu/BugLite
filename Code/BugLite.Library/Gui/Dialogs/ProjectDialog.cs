@@ -10,6 +10,7 @@
 using System.ComponentModel;
 using BugLite.Library.Domain;
 using BugLite.Library.Gui.Interfaces;
+using BugLite.Library.Management;
 
 namespace BugLite.Library.Gui.Dialogs
 {
@@ -25,7 +26,7 @@ namespace BugLite.Library.Gui.Dialogs
 		public ProjectDialog()
 		{
 			InitializeComponent();
-		} 
+		}
 		#endregion
 
 		#region IProjectDevice
@@ -46,5 +47,9 @@ namespace BugLite.Library.Gui.Dialogs
 			}
 		}
 		#endregion
+
+		private void OnOk(object sender, EventArgs e)
+		{
+		}
 	}
 }
