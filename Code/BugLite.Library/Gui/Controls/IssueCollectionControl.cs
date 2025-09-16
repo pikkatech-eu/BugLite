@@ -53,6 +53,10 @@ namespace BugLite.Library.Gui.Controls
 										};
 
 				ListViewItem lvi = new ListViewItem(itemStrings);
+
+				lvi.UseItemStyleForSubItems = false;
+				System.Windows.Forms.ListViewItem.ListViewSubItemCollection subItems = lvi.SubItems;
+
 				lvi.Tag = issue;
 
 				switch (issue.Status)
@@ -95,6 +99,32 @@ namespace BugLite.Library.Gui.Controls
 						break;
 				}
 
+				switch (issue.Priority)
+				{
+					case Domain.Enumerations.Priority.None:
+						subItems[4].BackColor	= Color.White;
+						break;
+
+					case Domain.Enumerations.Priority.Low:
+						subItems[4].BackColor	= Color.LightGreen;
+						break;
+
+					case Domain.Enumerations.Priority.Normal:
+						subItems[4].BackColor	= Color.Yellow;
+						break;
+
+					case Domain.Enumerations.Priority.High:
+						subItems[4].BackColor	= Color.Red;
+						break;
+
+					default:
+						break;
+				}
+
+
+				// Handle Priority
+
+				
 
 				this._lvIssues.Items.Add(lvi);
 			}
