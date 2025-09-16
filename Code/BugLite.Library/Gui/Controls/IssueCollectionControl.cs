@@ -62,9 +62,14 @@ namespace BugLite.Library.Gui.Controls
 						lvi.ForeColor = Color.Blue;
 						break;
 
-					case Domain.Enumerations.IssueStatus.Closed:
+					case Domain.Enumerations.IssueStatus.Resolved:
 						lvi.ForeColor = Color.Green;
 						break;
+
+					case Domain.Enumerations.IssueStatus.Closed:
+						lvi.ForeColor = Color.Gray;
+						break;
+
 					default:
 						break;
 				}

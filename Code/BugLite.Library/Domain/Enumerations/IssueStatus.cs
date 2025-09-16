@@ -26,6 +26,11 @@ namespace BugLite.Library.Domain.Enumerations
         InProgress,
 
 		/// <summary>
+		/// The ussue has been resolved.
+		/// </summary>
+		Resolved,
+
+		/// <summary>
 		/// The issue is closed (resolved or not).
 		/// </summary>
         Closed
