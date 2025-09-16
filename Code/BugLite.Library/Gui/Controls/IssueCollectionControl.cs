@@ -8,6 +8,7 @@
 ***********************************************************************************/
 
 using BugLite.Library.Domain;
+using BugLite.Library.Domain.Comparers;
 using BugLite.Library.Gui.Dialogs;
 using BugLite.Library.Gui.Interfaces;
 using BugLite.Library.Management;
@@ -79,15 +80,15 @@ namespace BugLite.Library.Gui.Controls
 				switch (issue.Severity)
 				{
 					case Domain.Enumerations.Severity.Feature:
-						lvi.ImageKey	= "feature";
+						lvi.ImageKey = "feature";
 						break;
 
 					case Domain.Enumerations.Severity.Minor:
-						lvi.ImageKey	= "bug_minor";
+						lvi.ImageKey = "bug_minor";
 						break;
 
 					case Domain.Enumerations.Severity.Major:
-						lvi.ImageKey	= "bug_major";
+						lvi.ImageKey = "bug_major";
 						break;
 
 					default:
@@ -194,5 +195,53 @@ namespace BugLite.Library.Gui.Controls
 			this.OnIssueEdit(sender, e);
 		}
 		#endregion
+
+		/// <summary>
+		/// Here - sort by column: id, date, status, severity, pririty
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void OnColumnClick(object sender, ColumnClickEventArgs e)
+		{
+			List<Issue> issues = null;
+
+			switch (e.Column)
+			{
+				case 1: // date/time
+					issues = JsonBugLiteManager.Instance.CurrentProject.Issues.Values.ToList();
+					issues.Sort(new IssueDateTimeComparer());
+
+					this.Display(issues);
+
+					break;
+
+				case 2:	// status
+					issues = JsonBugLiteManager.Instance.CurrentProject.Issues.Values.ToList();
+					issues.Sort(new IssueStatusComparer());
+
+					this.Display(issues);
+
+					break;
+
+				case 3:	// severity
+					issues = JsonBugLiteManager.Instance.CurrentProject.Issues.Values.ToList();
+					issues.Sort(new IssueSeverityComparer());
+
+					this.Display(issues);
+
+					break;
+
+				case 4:	// priority
+					issues = JsonBugLiteManager.Instance.CurrentProject.Issues.Values.ToList();
+					issues.Sort(new IssuePriorityComparer());
+
+					this.Display(issues);
+
+					break;
+
+				default:
+					break;
+			}
+		}
 	}
 }

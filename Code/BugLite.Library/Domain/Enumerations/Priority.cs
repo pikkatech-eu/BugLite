@@ -17,21 +17,21 @@ namespace BugLite.Library.Domain.Enumerations
 		/// <summary>
 		/// No definite priority defined.
 		/// </summary>
-        None,
+        None	= 0,
 
 		/// <summary>
 		/// Issue of low priority.
 		/// </summary>
-        Low,
+        Low		= 1,
 
 		/// <summary>
 		/// Issue of normal priority (default).
 		/// </summary>
-        Normal,
+        Normal	= 2,
 
 		/// <summary>
 		/// Issue of high priority.
 		/// </summary>
-        High
+        High	= 3
 	}
 }

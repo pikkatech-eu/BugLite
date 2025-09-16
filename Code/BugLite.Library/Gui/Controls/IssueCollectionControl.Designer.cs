@@ -80,6 +80,7 @@
 			this._lvIssues.TabIndex = 2;
 			this._lvIssues.UseCompatibleStateImageBehavior = false;
 			this._lvIssues.View = View.Details;
+			this._lvIssues.ColumnClick += this.OnColumnClick;
 			this._lvIssues.DoubleClick += this.OnListViewDoubleclicked;
 			// 
 			// IssueId

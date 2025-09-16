@@ -18,21 +18,21 @@ namespace BugLite.Library.Domain.Enumerations
 		/// <summary>
 		/// The issue is new.
 		/// </summary>
-		Open,
+		Open			= 0,
 
 		/// <summary>
 		/// The issue has been assigned to a developer.
 		/// </summary>
-        InProgress,
+        InProgress		= 1,
 
 		/// <summary>
 		/// The ussue has been resolved.
 		/// </summary>
-		Resolved,
+		Resolved		= 2,
 
 		/// <summary>
 		/// The issue is closed (resolved or not).
 		/// </summary>
-        Closed
+        Closed			= 3
 	}
 }

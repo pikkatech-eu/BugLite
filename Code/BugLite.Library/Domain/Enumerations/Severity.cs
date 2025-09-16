@@ -17,16 +17,16 @@ namespace BugLite.Library.Domain.Enumerations
 		/// <summary>
 		/// A new feature required, no bug.
 		/// </summary>
-		Feature,
+		Feature	= 2,
 
 		/// <summary>
 		/// Bug of minor severity,
 		/// </summary>
-		Minor,
+		Minor	= 1,
 
 		/// <summary>
 		/// Bug of major severity,
 		/// </summary>
-		Major
+		Major	= 0
 	}
 }
