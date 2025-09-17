@@ -6,10 +6,72 @@
     "1": {
       "IssueId": 1,
       "Title": "Program does not start with attached file",
-      "Details": "It does only if the jissue file is in the same directory as .exe\r\nNOTE: use a logger to sort out what happens.",
-      "SubmittedOn": "2025-09-16T11:21:58.1324085+02:00",
+      "Details": "It does only if the jissue file is in the same directory as .exe * \r\nNOTE: use a logger to sort out what happens. *\r\nReason: it tries to read the version.toml file, but does not find it.\r\n* Remove all mention to version.toml in this version and try again.",
+      "SubmittedOn": "2025-09-17T12:24:27.6496139+02:00",
+      "Status": 2,
+      "Severity": 0,
+      "Priority": 0,
+      "LastUpdated": "2025-09-17T12:24:27.6500714+02:00"
+    },
+    "2": {
+      "IssueId": 2,
+      "Title": "Save recently opened projects",
+      "Details": "- define the number of ROF -\u003E settings",
+      "SubmittedOn": "2025-09-16T13:38:30.1848442+02:00",
       "Status": 0,
-      "LastUpdated": "2025-09-16T11:21:58.1324414+02:00"
+      "Severity": 2,
+      "Priority": 1,
+      "LastUpdated": "2025-09-16T13:38:30.1852355+02:00"
+    },
+    "3": {
+      "IssueId": 3,
+      "Title": "Auto open most recent project ",
+      "Details": "-\u003E settings (true/false)",
+      "SubmittedOn": "2025-09-16T13:39:43.360489+02:00",
+      "Status": 0,
+      "Severity": 2,
+      "Priority": 1,
+      "LastUpdated": "2025-09-16T13:39:43.3605001+02:00"
+    },
+    "4": {
+      "IssueId": 4,
+      "Title": "Multiple access on files via FTP",
+      "Details": "",
+      "SubmittedOn": "2025-09-16T13:40:30.2375381+02:00",
+      "Status": 0,
+      "Severity": 2,
+      "Priority": 2,
+      "LastUpdated": "2025-09-16T13:40:30.2376088+02:00"
+    },
+    "5": {
+      "IssueId": 5,
+      "Title": "Export to Clipboard",
+      "Details": "-selected issues",
+      "SubmittedOn": "2025-09-16T13:41:09.5594206+02:00",
+      "Status": 0,
+      "Severity": 2,
+      "Priority": 2,
+      "LastUpdated": "2025-09-16T13:41:09.5594346+02:00"
+    },
+    "6": {
+      "IssueId": 6,
+      "Title": "Develop Numeron (to replace #1)",
+      "Details": "- change project name\r\n- copy suggested names into project names laundry\r\n- copy the ChatGPT discussion into it\r\n- develop it later",
+      "SubmittedOn": "2025-09-17T12:18:02.2926231+02:00",
+      "Status": 0,
+      "Severity": 1,
+      "Priority": 2,
+      "LastUpdated": "2025-09-17T12:18:02.2926472+02:00"
+    },
+    "7": {
+      "IssueId": 7,
+      "Title": "Change issue severity icons",
+      "Details": "the red one must be pure red, the yellow one pure yellow",
+      "SubmittedOn": "2025-09-17T12:19:08.9683558+02:00",
+      "Status": 0,
+      "Severity": 1,
+      "Priority": 1,
+      "LastUpdated": "2025-09-17T12:19:08.9683836+02:00"
     }
   }
 }

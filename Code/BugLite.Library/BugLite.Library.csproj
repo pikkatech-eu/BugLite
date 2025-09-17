@@ -24,4 +24,7 @@
     <Compile Remove="Domain\Enumerations\UserLevel.cs" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Tools\" />
+  </ItemGroup>
 </Project>

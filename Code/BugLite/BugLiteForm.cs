@@ -1,5 +1,4 @@
 using BugLite.Library.Management;
-using BugLite.Library.Tools.Toml;
 
 namespace BugLite
 {
@@ -14,31 +13,7 @@ namespace BugLite
 
 		private void SetTitle()
 		{
-			Tomler tomler = new Tomler();
-
-			string name = "BugLite";
-
-			string versionFile = null;
-			
-			try
-			{
-				// for NSIS
-				versionFile = "version.toml";
-				tomler.Load(versionFile);
-			}
-			catch (Exception)
-			{
-				// for debug
-				versionFile = "..\\..\\..\\version.toml";
-				tomler.Load(versionFile);
-			}
-			
-			string major	= tomler.GetValue("Version", "Major");
-			string minor	= tomler.GetValue("Version", "Minor");
-			string build	= tomler.GetValue("Version", "Build");
-			string revision = tomler.GetValue("Version", "Revision");
-
-			this.Text = $"{name} {major}.{minor}.{build}.{revision}";
+			// TODO: to iron away #1
 		}
 
 		protected override void OnLoad(EventArgs e)

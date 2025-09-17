@@ -62,19 +62,19 @@ namespace BugLite.Library.Gui.Controls
 				switch (issue.Status)
 				{
 					case Domain.Enumerations.IssueStatus.Open:
-						lvi.ForeColor = Color.Red;
+						subItems[2].ForeColor = Color.Red;
 						break;
 
 					case Domain.Enumerations.IssueStatus.InProgress:
-						lvi.ForeColor = Color.Blue;
+						subItems[2].ForeColor = Color.Blue;
 						break;
 
 					case Domain.Enumerations.IssueStatus.Resolved:
-						lvi.ForeColor = Color.Green;
+						subItems[2].ForeColor = Color.Green;
 						break;
 
 					case Domain.Enumerations.IssueStatus.Closed:
-						lvi.ForeColor = Color.Gray;
+						subItems[2].ForeColor = Color.Gray;
 						break;
 
 					default:
@@ -121,10 +121,6 @@ namespace BugLite.Library.Gui.Controls
 						break;
 				}
 
-
-				// Handle Priority
-
-				
 
 				this._lvIssues.Items.Add(lvi);
 			}
