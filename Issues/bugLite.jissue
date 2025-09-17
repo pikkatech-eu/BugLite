@@ -7,31 +7,31 @@
       "IssueId": 1,
       "Title": "Program does not start with attached file",
       "Details": "It does only if the jissue file is in the same directory as .exe * \r\nNOTE: use a logger to sort out what happens. *\r\nReason: it tries to read the version.toml file, but does not find it.\r\n* Remove all mention to version.toml in this version and try again.",
-      "SubmittedOn": "2025-09-17T12:24:27.6496139+02:00",
+      "SubmittedOn": "2025-09-17T13:28:55.5000765+02:00",
       "Status": 2,
       "Severity": 0,
-      "Priority": 0,
-      "LastUpdated": "2025-09-17T12:24:27.6500714+02:00"
+      "Priority": 3,
+      "LastUpdated": "2025-09-17T13:28:55.5007393+02:00"
     },
     "2": {
       "IssueId": 2,
       "Title": "Save recently opened projects",
       "Details": "- define the number of ROF -\u003E settings",
-      "SubmittedOn": "2025-09-16T13:38:30.1848442+02:00",
-      "Status": 0,
+      "SubmittedOn": "2025-09-17T17:25:26.0451497+02:00",
+      "Status": 2,
       "Severity": 2,
       "Priority": 1,
-      "LastUpdated": "2025-09-16T13:38:30.1852355+02:00"
+      "LastUpdated": "2025-09-17T17:25:26.0451858+02:00"
     },
     "3": {
       "IssueId": 3,
       "Title": "Auto open most recent project ",
       "Details": "-\u003E settings (true/false)",
-      "SubmittedOn": "2025-09-16T13:39:43.360489+02:00",
-      "Status": 0,
+      "SubmittedOn": "2025-09-17T17:44:47.2937459+02:00",
+      "Status": 2,
       "Severity": 2,
       "Priority": 1,
-      "LastUpdated": "2025-09-16T13:39:43.3605001+02:00"
+      "LastUpdated": "2025-09-17T17:44:47.2937632+02:00"
     },
     "4": {
       "IssueId": 4,
@@ -55,13 +55,13 @@
     },
     "6": {
       "IssueId": 6,
-      "Title": "Develop Numeron (to replace #1)",
+      "Title": "Develop Versena (to replace #1)",
       "Details": "- change project name\r\n- copy suggested names into project names laundry\r\n- copy the ChatGPT discussion into it\r\n- develop it later",
-      "SubmittedOn": "2025-09-17T12:18:02.2926231+02:00",
+      "SubmittedOn": "2025-09-17T17:45:16.6350799+02:00",
       "Status": 0,
       "Severity": 1,
       "Priority": 2,
-      "LastUpdated": "2025-09-17T12:18:02.2926472+02:00"
+      "LastUpdated": "2025-09-17T17:45:16.6350887+02:00"
     },
     "7": {
       "IssueId": 7,
@@ -72,6 +72,16 @@
       "Severity": 1,
       "Priority": 1,
       "LastUpdated": "2025-09-17T12:19:08.9683836+02:00"
+    },
+    "8": {
+      "IssueId": 8,
+      "Title": "Add Settings Dialog",
+      "Details": "",
+      "SubmittedOn": "2025-09-17T17:47:41.687726+02:00",
+      "Status": 0,
+      "Severity": 0,
+      "Priority": 1,
+      "LastUpdated": "2025-09-17T17:47:41.6880512+02:00"
     }
   }
 }

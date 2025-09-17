@@ -1,9 +1,7 @@
 {
   "profiles": {
     "BugLite": {
-      "commandName": "Project",
-      "commandLineArgs": "C:\\Users\\Stanislav\\Desktop\\test.jissue",
-      "workingDirectory": "C:\\Temp"
+      "commandName": "Project"
     }
   }
 }

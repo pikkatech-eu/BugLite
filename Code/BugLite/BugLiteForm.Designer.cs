@@ -52,6 +52,7 @@
 			this.statusStrip1 = new StatusStrip();
 			this._tlpBugLite = new TableLayoutPanel();
 			this._ctrlIssueCollection = new BugLite.Library.Gui.Controls.IssueCollectionControl();
+			this._menuItemRecentProjects = new ToolStripMenuItem();
 			this._msBugLite.SuspendLayout();
 			this._tsBugLite.SuspendLayout();
 			this._tlpBugLite.SuspendLayout();
@@ -71,7 +72,7 @@
 			// 
 			// projectToolStripMenuItem
 			// 
-			this.projectToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { this.newToolStripMenuItem, this.loadToolStripMenuItem, this.saveAsToolStripMenuItem, this.closeToolStripMenuItem, this.toolStripSeparator1, this.editToolStripMenuItem, this.toolStripSeparator2, this.quitToolStripMenuItem });
+			this.projectToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { this.newToolStripMenuItem, this.loadToolStripMenuItem, this._menuItemRecentProjects, this.saveAsToolStripMenuItem, this.closeToolStripMenuItem, this.toolStripSeparator1, this.editToolStripMenuItem, this.toolStripSeparator2, this.quitToolStripMenuItem });
 			this.projectToolStripMenuItem.Name = "projectToolStripMenuItem";
 			this.projectToolStripMenuItem.Size = new Size(101, 28);
 			this.projectToolStripMenuItem.Text = "&Project";
@@ -79,52 +80,52 @@
 			// newToolStripMenuItem
 			// 
 			this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-			this.newToolStripMenuItem.Size = new Size(171, 28);
+			this.newToolStripMenuItem.Size = new Size(259, 28);
 			this.newToolStripMenuItem.Text = "&New";
 			this.newToolStripMenuItem.Click += this.OnProjectNew;
 			// 
 			// loadToolStripMenuItem
 			// 
 			this.loadToolStripMenuItem.Name = "loadToolStripMenuItem";
-			this.loadToolStripMenuItem.Size = new Size(171, 28);
+			this.loadToolStripMenuItem.Size = new Size(259, 28);
 			this.loadToolStripMenuItem.Text = "&Load";
 			this.loadToolStripMenuItem.Click += this.OnProjectLoad;
 			// 
 			// saveAsToolStripMenuItem
 			// 
 			this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-			this.saveAsToolStripMenuItem.Size = new Size(171, 28);
+			this.saveAsToolStripMenuItem.Size = new Size(259, 28);
 			this.saveAsToolStripMenuItem.Text = "Save &As";
 			this.saveAsToolStripMenuItem.Click += this.OnProjectSaveAs;
 			// 
 			// closeToolStripMenuItem
 			// 
 			this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-			this.closeToolStripMenuItem.Size = new Size(171, 28);
+			this.closeToolStripMenuItem.Size = new Size(259, 28);
 			this.closeToolStripMenuItem.Text = "&Close";
 			this.closeToolStripMenuItem.Click += this.OnProjectClose;
 			// 
 			// toolStripSeparator1
 			// 
 			this.toolStripSeparator1.Name = "toolStripSeparator1";
-			this.toolStripSeparator1.Size = new Size(168, 6);
+			this.toolStripSeparator1.Size = new Size(256, 6);
 			// 
 			// editToolStripMenuItem
 			// 
 			this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-			this.editToolStripMenuItem.Size = new Size(171, 28);
+			this.editToolStripMenuItem.Size = new Size(259, 28);
 			this.editToolStripMenuItem.Text = "&Edit";
 			this.editToolStripMenuItem.Click += this.OnProjectEdit;
 			// 
 			// toolStripSeparator2
 			// 
 			this.toolStripSeparator2.Name = "toolStripSeparator2";
-			this.toolStripSeparator2.Size = new Size(168, 6);
+			this.toolStripSeparator2.Size = new Size(256, 6);
 			// 
 			// quitToolStripMenuItem
 			// 
 			this.quitToolStripMenuItem.Name = "quitToolStripMenuItem";
-			this.quitToolStripMenuItem.Size = new Size(171, 28);
+			this.quitToolStripMenuItem.Size = new Size(259, 28);
 			this.quitToolStripMenuItem.Text = "&Quit";
 			this.quitToolStripMenuItem.Click += this.OnProjectQuit;
 			// 
@@ -237,6 +238,12 @@
 			this._ctrlIssueCollection.Size = new Size(1115, 482);
 			this._ctrlIssueCollection.TabIndex = 0;
 			// 
+			// _menuItemRecentProjects
+			// 
+			this._menuItemRecentProjects.Name = "_menuItemRecentProjects";
+			this._menuItemRecentProjects.Size = new Size(259, 28);
+			this._menuItemRecentProjects.Text = "&Recent Projects";
+			// 
 			// BugLiteForm
 			// 
 			this.AutoScaleDimensions = new SizeF(9F, 20F);
@@ -287,5 +294,6 @@
 		private ToolStripMenuItem helpToolStripMenuItem;
 		private ToolStripMenuItem aboutToolStripMenuItem;
 		private Library.Gui.Controls.IssueCollectionControl _ctrlIssueCollection;
+		private ToolStripMenuItem _menuItemRecentProjects;
 	}
 }

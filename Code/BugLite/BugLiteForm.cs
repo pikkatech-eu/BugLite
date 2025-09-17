@@ -1,4 +1,6 @@
+using System.Windows.Forms;
 using BugLite.Library.Management;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 
 namespace BugLite
 {
@@ -8,7 +10,45 @@ namespace BugLite
 		{
 			InitializeComponent();
 
+			JsonBugLiteManager.Instance.Settings.RecentlyOpenedProjectsChanged += this.OnRecentlyOpenedProjectsChanged;
 			this.SetTitle();
+
+			this.OnRecentlyOpenedProjectsChanged(JsonBugLiteManager.Instance.Settings.RecentlyOpenedProjects);
+
+			if (JsonBugLiteManager.Instance.Settings.AutoLoadLastProject && JsonBugLiteManager.Instance.Settings.RecentlyOpenedProjects.Count > 0)
+			{
+				this.LoadProject(JsonBugLiteManager.Instance.Settings.RecentlyOpenedProjects[0]);
+			}
+		}
+
+		private void OnRecentlyOpenedProjectsChanged(List<string> paths)
+		{
+			List<ToolStripItem> items = new List<ToolStripItem>();
+
+			this._menuItemRecentProjects.DropDownItems.Clear();
+
+			foreach (string path in paths)
+			{
+				ToolStripItem item = this._menuItemRecentProjects.DropDownItems.Add(path);
+
+				item.Click += this.RecentlyOpenedItemClicked;
+
+				items.Add(item);
+			}
+		}
+
+		private void RecentlyOpenedItemClicked(object? sender, EventArgs e)
+		{
+			string filePath = ((ToolStripItem)sender).Text;
+
+			if (File.Exists(filePath))
+			{
+				this.LoadProject(filePath);
+			}
+			else
+			{
+				JsonBugLiteManager.Instance.Settings.RemoveRecentlyOpenedProject(filePath);
+			}
 		}
 
 		private void SetTitle()

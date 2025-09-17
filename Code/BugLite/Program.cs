@@ -1,3 +1,5 @@
+using BugLite.Library.Management;
+
 namespace BugLite
 {
 	internal static class Program

@@ -35,7 +35,7 @@ namespace BugLite.Library.Management
 		/// </summary>
 		private JsonBugLiteManager() 
 		{
-
+			this.Settings = Settings.Load();
 		}
 		#endregion
 
@@ -54,6 +54,8 @@ namespace BugLite.Library.Management
 		/// Instance of IIssueCollectionDevice responsible for display of issues and interaction with the manager.
 		/// </summary>
 		public IIssueCollectionDevice	IssueCollectionDevice	{get;set;}
+
+		public Settings Settings	{get;internal set;}	= new Settings();
 		#endregion
 
 		#region Project Management
@@ -74,8 +76,11 @@ namespace BugLite.Library.Management
 				
 				if (sfd.ShowDialog() == DialogResult.OK)
 				{
-					JsonBugLiteManager.Instance.ProjectPath = sfd.FileName;
-					JsonBugLiteManager.Instance.SaveProject(JsonBugLiteManager.Instance.ProjectPath);
+					this.ProjectPath = sfd.FileName;
+					this.SaveProject(this.ProjectPath);
+
+					this.Settings.AddRecentlyOpenedProject(this.ProjectPath);
+					this.Settings.Save();
 				}
 			}
 		}
@@ -117,6 +122,9 @@ namespace BugLite.Library.Management
 				{
 					this.ProjectPath = fileName;
 					this.CurrentProject = Project.Load(this.ProjectPath);
+
+					this.Settings.AddRecentlyOpenedProject(this.ProjectPath);
+					this.Settings.Save();
 				}
 			}
 			catch (Exception)
