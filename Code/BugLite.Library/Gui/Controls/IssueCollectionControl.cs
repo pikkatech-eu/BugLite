@@ -20,6 +20,27 @@ namespace BugLite.Library.Gui.Controls
 	/// </summary>
 	public partial class IssueCollectionControl : UserControl, IIssueCollectionDevice
 	{
+		#region Properties
+		/// <summary>
+		/// Gets the selected issue in the list view (null if none is selected or more than one).
+		/// </summary>
+		public Issue SelectedIssue
+		{
+			get
+			{
+				if (this._lvIssues.SelectedItems.Count == 1)
+				{
+					Issue issue = this._lvIssues.SelectedItems[0].Tag as Issue;
+					return issue;
+				}
+				else
+				{
+					return null;
+				}
+			}
+		}
+		#endregion
+
 		#region Construction
 		/// <summary>
 		/// Default constructor.

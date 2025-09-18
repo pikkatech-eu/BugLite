@@ -1,6 +1,6 @@
 ﻿namespace BugLite.Library.Gui.Dialogs
 {
-	partial class ProjectDialog
+	partial class SettingsDialog
 	{
 		/// <summary>
 		/// Required designer variable.
@@ -28,10 +28,10 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProjectDialog));
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SettingsDialog));
 			this._btOK = new Button();
 			this._btCancel = new Button();
-			this._ctrlProject = new BugLite.Library.Gui.Controls.ProjectControl();
+			this._pgSettings = new PropertyGrid();
 			this.SuspendLayout();
 			// 
 			// _btOK
@@ -39,21 +39,20 @@
 			this._btOK.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
 			this._btOK.BackColor = Color.FromArgb(0, 48, 96);
 			this._btOK.DialogResult = DialogResult.OK;
-			this._btOK.Location = new Point(9, 352);
+			this._btOK.Location = new Point(9, 447);
 			this._btOK.Margin = new Padding(0);
 			this._btOK.Name = "_btOK";
 			this._btOK.Size = new Size(80, 32);
 			this._btOK.TabIndex = 0;
 			this._btOK.Text = "OK";
 			this._btOK.UseVisualStyleBackColor = false;
-			this._btOK.Click += this.OnOk;
 			// 
 			// _btCancel
 			// 
 			this._btCancel.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
 			this._btCancel.BackColor = Color.FromArgb(0, 48, 96);
 			this._btCancel.DialogResult = DialogResult.Cancel;
-			this._btCancel.Location = new Point(114, 352);
+			this._btCancel.Location = new Point(114, 447);
 			this._btCancel.Margin = new Padding(0);
 			this._btCancel.Name = "_btCancel";
 			this._btCancel.Size = new Size(80, 32);
@@ -61,33 +60,30 @@
 			this._btCancel.Text = "Cancel";
 			this._btCancel.UseVisualStyleBackColor = false;
 			// 
-			// _ctrlProject
+			// _pgSettings
 			// 
-			this._ctrlProject.BackColor = Color.FromArgb(0, 48, 96);
-			this._ctrlProject.Dock = DockStyle.Top;
-			this._ctrlProject.Font = new Font("Consolas", 10F);
-			this._ctrlProject.ForeColor = Color.White;
-			this._ctrlProject.Location = new Point(0, 0);
-			this._ctrlProject.Margin = new Padding(0);
-			this._ctrlProject.Name = "_ctrlProject";
-			this._ctrlProject.Size = new Size(462, 338);
-			this._ctrlProject.TabIndex = 1;
+			this._pgSettings.BackColor = Color.FromArgb(0, 48, 96);
+			this._pgSettings.Dock = DockStyle.Top;
+			this._pgSettings.Location = new Point(0, 0);
+			this._pgSettings.Name = "_pgSettings";
+			this._pgSettings.Size = new Size(549, 423);
+			this._pgSettings.TabIndex = 1;
 			// 
-			// ProjectDialog
+			// SettingsDialog
 			// 
 			this.AutoScaleDimensions = new SizeF(9F, 20F);
 			this.AutoScaleMode = AutoScaleMode.Font;
 			this.BackColor = Color.FromArgb(0, 48, 96);
-			this.ClientSize = new Size(462, 393);
-			this.Controls.Add(this._ctrlProject);
+			this.ClientSize = new Size(549, 488);
+			this.Controls.Add(this._pgSettings);
 			this.Controls.Add(this._btCancel);
 			this.Controls.Add(this._btOK);
 			this.Font = new Font("Consolas", 10F);
 			this.ForeColor = Color.White;
 			this.Icon = (Icon)resources.GetObject("$this.Icon");
-			this.Name = "ProjectDialog";
+			this.Name = "SettingsDialog";
 			this.StartPosition = FormStartPosition.CenterParent;
-			this.Text = "Project Properties";
+			this.Text = "Settings";
 			this.ResumeLayout(false);
 		}
 
@@ -95,6 +91,6 @@
 
 		private Button _btOK;
 		private Button _btCancel;
-		private Controls.ProjectControl _ctrlProject;
+		private PropertyGrid _pgSettings;
 	}
 }

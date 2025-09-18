@@ -17,6 +17,11 @@ namespace BugLite.Library.Gui.Interfaces
 	public interface IIssueCollectionDevice
 	{
 		/// <summary>
+		/// Gets the selected issue in the list view.
+		/// </summary>
+		Issue SelectedIssue		{get;}
+
+		/// <summary>
 		/// Displays a collections of Issues.
 		/// </summary>
 		/// <param name="issues">Collection of Issues to display.</param>

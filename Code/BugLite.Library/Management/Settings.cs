@@ -7,6 +7,7 @@
 * Copyright:    pikkatech.eu (www.pikkatech.eu)                                    *
 ***********************************************************************************/
 
+using System.ComponentModel;
 using System.Text.Json;
 
 namespace BugLite.Library.Management
@@ -19,7 +20,11 @@ namespace BugLite.Library.Management
 		#endregion
 
 		#region Properties
+		[Category("General")]
+		[Description("Is set to true, will try to open the last project.")]
 		public bool AutoLoadLastProject	{get;set;}	= false;
+
+		[Browsable(false)]
 		public List<string>	RecentlyOpenedProjects	{get;set;}	= new List<string>();
 		#endregion
 

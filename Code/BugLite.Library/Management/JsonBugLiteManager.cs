@@ -55,7 +55,7 @@ namespace BugLite.Library.Management
 		/// </summary>
 		public IIssueCollectionDevice	IssueCollectionDevice	{get;set;}
 
-		public Settings Settings	{get;internal set;}	= new Settings();
+		public Settings Settings	{get;set;}	= new Settings();
 		#endregion
 
 		#region Project Management

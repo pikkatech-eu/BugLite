@@ -85,6 +85,7 @@
 			this.ForeColor = Color.White;
 			this.Icon = (Icon)resources.GetObject("$this.Icon");
 			this.Name = "IssueDialog";
+			this.StartPosition = FormStartPosition.CenterParent;
 			this.Text = "User Dialog";
 			this.ResumeLayout(false);
 		}

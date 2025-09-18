@@ -55,13 +55,13 @@
     },
     "6": {
       "IssueId": 6,
-      "Title": "Develop Versena (to replace #1)",
+      "Title": "Develop Versena ",
       "Details": "- change project name\r\n- copy suggested names into project names laundry\r\n- copy the ChatGPT discussion into it\r\n- develop it later",
-      "SubmittedOn": "2025-09-17T17:45:16.6350799+02:00",
+      "SubmittedOn": "2025-09-18T08:04:55.2147147+02:00",
       "Status": 0,
       "Severity": 1,
       "Priority": 2,
-      "LastUpdated": "2025-09-17T17:45:16.6350887+02:00"
+      "LastUpdated": "2025-09-18T08:04:55.2147285+02:00"
     },
     "7": {
       "IssueId": 7,
@@ -77,11 +77,61 @@
       "IssueId": 8,
       "Title": "Add Settings Dialog",
       "Details": "",
-      "SubmittedOn": "2025-09-17T17:47:41.687726+02:00",
+      "SubmittedOn": "2025-09-18T09:01:36.3010562+02:00",
+      "Status": 2,
+      "Severity": 0,
+      "Priority": 3,
+      "LastUpdated": "2025-09-18T09:01:36.3010676+02:00"
+    },
+    "9": {
+      "IssueId": 9,
+      "Title": "Prepare release Beta 1.0",
+      "Details": "- rest of high prio issues\r\n- NSIS installer\r\n- GitHub: installer; readme.md",
+      "SubmittedOn": "2025-09-18T08:03:06.3027332+02:00",
       "Status": 0,
       "Severity": 0,
       "Priority": 1,
-      "LastUpdated": "2025-09-17T17:47:41.6880512+02:00"
+      "LastUpdated": "2025-09-18T08:03:06.3027602+02:00"
+    },
+    "10": {
+      "IssueId": 10,
+      "Title": "Issue management from main menu",
+      "Details": "",
+      "SubmittedOn": "2025-09-18T08:41:50.7629323+02:00",
+      "Status": 2,
+      "Severity": 0,
+      "Priority": 3,
+      "LastUpdated": "2025-09-18T08:41:50.762944+02:00"
+    },
+    "11": {
+      "IssueId": 11,
+      "Title": "Add Steps to reproduce",
+      "Details": "-\u003E to Issue",
+      "SubmittedOn": "2025-09-18T08:24:59.7571666+02:00",
+      "Status": 0,
+      "Severity": 1,
+      "Priority": 2,
+      "LastUpdated": "2025-09-18T08:24:59.7571816+02:00"
+    },
+    "12": {
+      "IssueId": 12,
+      "Title": "Add notes",
+      "Details": "-\u003E to Issue",
+      "SubmittedOn": "2025-09-18T08:25:28.9290146+02:00",
+      "Status": 0,
+      "Severity": 1,
+      "Priority": 2,
+      "LastUpdated": "2025-09-18T08:25:28.9290391+02:00"
+    },
+    "13": {
+      "IssueId": 13,
+      "Title": "Add fotos",
+      "Details": "-\u003E to Issue",
+      "SubmittedOn": "2025-09-18T08:26:27.6844339+02:00",
+      "Status": 0,
+      "Severity": 1,
+      "Priority": 2,
+      "LastUpdated": "2025-09-18T08:26:27.6844503+02:00"
     }
   }
 }

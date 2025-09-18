@@ -1,4 +1,6 @@
 using System.Windows.Forms;
+using BugLite.Library.Domain;
+using BugLite.Library.Gui.Dialogs;
 using BugLite.Library.Management;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 
@@ -113,22 +115,42 @@ namespace BugLite
 
 		private void OnIssueNew(object sender, EventArgs e)
 		{
-			// JsonBugLiteManager.Instance.AddIssue();
+			JsonBugLiteManager.Instance.AddIssue();
+			this._ctrlIssueCollection.Display(JsonBugLiteManager.Instance.CurrentProject.Issues.Values);
 		}
 
 		private void OnIssueEdit(object sender, EventArgs e)
 		{
-			// JsonBugLiteManager.Instance.ReplaceIssue();
+			Issue issue = this._ctrlIssueCollection.SelectedIssue;
+
+			if (issue != null)
+			{
+				JsonBugLiteManager.Instance.ReplaceIssue(issue);
+				this._ctrlIssueCollection.Display(JsonBugLiteManager.Instance.CurrentProject.Issues.Values);
+			}
 		}
 
 		private void OnIssueDelete(object sender, EventArgs e)
 		{
+			Issue issue = this._ctrlIssueCollection.SelectedIssue;
 
+			if (issue != null)
+			{
+				JsonBugLiteManager.Instance.DeleteIssue(issue.IssueId);
+				this._ctrlIssueCollection.Display(JsonBugLiteManager.Instance.CurrentProject.Issues.Values);
+			}
 		}
 
 		private void OnToolsSettings(object sender, EventArgs e)
 		{
+			SettingsDialog dialog	= new SettingsDialog();
+			dialog.Settings			= JsonBugLiteManager.Instance.Settings;
 
+			if (dialog.ShowDialog() == DialogResult.OK)
+			{
+				JsonBugLiteManager.Instance.Settings = dialog.Settings;
+				JsonBugLiteManager.Instance.Settings.Save();
+			}
 		}
 
 		private void OnHelpAbout(object sender, EventArgs e)
@@ -139,11 +161,26 @@ namespace BugLite
 		#region Internal Auxiliary
 		internal void LoadProject(string fileName)
 		{
-			JsonBugLiteManager.Instance.LoadProject(fileName);
+			try
+			{
+				JsonBugLiteManager.Instance.LoadProject(fileName);
 
-			this._lblProjectInfo.Text = JsonBugLiteManager.Instance.CurrentProject.Name;
+				this._lblProjectInfo.Text = JsonBugLiteManager.Instance.CurrentProject.Name;
 
-			this._ctrlIssueCollection.Display(JsonBugLiteManager.Instance.CurrentProject.Issues.Values);
+				this._ctrlIssueCollection.Display(JsonBugLiteManager.Instance.CurrentProject.Issues.Values);
+			}
+			catch (Exception)
+			{
+				MessageBox.Show
+								(
+									$"Unable to open project {fileName}", 
+									"The project will be removed from Recently Opened Projects", 
+									MessageBoxButtons.OK, 
+									MessageBoxIcon.Warning
+								);
+
+				JsonBugLiteManager.Instance.Settings.RemoveRecentlyOpenedProject(fileName);
+			}
 		}
 		#endregion
 	}
