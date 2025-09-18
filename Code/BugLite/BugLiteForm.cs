@@ -1,8 +1,15 @@
-using System.Windows.Forms;
+/***********************************************************************************
+* File:         BugLiteForm.cs                                                     *
+* Contents:     Class BugLiteForm                                                  *
+* Author:       Stanislav "Bav" Koncebovski (stanislav@pikkatech.eu)               *
+* Date:         2025-09-18 09:16                                                   *
+* Version:      1.0                                                                *
+* Copyright:    pikkatech.eu (www.pikkatech.eu)                                    *
+***********************************************************************************/
+
 using BugLite.Library.Domain;
 using BugLite.Library.Gui.Dialogs;
 using BugLite.Library.Management;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 
 namespace BugLite
 {
