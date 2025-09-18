@@ -35,7 +35,7 @@ It focuses on simplicity: record issues, track their status, severity and priori
 
 ## Screenshots / UI Mockups (Ideas)
 
-> *(Placeholder images, to be replaced when there will be a working prototype)*
+![Screenshot](Design/Images/Raster/Screenshot_1.png)
 
 * Main window with **ListView showing all issues**
 * “New Bug” dialog with input fields for Project, Title, Status, Description
