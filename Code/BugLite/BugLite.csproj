@@ -8,6 +8,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <BaseOutputPath>C:\pikkatech.eu\Projects\BugLite\Binary\</BaseOutputPath>
     <PackageIcon>bugLite.png</PackageIcon>
+    <ApplicationIcon>bugLite.ico</ApplicationIcon>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
