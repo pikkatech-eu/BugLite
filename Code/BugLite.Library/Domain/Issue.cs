@@ -21,22 +21,22 @@ namespace BugLite.Library.Domain
 		/// <summary>
 		/// The ID of the issue.
 		/// </summary>
-		public int IssueId	{get;set;}	= 0;
+		public int			IssueId	{get;set;}	= 0;
 
 		/// <summary>
 		/// Short description
 		/// </summary>
-		public string Title	{get;set;}	= "";
+		public string		Title	{get;set;}	= "";
 
 		/// <summary>
 		/// Notes (single text field can double as description + notes at first).
 		/// </summary>
-		public string Details	{get;set;}	= "";
+		public string		Details	{get;set;}	= "";
 
 		/// <summary>
 		/// Date/Time of first submittance.
 		/// </summary>
-		public DateTime SubmittedOn	{get;set;} = DateTime.Now;
+		public DateTime		SubmittedOn	{get;set;} = DateTime.Now;
 
 		/// <summary>
 		/// The status of the issue.
@@ -50,7 +50,22 @@ namespace BugLite.Library.Domain
 		/// <summary>
 		/// Date/Time of last submittance.
 		/// </summary>
-        public DateTime LastUpdated	{get;set;} = DateTime.Now;
+        public DateTime		LastUpdated	{get;set;} = DateTime.Now;
+
+		/// <summary>
+		/// Optional description how to reproduce the issue. 
+		/// </summary>
+		public string		StepsToReproduce	{get;set;}	= "";
+
+		/// <summary>
+		/// Optional additional information. 
+		/// </summary>
+		public string		AdditionalInformation		{get;set;}	= "";
+
+		/// <summary>
+		/// Optional notes.
+		/// </summary>
+		public List<Note>	Notes						{get;set;}	= new List<Note>();
 		#endregion	
 	}
 }
