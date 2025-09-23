@@ -132,6 +132,26 @@
       "Severity": 1,
       "Priority": 2,
       "LastUpdated": "2025-09-18T08:26:27.6844503+02:00"
+    },
+    "14": {
+      "IssueId": 14,
+      "Title": "Code Review",
+      "Details": "- comment and order the code",
+      "SubmittedOn": "2025-09-19T09:26:26.9110522+02:00",
+      "Status": 0,
+      "Severity": 1,
+      "Priority": 2,
+      "LastUpdated": "2025-09-19T09:26:26.9115279+02:00"
+    },
+    "15": {
+      "IssueId": 15,
+      "Title": "ListView displays datetime of last modified instead of created",
+      "Details": "- or created is somehow modified within the program",
+      "SubmittedOn": "2025-09-19T09:27:39.0436781+02:00",
+      "Status": 0,
+      "Severity": 1,
+      "Priority": 1,
+      "LastUpdated": "2025-09-19T09:27:39.0437058+02:00"
     }
   }
 }
