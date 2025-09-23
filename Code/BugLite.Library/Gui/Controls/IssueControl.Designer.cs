@@ -51,21 +51,24 @@
 			this.label7 = new Label();
 			this._txStepsToReproduce = new TextBox();
 			this._tpNotes = new TabPage();
-			this._tlpNotes = new TableLayoutPanel();
-			this._txInfo = new TextBox();
+			this._scNotes = new SplitContainer();
 			this._lvNotes = new ListView();
 			this.NoteDateTime = new ColumnHeader();
 			this._cmsNotes = new ContextMenuStrip(this.components);
 			this.addToolStripMenuItem = new ToolStripMenuItem();
 			this.editToolStripMenuItem = new ToolStripMenuItem();
 			this.deleteToolStripMenuItem = new ToolStripMenuItem();
+			this._txNoteText = new TextBox();
 			this._tlpMain.SuspendLayout();
 			this._tcIssue.SuspendLayout();
 			this._tpIssueMain.SuspendLayout();
 			this._tpAdditional.SuspendLayout();
 			this._tlpAdditional.SuspendLayout();
 			this._tpNotes.SuspendLayout();
-			this._tlpNotes.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)this._scNotes).BeginInit();
+			this._scNotes.Panel1.SuspendLayout();
+			this._scNotes.Panel2.SuspendLayout();
+			this._scNotes.SuspendLayout();
 			this._cmsNotes.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -332,7 +335,7 @@
 			// 
 			// _tpNotes
 			// 
-			this._tpNotes.Controls.Add(this._tlpNotes);
+			this._tpNotes.Controls.Add(this._scNotes);
 			this._tpNotes.Location = new Point(4, 29);
 			this._tpNotes.Margin = new Padding(0);
 			this._tpNotes.Name = "_tpNotes";
@@ -341,31 +344,22 @@
 			this._tpNotes.Text = "Notes";
 			this._tpNotes.UseVisualStyleBackColor = true;
 			// 
-			// _tlpNotes
+			// _scNotes
 			// 
-			this._tlpNotes.ColumnCount = 2;
-			this._tlpNotes.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 30F));
-			this._tlpNotes.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 70F));
-			this._tlpNotes.Controls.Add(this._txInfo, 1, 0);
-			this._tlpNotes.Controls.Add(this._lvNotes, 0, 0);
-			this._tlpNotes.Dock = DockStyle.Fill;
-			this._tlpNotes.Location = new Point(0, 0);
-			this._tlpNotes.Margin = new Padding(0);
-			this._tlpNotes.Name = "_tlpNotes";
-			this._tlpNotes.RowCount = 1;
-			this._tlpNotes.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-			this._tlpNotes.Size = new Size(551, 407);
-			this._tlpNotes.TabIndex = 0;
+			this._scNotes.Dock = DockStyle.Fill;
+			this._scNotes.Location = new Point(0, 0);
+			this._scNotes.Name = "_scNotes";
 			// 
-			// _txInfo
+			// _scNotes.Panel1
 			// 
-			this._txInfo.Dock = DockStyle.Fill;
-			this._txInfo.Location = new Point(165, 0);
-			this._txInfo.Margin = new Padding(0);
-			this._txInfo.Multiline = true;
-			this._txInfo.Name = "_txInfo";
-			this._txInfo.Size = new Size(386, 407);
-			this._txInfo.TabIndex = 1;
+			this._scNotes.Panel1.Controls.Add(this._lvNotes);
+			// 
+			// _scNotes.Panel2
+			// 
+			this._scNotes.Panel2.Controls.Add(this._txNoteText);
+			this._scNotes.Size = new Size(551, 407);
+			this._scNotes.SplitterDistance = 183;
+			this._scNotes.TabIndex = 1;
 			// 
 			// _lvNotes
 			// 
@@ -377,10 +371,11 @@
 			this._lvNotes.Location = new Point(0, 0);
 			this._lvNotes.Margin = new Padding(0);
 			this._lvNotes.Name = "_lvNotes";
-			this._lvNotes.Size = new Size(165, 407);
+			this._lvNotes.Size = new Size(183, 407);
 			this._lvNotes.TabIndex = 2;
 			this._lvNotes.UseCompatibleStateImageBehavior = false;
 			this._lvNotes.View = View.Details;
+			this._lvNotes.SelectedIndexChanged += this.OnNoteSelected;
 			// 
 			// NoteDateTime
 			// 
@@ -415,6 +410,17 @@
 			this.deleteToolStripMenuItem.Text = "&Delete";
 			this.deleteToolStripMenuItem.Click += this.OnNoteDelete;
 			// 
+			// _txNoteText
+			// 
+			this._txNoteText.Dock = DockStyle.Fill;
+			this._txNoteText.Location = new Point(0, 0);
+			this._txNoteText.Margin = new Padding(0);
+			this._txNoteText.Multiline = true;
+			this._txNoteText.Name = "_txNoteText";
+			this._txNoteText.ReadOnly = true;
+			this._txNoteText.Size = new Size(364, 407);
+			this._txNoteText.TabIndex = 1;
+			// 
 			// IssueControl
 			// 
 			this.AutoScaleDimensions = new SizeF(9F, 20F);
@@ -434,8 +440,11 @@
 			this._tlpAdditional.ResumeLayout(false);
 			this._tlpAdditional.PerformLayout();
 			this._tpNotes.ResumeLayout(false);
-			this._tlpNotes.ResumeLayout(false);
-			this._tlpNotes.PerformLayout();
+			this._scNotes.Panel1.ResumeLayout(false);
+			this._scNotes.Panel2.ResumeLayout(false);
+			this._scNotes.Panel2.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)this._scNotes).EndInit();
+			this._scNotes.ResumeLayout(false);
 			this._cmsNotes.ResumeLayout(false);
 			this.ResumeLayout(false);
 		}
@@ -464,13 +473,13 @@
 		private Label label7;
 		private TextBox _txStepsToReproduce;
 		private TextBox _txAdditionalInformation;
-		private TableLayoutPanel _tlpNotes;
-		private TextBox _txInfo;
+		private TextBox _txNoteText;
 		private ContextMenuStrip _cmsNotes;
 		private ToolStripMenuItem addToolStripMenuItem;
 		private ToolStripMenuItem editToolStripMenuItem;
 		private ToolStripMenuItem deleteToolStripMenuItem;
 		private ListView _lvNotes;
 		private ColumnHeader NoteDateTime;
+		private SplitContainer _scNotes;
 	}
 }

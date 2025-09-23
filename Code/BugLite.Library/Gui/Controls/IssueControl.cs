@@ -8,9 +8,9 @@
 ***********************************************************************************/
 
 using System.ComponentModel;
-using System.Runtime.Intrinsics.X86;
 using BugLite.Library.Domain;
 using BugLite.Library.Domain.Enumerations;
+using BugLite.Library.Gui.Dialogs;
 using BugLite.Library.Gui.Interfaces;
 
 namespace BugLite.Library.Gui.Controls
@@ -49,16 +49,16 @@ namespace BugLite.Library.Gui.Controls
 		{
 			get
 			{
-				Issue issue = new Issue();
+				Issue issue					= new Issue();
 
-				issue.IssueId = Int32.Parse(this._lblIssue.Text);
+				issue.IssueId				= Int32.Parse(this._lblIssue.Text);
 
-				issue.LastUpdated = DateTime.Now;
-				issue.Status = (IssueStatus)this._cxStatus.SelectedItem;
-				issue.Severity = (Severity)this._cxSeverity.SelectedItem;
-				issue.Priority = (Priority)this._cxPriority.SelectedItem;
-				issue.Title = this._txTitle.Text;
-				issue.Details = this._txDescription.Text;
+				issue.LastUpdated			= DateTime.Now;
+				issue.Status				= (IssueStatus)this._cxStatus.SelectedItem;
+				issue.Severity				= (Severity)this._cxSeverity.SelectedItem;
+				issue.Priority				= (Priority)this._cxPriority.SelectedItem;
+				issue.Title					= this._txTitle.Text;
+				issue.Details				= this._txDescription.Text;
 
 				issue.StepsToReproduce		= this._txStepsToReproduce.Text;
 				issue.AdditionalInformation	= this._txAdditionalInformation.Text;
@@ -74,15 +74,15 @@ namespace BugLite.Library.Gui.Controls
 
 			set
 			{
-				this._lblIssue.Text = value.IssueId.ToString();
+				this._lblIssue.Text					= value.IssueId.ToString();
 
-				this._cxStatus.SelectedItem = value.Status;
-				this._cxSeverity.SelectedItem = value.Severity;
-				this._cxPriority.SelectedItem = value.Priority;
-				this._txTitle.Text = value.Title;
-				this._txDescription.Text = value.Details;
+				this._cxStatus.SelectedItem			= value.Status;
+				this._cxSeverity.SelectedItem		= value.Severity;
+				this._cxPriority.SelectedItem		= value.Priority;
+				this._txTitle.Text					= value.Title;
+				this._txDescription.Text			= value.Details;
 
-				this._txStepsToReproduce.Text	= value.StepsToReproduce; 
+				this._txStepsToReproduce.Text		= value.StepsToReproduce;
 				this._txAdditionalInformation.Text	= value.AdditionalInformation;
 
 				this.DisplayNotes(value);
@@ -90,40 +90,98 @@ namespace BugLite.Library.Gui.Controls
 		}
 		#endregion
 
+		#region Note context menu handlers
+		/// <summary>
+		/// Tries to add a note.
+		/// </summary>
+		/// <param name="sender">Unused.</param>
+		/// <param name="e">Unused.</param>
 		private void OnNoteAdd(object sender, EventArgs e)
 		{
-			Note note = new Note();
-			note.Text = "aaaa";
+			NoteDialog dialog = new NoteDialog();
 
-			ListViewItem lvi	= new ListViewItem(new string[]{note.Created.ToString("yyyy-MM-dd HH:mm")});
-			lvi.Tag				= note;
+			if (dialog.ShowDialog() == DialogResult.OK)
+			{
+				Note note			= dialog.Note;
 
-			this._lvNotes.Items.Add(lvi);
+				ListViewItem lvi	= new ListViewItem(new string[] { note.Created.ToString("yyyy-MM-dd HH:mm") });
+				lvi.Tag				= note;
+
+				this._lvNotes.Items.Add(lvi);
+				this._lvNotes.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
+			}
 		}
 
+		/// <summary>
+		/// Tries to edit selected note.
+		/// </summary>
+		/// <param name="sender">Unused.</param>
+		/// <param name="e">Unused.</param>
 		private void OnNoteEdit(object sender, EventArgs e)
 		{
+			if (this._lvNotes.SelectedItems.Count == 1)
+			{
+				int index			= this._lvNotes.SelectedIndices[0];
+				Note note			= this._lvNotes.SelectedItems[0].Tag as Note;
+				
+				NoteDialog dialog	= new NoteDialog();
+				dialog.Note			= note;
 
+				if (dialog.ShowDialog() == DialogResult.OK)
+				{
+					this._lvNotes.Items[index].Tag	= dialog.Note;
+					this._txNoteText.Text			= dialog.Note.Text;
+
+					this.DisplayNotes(this.Issue);
+				}
+			}
 		}
 
+		/// <summary>
+		/// Tries to delete selected note.
+		/// </summary>
+		/// <param name="sender">Unused.</param>
+		/// <param name="e">Unused.</param>
 		private void OnNoteDelete(object sender, EventArgs e)
 		{
+			if (this._lvNotes.SelectedItems.Count == 1)
+			{
+				int index	= this._lvNotes.SelectedIndices[0];
+				Note note	= this._lvNotes.SelectedItems[0].Tag as Note;
 
+				if (MessageBox.Show($"Delete note {note.Text}?", "Note about to be deleted", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+				{
+					this._lvNotes.Items.RemoveAt(index);
+					this.DisplayNotes(this.Issue);
+				}
+			}
 		}
+		#endregion
 
+		#region Private auxiliary
 		private void DisplayNotes(Issue issue)
 		{
 			this._lvNotes.Items.Clear();
 
 			foreach (Note note in issue.Notes)
 			{
-				ListViewItem lvi	= new ListViewItem(new string[]{note.Created.ToString("yyyy-MM-dd HH:mm")});
-				lvi.Tag				= note;
+				ListViewItem lvi = new ListViewItem(new string[] { note.Created.ToString("yyyy-MM-dd HH:mm") });
+				lvi.Tag = note;
 
 				this._lvNotes.Items.Add(lvi);
 			}
 
 			this._lvNotes.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
 		}
+
+		private void OnNoteSelected(object sender, EventArgs e)
+		{
+			if (this._lvNotes.SelectedItems.Count == 1)
+			{
+				Note note				= this._lvNotes.SelectedItems[0].Tag as Note;
+				this._txNoteText.Text	= note.Text;
+			}
+		}
+		#endregion
 	}
 }
