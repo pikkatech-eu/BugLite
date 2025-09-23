@@ -28,6 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			this.components = new System.ComponentModel.Container();
 			this._txDescription = new TextBox();
 			this._cxStatus = new ComboBox();
 			this._lblIssue = new Label();
@@ -44,10 +45,28 @@
 			this._tcIssue = new TabControl();
 			this._tpIssueMain = new TabPage();
 			this._tpAdditional = new TabPage();
+			this._tlpAdditional = new TableLayoutPanel();
+			this._txAdditionalInformation = new TextBox();
+			this.label8 = new Label();
+			this.label7 = new Label();
+			this._txStepsToReproduce = new TextBox();
 			this._tpNotes = new TabPage();
+			this._tlpNotes = new TableLayoutPanel();
+			this._txInfo = new TextBox();
+			this._lvNotes = new ListView();
+			this.NoteDateTime = new ColumnHeader();
+			this._cmsNotes = new ContextMenuStrip(this.components);
+			this.addToolStripMenuItem = new ToolStripMenuItem();
+			this.editToolStripMenuItem = new ToolStripMenuItem();
+			this.deleteToolStripMenuItem = new ToolStripMenuItem();
 			this._tlpMain.SuspendLayout();
 			this._tcIssue.SuspendLayout();
 			this._tpIssueMain.SuspendLayout();
+			this._tpAdditional.SuspendLayout();
+			this._tlpAdditional.SuspendLayout();
+			this._tpNotes.SuspendLayout();
+			this._tlpNotes.SuspendLayout();
+			this._cmsNotes.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// _txDescription
@@ -108,6 +127,7 @@
 			// 
 			this.label1.AutoSize = true;
 			this.label1.Dock = DockStyle.Right;
+			this.label1.ForeColor = Color.Black;
 			this.label1.Location = new Point(44, 0);
 			this.label1.Name = "label1";
 			this.label1.Size = new Size(81, 28);
@@ -155,6 +175,7 @@
 			this._tlpMain.Controls.Add(this._txTitle, 1, 3);
 			this._tlpMain.Controls.Add(this._txDescription, 1, 4);
 			this._tlpMain.Dock = DockStyle.Fill;
+			this._tlpMain.ForeColor = Color.Black;
 			this._tlpMain.Location = new Point(0, 0);
 			this._tlpMain.Margin = new Padding(0);
 			this._tlpMain.Name = "_tlpMain";
@@ -237,6 +258,7 @@
 			// 
 			// _tpAdditional
 			// 
+			this._tpAdditional.Controls.Add(this._tlpAdditional);
 			this._tpAdditional.Location = new Point(4, 29);
 			this._tpAdditional.Margin = new Padding(0);
 			this._tpAdditional.Name = "_tpAdditional";
@@ -245,8 +267,72 @@
 			this._tpAdditional.Text = "Additional";
 			this._tpAdditional.UseVisualStyleBackColor = true;
 			// 
+			// _tlpAdditional
+			// 
+			this._tlpAdditional.ColumnCount = 1;
+			this._tlpAdditional.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+			this._tlpAdditional.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
+			this._tlpAdditional.Controls.Add(this._txAdditionalInformation, 0, 3);
+			this._tlpAdditional.Controls.Add(this.label8, 0, 2);
+			this._tlpAdditional.Controls.Add(this.label7, 0, 0);
+			this._tlpAdditional.Controls.Add(this._txStepsToReproduce, 0, 1);
+			this._tlpAdditional.Dock = DockStyle.Fill;
+			this._tlpAdditional.Location = new Point(0, 0);
+			this._tlpAdditional.Margin = new Padding(0);
+			this._tlpAdditional.Name = "_tlpAdditional";
+			this._tlpAdditional.RowCount = 4;
+			this._tlpAdditional.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+			this._tlpAdditional.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+			this._tlpAdditional.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+			this._tlpAdditional.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+			this._tlpAdditional.Size = new Size(551, 407);
+			this._tlpAdditional.TabIndex = 0;
+			// 
+			// _txAdditionalInformation
+			// 
+			this._txAdditionalInformation.Dock = DockStyle.Fill;
+			this._txAdditionalInformation.Location = new Point(0, 223);
+			this._txAdditionalInformation.Margin = new Padding(0);
+			this._txAdditionalInformation.Multiline = true;
+			this._txAdditionalInformation.Name = "_txAdditionalInformation";
+			this._txAdditionalInformation.Size = new Size(551, 184);
+			this._txAdditionalInformation.TabIndex = 4;
+			// 
+			// label8
+			// 
+			this.label8.AutoSize = true;
+			this.label8.Dock = DockStyle.Fill;
+			this.label8.ForeColor = Color.Black;
+			this.label8.Location = new Point(3, 203);
+			this.label8.Name = "label8";
+			this.label8.Size = new Size(545, 20);
+			this.label8.TabIndex = 2;
+			this.label8.Text = "Additional Information";
+			// 
+			// label7
+			// 
+			this.label7.AutoSize = true;
+			this.label7.Dock = DockStyle.Fill;
+			this.label7.ForeColor = Color.Black;
+			this.label7.Location = new Point(3, 0);
+			this.label7.Name = "label7";
+			this.label7.Size = new Size(545, 20);
+			this.label7.TabIndex = 1;
+			this.label7.Text = "Steps to Reproduce";
+			// 
+			// _txStepsToReproduce
+			// 
+			this._txStepsToReproduce.Dock = DockStyle.Fill;
+			this._txStepsToReproduce.Location = new Point(0, 20);
+			this._txStepsToReproduce.Margin = new Padding(0);
+			this._txStepsToReproduce.Multiline = true;
+			this._txStepsToReproduce.Name = "_txStepsToReproduce";
+			this._txStepsToReproduce.Size = new Size(551, 183);
+			this._txStepsToReproduce.TabIndex = 3;
+			// 
 			// _tpNotes
 			// 
+			this._tpNotes.Controls.Add(this._tlpNotes);
 			this._tpNotes.Location = new Point(4, 29);
 			this._tpNotes.Margin = new Padding(0);
 			this._tpNotes.Name = "_tpNotes";
@@ -254,6 +340,80 @@
 			this._tpNotes.TabIndex = 2;
 			this._tpNotes.Text = "Notes";
 			this._tpNotes.UseVisualStyleBackColor = true;
+			// 
+			// _tlpNotes
+			// 
+			this._tlpNotes.ColumnCount = 2;
+			this._tlpNotes.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 30F));
+			this._tlpNotes.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 70F));
+			this._tlpNotes.Controls.Add(this._txInfo, 1, 0);
+			this._tlpNotes.Controls.Add(this._lvNotes, 0, 0);
+			this._tlpNotes.Dock = DockStyle.Fill;
+			this._tlpNotes.Location = new Point(0, 0);
+			this._tlpNotes.Margin = new Padding(0);
+			this._tlpNotes.Name = "_tlpNotes";
+			this._tlpNotes.RowCount = 1;
+			this._tlpNotes.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+			this._tlpNotes.Size = new Size(551, 407);
+			this._tlpNotes.TabIndex = 0;
+			// 
+			// _txInfo
+			// 
+			this._txInfo.Dock = DockStyle.Fill;
+			this._txInfo.Location = new Point(165, 0);
+			this._txInfo.Margin = new Padding(0);
+			this._txInfo.Multiline = true;
+			this._txInfo.Name = "_txInfo";
+			this._txInfo.Size = new Size(386, 407);
+			this._txInfo.TabIndex = 1;
+			// 
+			// _lvNotes
+			// 
+			this._lvNotes.Columns.AddRange(new ColumnHeader[] { this.NoteDateTime });
+			this._lvNotes.ContextMenuStrip = this._cmsNotes;
+			this._lvNotes.Dock = DockStyle.Fill;
+			this._lvNotes.FullRowSelect = true;
+			this._lvNotes.HeaderStyle = ColumnHeaderStyle.None;
+			this._lvNotes.Location = new Point(0, 0);
+			this._lvNotes.Margin = new Padding(0);
+			this._lvNotes.Name = "_lvNotes";
+			this._lvNotes.Size = new Size(165, 407);
+			this._lvNotes.TabIndex = 2;
+			this._lvNotes.UseCompatibleStateImageBehavior = false;
+			this._lvNotes.View = View.Details;
+			// 
+			// NoteDateTime
+			// 
+			this.NoteDateTime.Text = "DateTime";
+			// 
+			// _cmsNotes
+			// 
+			this._cmsNotes.Font = new Font("Consolas", 10F);
+			this._cmsNotes.ImageScalingSize = new Size(20, 20);
+			this._cmsNotes.Items.AddRange(new ToolStripItem[] { this.addToolStripMenuItem, this.editToolStripMenuItem, this.deleteToolStripMenuItem });
+			this._cmsNotes.Name = "_cmsNotes";
+			this._cmsNotes.Size = new Size(133, 76);
+			// 
+			// addToolStripMenuItem
+			// 
+			this.addToolStripMenuItem.Name = "addToolStripMenuItem";
+			this.addToolStripMenuItem.Size = new Size(132, 24);
+			this.addToolStripMenuItem.Text = "&Add";
+			this.addToolStripMenuItem.Click += this.OnNoteAdd;
+			// 
+			// editToolStripMenuItem
+			// 
+			this.editToolStripMenuItem.Name = "editToolStripMenuItem";
+			this.editToolStripMenuItem.Size = new Size(132, 24);
+			this.editToolStripMenuItem.Text = "&Edit";
+			this.editToolStripMenuItem.Click += this.OnNoteEdit;
+			// 
+			// deleteToolStripMenuItem
+			// 
+			this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
+			this.deleteToolStripMenuItem.Size = new Size(132, 24);
+			this.deleteToolStripMenuItem.Text = "&Delete";
+			this.deleteToolStripMenuItem.Click += this.OnNoteDelete;
 			// 
 			// IssueControl
 			// 
@@ -270,6 +430,13 @@
 			this._tlpMain.PerformLayout();
 			this._tcIssue.ResumeLayout(false);
 			this._tpIssueMain.ResumeLayout(false);
+			this._tpAdditional.ResumeLayout(false);
+			this._tlpAdditional.ResumeLayout(false);
+			this._tlpAdditional.PerformLayout();
+			this._tpNotes.ResumeLayout(false);
+			this._tlpNotes.ResumeLayout(false);
+			this._tlpNotes.PerformLayout();
+			this._cmsNotes.ResumeLayout(false);
 			this.ResumeLayout(false);
 		}
 
@@ -292,5 +459,18 @@
 		private TabPage _tpIssueMain;
 		private TabPage _tpAdditional;
 		private TabPage _tpNotes;
+		private TableLayoutPanel _tlpAdditional;
+		private Label label8;
+		private Label label7;
+		private TextBox _txStepsToReproduce;
+		private TextBox _txAdditionalInformation;
+		private TableLayoutPanel _tlpNotes;
+		private TextBox _txInfo;
+		private ContextMenuStrip _cmsNotes;
+		private ToolStripMenuItem addToolStripMenuItem;
+		private ToolStripMenuItem editToolStripMenuItem;
+		private ToolStripMenuItem deleteToolStripMenuItem;
+		private ListView _lvNotes;
+		private ColumnHeader NoteDateTime;
 	}
 }

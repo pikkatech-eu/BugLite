@@ -86,7 +86,7 @@
 			this.Icon = (Icon)resources.GetObject("$this.Icon");
 			this.Name = "IssueDialog";
 			this.StartPosition = FormStartPosition.CenterParent;
-			this.Text = "User Dialog";
+			this.Text = "Issue Properties";
 			this.ResumeLayout(false);
 		}
 
