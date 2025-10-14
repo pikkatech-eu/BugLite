@@ -11,7 +11,10 @@
       "Status": 2,
       "Severity": 0,
       "Priority": 3,
-      "LastUpdated": "2025-09-17T13:28:55.5007393+02:00"
+      "LastUpdated": "2025-09-17T13:28:55.5007393+02:00",
+      "StepsToReproduce": "",
+      "AdditionalInformation": "",
+      "Notes": []
     },
     "2": {
       "IssueId": 2,
@@ -21,7 +24,10 @@
       "Status": 1,
       "Severity": 2,
       "Priority": 1,
-      "LastUpdated": "2025-09-24T08:03:05.2463282+02:00"
+      "LastUpdated": "2025-09-24T08:03:05.2463282+02:00",
+      "StepsToReproduce": "",
+      "AdditionalInformation": "",
+      "Notes": []
     },
     "3": {
       "IssueId": 3,
@@ -31,7 +37,10 @@
       "Status": 1,
       "Severity": 2,
       "Priority": 1,
-      "LastUpdated": "2025-09-24T08:03:20.7959603+02:00"
+      "LastUpdated": "2025-09-24T08:03:20.7959603+02:00",
+      "StepsToReproduce": "",
+      "AdditionalInformation": "",
+      "Notes": []
     },
     "4": {
       "IssueId": 4,
@@ -41,7 +50,10 @@
       "Status": 0,
       "Severity": 2,
       "Priority": 2,
-      "LastUpdated": "2025-09-16T13:40:30.2376088+02:00"
+      "LastUpdated": "2025-09-16T13:40:30.2376088+02:00",
+      "StepsToReproduce": "",
+      "AdditionalInformation": "",
+      "Notes": []
     },
     "5": {
       "IssueId": 5,
@@ -51,7 +63,10 @@
       "Status": 0,
       "Severity": 2,
       "Priority": 2,
-      "LastUpdated": "2025-09-16T13:41:09.5594346+02:00"
+      "LastUpdated": "2025-09-16T13:41:09.5594346+02:00",
+      "StepsToReproduce": "",
+      "AdditionalInformation": "",
+      "Notes": []
     },
     "6": {
       "IssueId": 6,
@@ -61,7 +76,10 @@
       "Status": 0,
       "Severity": 1,
       "Priority": 2,
-      "LastUpdated": "2025-09-18T08:04:55.2147285+02:00"
+      "LastUpdated": "2025-09-18T08:04:55.2147285+02:00",
+      "StepsToReproduce": "",
+      "AdditionalInformation": "",
+      "Notes": []
     },
     "7": {
       "IssueId": 7,
@@ -71,7 +89,10 @@
       "Status": 0,
       "Severity": 1,
       "Priority": 1,
-      "LastUpdated": "2025-09-17T12:19:08.9683836+02:00"
+      "LastUpdated": "2025-09-17T12:19:08.9683836+02:00",
+      "StepsToReproduce": "",
+      "AdditionalInformation": "",
+      "Notes": []
     },
     "8": {
       "IssueId": 8,
@@ -81,7 +102,10 @@
       "Status": 2,
       "Severity": 0,
       "Priority": 3,
-      "LastUpdated": "2025-09-18T09:01:36.3010676+02:00"
+      "LastUpdated": "2025-09-18T09:01:36.3010676+02:00",
+      "StepsToReproduce": "",
+      "AdditionalInformation": "",
+      "Notes": []
     },
     "9": {
       "IssueId": 9,
@@ -91,7 +115,10 @@
       "Status": 0,
       "Severity": 0,
       "Priority": 1,
-      "LastUpdated": "2025-09-18T08:03:06.3027602+02:00"
+      "LastUpdated": "2025-09-18T08:03:06.3027602+02:00",
+      "StepsToReproduce": "",
+      "AdditionalInformation": "",
+      "Notes": []
     },
     "10": {
       "IssueId": 10,
@@ -101,27 +128,36 @@
       "Status": 2,
       "Severity": 0,
       "Priority": 3,
-      "LastUpdated": "2025-09-18T08:41:50.762944+02:00"
+      "LastUpdated": "2025-09-18T08:41:50.762944+02:00",
+      "StepsToReproduce": "",
+      "AdditionalInformation": "",
+      "Notes": []
     },
     "11": {
       "IssueId": 11,
       "Title": "Add Steps to reproduce",
       "Details": "-\u003E to Issue",
-      "SubmittedOn": "2025-09-18T08:24:59.7571666+02:00",
-      "Status": 0,
+      "SubmittedOn": "2025-10-06T11:31:40.7931212+02:00",
+      "Status": 2,
       "Severity": 1,
-      "Priority": 2,
-      "LastUpdated": "2025-09-18T08:24:59.7571816+02:00"
+      "Priority": 3,
+      "LastUpdated": "2025-10-06T11:31:40.7935103+02:00",
+      "StepsToReproduce": "",
+      "AdditionalInformation": "",
+      "Notes": []
     },
     "12": {
       "IssueId": 12,
       "Title": "Add notes",
       "Details": "-\u003E to Issue",
-      "SubmittedOn": "2025-09-18T08:25:28.9290146+02:00",
-      "Status": 0,
+      "SubmittedOn": "2025-10-06T11:31:56.1351255+02:00",
+      "Status": 2,
       "Severity": 1,
-      "Priority": 2,
-      "LastUpdated": "2025-09-18T08:25:28.9290391+02:00"
+      "Priority": 3,
+      "LastUpdated": "2025-10-06T11:31:56.1351444+02:00",
+      "StepsToReproduce": "",
+      "AdditionalInformation": "",
+      "Notes": []
     },
     "13": {
       "IssueId": 13,
@@ -131,7 +167,10 @@
       "Status": 0,
       "Severity": 1,
       "Priority": 2,
-      "LastUpdated": "2025-09-18T08:26:27.6844503+02:00"
+      "LastUpdated": "2025-09-18T08:26:27.6844503+02:00",
+      "StepsToReproduce": "",
+      "AdditionalInformation": "",
+      "Notes": []
     },
     "14": {
       "IssueId": 14,
@@ -141,7 +180,10 @@
       "Status": 0,
       "Severity": 1,
       "Priority": 2,
-      "LastUpdated": "2025-09-19T09:26:26.9115279+02:00"
+      "LastUpdated": "2025-09-19T09:26:26.9115279+02:00",
+      "StepsToReproduce": "",
+      "AdditionalInformation": "",
+      "Notes": []
     },
     "15": {
       "IssueId": 15,
@@ -151,7 +193,10 @@
       "Status": 0,
       "Severity": 0,
       "Priority": 0,
-      "LastUpdated": "2025-09-24T08:02:28.7145512+02:00"
+      "LastUpdated": "2025-09-24T08:02:28.7145512+02:00",
+      "StepsToReproduce": "",
+      "AdditionalInformation": "",
+      "Notes": []
     },
     "16": {
       "IssueId": 16,
@@ -161,7 +206,10 @@
       "Status": 0,
       "Severity": 1,
       "Priority": 2,
-      "LastUpdated": "2025-09-23T23:51:01.3013306+02:00"
+      "LastUpdated": "2025-09-23T23:51:01.3013306+02:00",
+      "StepsToReproduce": "",
+      "AdditionalInformation": "",
+      "Notes": []
     }
   }
 }

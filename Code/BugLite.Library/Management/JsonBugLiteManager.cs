@@ -138,7 +138,10 @@ namespace BugLite.Library.Management
 		/// <param name="fileName">The name of the file to save to.</param>
 		public void SaveProject(string fileName)
 		{
-			this.CurrentProject.Save(fileName);
+			if (this.CurrentProject != null)
+			{
+				this.CurrentProject.Save(fileName);
+			}
 		}
 		#endregion
 

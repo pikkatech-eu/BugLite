@@ -79,9 +79,12 @@ namespace BugLite
 
 		private void OnProjectEdit(object sender, EventArgs e)
 		{
-			JsonBugLiteManager.Instance.EditProject();
-			this._lblProjectInfo.Text	= JsonBugLiteManager.Instance.CurrentProject.Name;
-			JsonBugLiteManager.Instance.SaveProject(JsonBugLiteManager.Instance.CurrentProject.Name);
+			if (JsonBugLiteManager.Instance.CurrentProject != null)
+			{
+				JsonBugLiteManager.Instance.EditProject();
+				this._lblProjectInfo.Text	= JsonBugLiteManager.Instance.CurrentProject.Name;
+				JsonBugLiteManager.Instance.SaveProject(JsonBugLiteManager.Instance.CurrentProject.Name);
+			}
 		}
 
 		private void OnProjectClose(object sender, EventArgs e)
@@ -122,8 +125,15 @@ namespace BugLite
 
 		private void OnIssueNew(object sender, EventArgs e)
 		{
-			JsonBugLiteManager.Instance.AddIssue();
-			this._ctrlIssueCollection.Display(JsonBugLiteManager.Instance.CurrentProject.Issues.Values);
+			try
+			{
+				JsonBugLiteManager.Instance.AddIssue();
+				this._ctrlIssueCollection.Display(JsonBugLiteManager.Instance.CurrentProject.Issues.Values);
+			}
+			catch (NullReferenceException nrx)
+			{
+				MessageBox.Show(nrx.Message, "Error occurred", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+			}
 		}
 
 		private void OnIssueEdit(object sender, EventArgs e)

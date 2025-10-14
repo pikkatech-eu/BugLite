@@ -46,8 +46,11 @@ namespace BugLite.Library.Gui.Controls
 
 			set
 			{
-				this._txName.Text			= value.Name;
-				this._txDescription.Text	= value.Description;
+				if (value != null)
+				{
+					this._txName.Text			= value.Name;
+					this._txDescription.Text	= value.Description;
+				}
 			}
 		}
 		#endregion
