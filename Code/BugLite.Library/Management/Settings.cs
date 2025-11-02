@@ -21,7 +21,7 @@ namespace BugLite.Library.Management
 
 		#region Properties
 		[Category("General")]
-		[Description("Is set to true, will try to open the last project.")]
+		[Description("If set to true, will try to open the last project.")]
 		public bool AutoLoadLastProject	{get;set;}	= false;
 
 		[Browsable(false)]
