@@ -210,6 +210,32 @@
       "StepsToReproduce": "",
       "AdditionalInformation": "",
       "Notes": []
+    },
+    "17": {
+      "IssueId": 17,
+      "Title": "Auto close priority when status set to resolved or closed",
+      "Details": "set it to None",
+      "SubmittedOn": "2025-11-11T08:59:01.4437539+01:00",
+      "Status": 0,
+      "Severity": 0,
+      "Priority": 1,
+      "LastUpdated": "2025-11-11T08:59:01.4437825+01:00",
+      "StepsToReproduce": "",
+      "AdditionalInformation": "",
+      "Notes": []
+    },
+    "18": {
+      "IssueId": 18,
+      "Title": "Change back- and foreground colors in Status and Severity",
+      "Details": "",
+      "SubmittedOn": "2025-11-11T09:02:01.1812515+01:00",
+      "Status": 0,
+      "Severity": 0,
+      "Priority": 1,
+      "LastUpdated": "2025-11-11T09:02:01.1812715+01:00",
+      "StepsToReproduce": "",
+      "AdditionalInformation": "",
+      "Notes": []
     }
   }
 }

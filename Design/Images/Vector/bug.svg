@@ -9,9 +9,9 @@
    id="svg1"
    inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
    sodipodi:docname="bug.svg"
-   inkscape:export-filename="bug_yellow2.png"
-   inkscape:export-xdpi="1.54"
-   inkscape:export-ydpi="1.54"
+   inkscape:export-filename="bug_green2.png"
+   inkscape:export-xdpi="1.92"
+   inkscape:export-ydpi="1.92"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -27,8 +27,8 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="px"
      inkscape:zoom="1.122"
-     inkscape:cx="500"
-     inkscape:cy="500.89127"
+     inkscape:cx="499.55437"
+     inkscape:cy="501.78253"
      inkscape:window-width="2560"
      inkscape:window-height="1373"
      inkscape:window-x="-9"
@@ -36,41 +36,43 @@
      inkscape:window-maximized="1"
      inkscape:current-layer="layer1"
      showguides="true"
-     showgrid="false">
-    <sodipodi:guide
-       position="36.862549,122.12148"
-       orientation="1,0"
-       id="guide1"
-       inkscape:locked="false" />
-    <sodipodi:guide
-       position="167.1538,122.12148"
-       orientation="-1,0"
-       id="guide2"
-       inkscape:label=""
-       inkscape:locked="false"
-       inkscape:color="rgb(0,134,229)" />
-  </sodipodi:namedview>
+     showgrid="false" />
   <defs
      id="defs1" />
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1">
-    <path
-       id="path2"
-       style="fill:#d4aa00;fill-rule:evenodd;stroke:none;stroke-width:6.4;stroke-linecap:round;paint-order:stroke markers fill;font-variation-settings:normal;opacity:1;vector-effect:none;fill-opacity:1;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;stop-color:#000000;stop-opacity:1"
-       d="M 102.0051,22.459893 A 51.005203,65.203327 0 0 0 54.395165,64.546094 L 149.62118,64.304128 A 51.005203,65.203327 0 0 0 102.0051,22.459893 Z" />
     <g
-       id="g2"
-       style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:#d4aa00;fill-opacity:1;stroke:none;stroke-width:6.4;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;paint-order:stroke markers fill;stop-color:#000000;stop-opacity:1">
-      <path
-         id="path1"
-         style="fill:#d4aa00;fill-rule:evenodd;stroke:none;stroke-width:6.4;stroke-linecap:round;paint-order:stroke markers fill;font-variation-settings:normal;vector-effect:none;fill-opacity:1;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;stop-color:#000000;stop-opacity:1"
-         d="M 93.181328,77.711328 36.862549,77.878516 A 60.335115,90.157199 0 0 0 32.846215,109.84297 60.335115,90.157199 0 0 0 93.181328,200 Z" />
-      <path
-         id="path3"
-         style="fill:#d4aa00;fill-rule:evenodd;stroke:none;stroke-width:6.4;stroke-linecap:round;paint-order:stroke markers fill;font-variation-settings:normal;vector-effect:none;fill-opacity:1;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;stop-color:#000000;stop-opacity:1"
-         d="m 110.83502,77.711328 56.31878,0.167188 A 60.335115,90.157199 0 0 1 171.17013,109.84297 60.335115,90.157199 0 0 1 110.83502,200 Z" />
+       id="g3">
+      <rect
+         style="fill:none;fill-rule:evenodd;stroke-width:0.181417;paint-order:stroke markers fill"
+         id="rect1"
+         width="160"
+         height="160"
+         x="20"
+         y="20" />
+      <g
+         id="g1"
+         transform="matrix(0.92536421,0,0,0.90120482,5.605288,-0.24096391)"
+         style="stroke-width:1.09505">
+        <path
+           id="path2"
+           style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:#00ff00;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:7.00828;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;paint-order:stroke markers fill;stop-color:#000000;stop-opacity:1"
+           d="M 102.0051,22.459893 A 51.005203,65.203327 0 0 0 54.395165,64.546094 L 149.62118,64.304128 A 51.005203,65.203327 0 0 0 102.0051,22.459893 Z" />
+        <g
+           id="g2"
+           style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:#ffff00;fill-opacity:1;stroke:none;stroke-width:7.00828;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;paint-order:stroke markers fill;stop-color:#000000;stop-opacity:1">
+          <path
+             id="path1"
+             style="font-variation-settings:normal;vector-effect:none;fill:#00ff00;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:7.00828;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;paint-order:stroke markers fill;stop-color:#000000;stop-opacity:1"
+             d="M 93.181328,77.711328 36.862549,77.878516 A 60.335115,90.157199 0 0 0 32.846215,109.84297 60.335115,90.157199 0 0 0 93.181328,200 Z" />
+          <path
+             id="path3"
+             style="font-variation-settings:normal;vector-effect:none;fill:#00ff00;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:7.00828;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;paint-order:stroke markers fill;stop-color:#000000;stop-opacity:1"
+             d="m 110.83502,77.711328 56.31878,0.167188 A 60.335115,90.157199 0 0 1 171.17013,109.84297 60.335115,90.157199 0 0 1 110.83502,200 Z" />
+        </g>
+      </g>
     </g>
   </g>
 </svg>
