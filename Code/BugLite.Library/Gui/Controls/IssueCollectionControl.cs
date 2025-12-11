@@ -105,23 +105,33 @@ namespace BugLite.Library.Gui.Controls
 				switch (issue.Severity)
 				{
 					case Domain.Enumerations.Severity.Feature:
-						lvi.ImageKey = "feature";
+						lvi.ImageKey			= "feature";
+						subItems[3].BackColor	= Color.LightGreen;
+						subItems[3].ForeColor	= Color.MidnightBlue;
 						break;
 
 					case Domain.Enumerations.Severity.Minor:
 						lvi.ImageKey = "bug_minor";
+						subItems[3].BackColor	= Color.Yellow;
+						subItems[3].ForeColor	= Color.MidnightBlue;
 						break;
 
 					case Domain.Enumerations.Severity.Major:
 						lvi.ImageKey = "bug_major";
+						subItems[3].BackColor	= Color.Orange;
+						subItems[3].ForeColor	= Color.MidnightBlue;
 						break;
 
 					case Domain.Enumerations.Severity.Crash:
 						lvi.ImageKey = "bang";
+						subItems[3].BackColor	= Color.Fuchsia;
+						subItems[3].ForeColor	= Color.White;
 						break;
 
 					case Domain.Enumerations.Severity.Critical:
 						lvi.ImageKey = "critical";
+						subItems[3].BackColor	= Color.Red;
+						subItems[3].ForeColor	= Color.White;
 						break;
 
 					default:
