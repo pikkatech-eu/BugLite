@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="1000"
+   height="1000"
+   viewBox="0 0 200 200"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
+   sodipodi:docname="critical.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="px"
+     inkscape:zoom="1.2983895"
+     inkscape:cx="499.85001"
+     inkscape:cy="560.69461"
+     inkscape:window-width="2560"
+     inkscape:window-height="1373"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       sodipodi:type="star"
+       style="fill:#ffff00;fill-rule:evenodd;stroke:#ef0000;stroke-width:24.5061;stroke-linejoin:round;stroke-dasharray:none;paint-order:stroke markers fill;stroke-opacity:1"
+       id="path1"
+       inkscape:flatsided="true"
+       sodipodi:sides="3"
+       sodipodi:cx="81.461678"
+       sodipodi:cy="37.433159"
+       sodipodi:r1="71.904755"
+       sodipodi:r2="35.952377"
+       sodipodi:arg1="0.52359878"
+       sodipodi:arg2="1.5707963"
+       inkscape:rounded="0"
+       inkscape:randomized="0"
+       d="m 143.73302,73.385536 -124.542687,0 62.271345,-107.857132 z"
+       inkscape:transform-center-y="-23.472108"
+       transform="matrix(1.3058561,0,0,1.3057334,-6.3772283,74.593584)"
+       inkscape:transform-center-x="-1.0098498e-05" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:208.471px;line-height:8;font-family:Arial;-inkscape-font-specification:'Arial, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:end;text-decoration:none;text-decoration-line:none;text-decoration-color:#000000;letter-spacing:0px;text-anchor:end;fill:#e60000;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:32;stroke-linejoin:round;stroke-dasharray:none;paint-order:stroke markers fill"
+       x="109.54813"
+       y="195.66383"
+       id="text1"
+       transform="scale(1.200885,0.8327192)"><tspan
+         sodipodi:role="line"
+         id="tspan1"
+         x="109.54813"
+         y="195.66383"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Frank Ruehl CLM';-inkscape-font-specification:'Frank Ruehl CLM';fill:#e60000;fill-opacity:1;stroke-width:32">!</tspan></text>
+  </g>
+</svg>

@@ -7,26 +7,39 @@
 * Copyright:    pikkatech.eu (www.pikkatech.eu)                                    *
 ***********************************************************************************/
 
+using System.Text.Json.Serialization;
+
 namespace BugLite.Library.Domain.Enumerations
 {
 	/// <summary>
 	/// Severity of an issue.
 	/// </summary>
+	[JsonConverter(typeof(JsonStringEnumConverter))]
 	public enum Severity
 	{
 		/// <summary>
 		/// A new feature required, no bug.
 		/// </summary>
-		Feature	= 2,
+		Feature		= 4,
 
 		/// <summary>
 		/// Bug of minor severity,
 		/// </summary>
-		Minor	= 1,
+		Minor		= 3,
 
 		/// <summary>
 		/// Bug of major severity,
 		/// </summary>
-		Major	= 0
+		Major		= 2,
+
+		/// <summary>
+		/// Of critical importance
+		/// </summary>
+		Critical	= 1,
+
+		/// <summary>
+		/// Causes program crash
+		/// </summary>
+		Crash		= 0
 	}
 }

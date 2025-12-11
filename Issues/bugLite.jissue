@@ -72,13 +72,13 @@
       "IssueId": 6,
       "Title": "Develop Versena ",
       "Details": "- change project name\r\n- copy suggested names into project names laundry\r\n- copy the ChatGPT discussion into it\r\n- develop it later",
-      "SubmittedOn": "2025-09-18T08:04:55.2147147+02:00",
-      "Status": 0,
+      "SubmittedOn": "2025-12-11T12:01:01.6699419+01:00",
+      "Status": 3,
       "Severity": 1,
-      "Priority": 2,
-      "LastUpdated": "2025-09-18T08:04:55.2147285+02:00",
+      "Priority": 3,
+      "LastUpdated": "2025-12-11T12:01:01.6699549+01:00",
       "StepsToReproduce": "",
-      "AdditionalInformation": "",
+      "AdditionalInformation": "Versena will not be developed",
       "Notes": []
     },
     "7": {
@@ -233,6 +233,19 @@
       "Severity": 0,
       "Priority": 1,
       "LastUpdated": "2025-11-11T09:02:01.1812715+01:00",
+      "StepsToReproduce": "",
+      "AdditionalInformation": "",
+      "Notes": []
+    },
+    "19": {
+      "IssueId": 19,
+      "Title": "Add About Dialog",
+      "Details": "",
+      "SubmittedOn": "2025-12-11T12:01:26.6616738+01:00",
+      "Status": 0,
+      "Severity": 2,
+      "Priority": 2,
+      "LastUpdated": "2025-12-11T12:01:26.6616827+01:00",
       "StepsToReproduce": "",
       "AdditionalInformation": "",
       "Notes": []

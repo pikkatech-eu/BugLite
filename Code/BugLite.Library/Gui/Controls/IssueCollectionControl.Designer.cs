@@ -145,9 +145,11 @@
 			this._ilIssues.ColorDepth = ColorDepth.Depth32Bit;
 			this._ilIssues.ImageStream = (ImageListStreamer)resources.GetObject("_ilIssues.ImageStream");
 			this._ilIssues.TransparentColor = Color.Transparent;
-			this._ilIssues.Images.SetKeyName(0, "bug_major");
+			this._ilIssues.Images.SetKeyName(0, "feature");
 			this._ilIssues.Images.SetKeyName(1, "bug_minor");
-			this._ilIssues.Images.SetKeyName(2, "feature");
+			this._ilIssues.Images.SetKeyName(2, "bug_major");
+			this._ilIssues.Images.SetKeyName(3, "critical");
+			this._ilIssues.Images.SetKeyName(4, "bang");
 			// 
 			// IssueCollectionControl
 			// 

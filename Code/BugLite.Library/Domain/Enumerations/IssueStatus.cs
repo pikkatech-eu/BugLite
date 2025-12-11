@@ -7,12 +7,15 @@
 * Copyright:    pikkatech.eu (www.pikkatech.eu)                                    *
 ***********************************************************************************/
 
+using System.Text.Json.Serialization;
+
 namespace BugLite.Library.Domain.Enumerations
 {
 	/// <summary>
 	/// Stage of an issue's evolution.
 	/// Lean Core version.
 	/// </summary>
+	[JsonConverter(typeof(JsonStringEnumConverter))]
 	public enum IssueStatus
 	{
 		/// <summary>

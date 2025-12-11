@@ -7,11 +7,14 @@
 * Copyright:    pikkatech.eu (www.pikkatech.eu)                                    *
 ***********************************************************************************/
 
+using System.Text.Json.Serialization;
+
 namespace BugLite.Library.Domain.Enumerations
 {
 	/// <summary>
 	/// Priority of an issue.
 	/// </summary>
+	[JsonConverter(typeof(JsonStringEnumConverter))]
 	public enum Priority
 	{
 		/// <summary>

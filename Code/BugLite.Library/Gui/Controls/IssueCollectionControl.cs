@@ -116,6 +116,14 @@ namespace BugLite.Library.Gui.Controls
 						lvi.ImageKey = "bug_major";
 						break;
 
+					case Domain.Enumerations.Severity.Crash:
+						lvi.ImageKey = "bang";
+						break;
+
+					case Domain.Enumerations.Severity.Critical:
+						lvi.ImageKey = "critical";
+						break;
+
 					default:
 						break;
 				}
