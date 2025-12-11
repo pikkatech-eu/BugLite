@@ -68,11 +68,10 @@ It focuses on simplicity: record issues, track their status, severity and priori
 ## Roadmap / Future Enhancements
 
 * Filter by text, date, or priority
+* Export to clipboard
 * Export to CSV for reporting
 * Optional “user roles” for team collaboration
 * Optional attachments per issue
-* Optional "Steps to reproduce"
-* Optional "Notes"
 * Optional dark/light theme
 
 
