@@ -20,7 +20,7 @@ namespace BugLite.Library.Gui.Controls
 	/// </summary>
 	public partial class IssueControl : UserControl, IIssueDevice
 	{
-		private DateTime	_creationDateTime;
+		private DateTime?	_creationDateTime = null;
 
 		#region Construction
 		/// <summary>
@@ -55,7 +55,7 @@ namespace BugLite.Library.Gui.Controls
 
 				issue.IssueId				= Int32.Parse(this._lblIssue.Text);
 
-				issue.LastUpdated			= DateTime.Now;
+				// issue.LastUpdated			= DateTime.Now;
 
 				issue.Status				= (IssueStatus)this._cxStatus.SelectedItem;
 
@@ -79,7 +79,8 @@ namespace BugLite.Library.Gui.Controls
 					issue.Notes.Add(note);
 				}
 
-				issue.SubmittedOn			= this._creationDateTime;
+				issue.SubmittedOn			= this._creationDateTime??DateTime.Now;
+
 				return issue;
 			}
 

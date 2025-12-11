@@ -9,9 +9,9 @@
    id="svg1"
    inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
    sodipodi:docname="bang.svg"
-   inkscape:export-filename="..\Raster\bang_32.png"
-   inkscape:export-xdpi="3.1316524"
-   inkscape:export-ydpi="3.1316524"
+   inkscape:export-filename="..\Raster\bang_16.png"
+   inkscape:export-xdpi="1.4244319"
+   inkscape:export-ydpi="1.4244319"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -43,8 +43,8 @@
      id="layer1">
     <path
        id="path1"
-       style="fill:#ffff00;fill-rule:evenodd;stroke:#ff0000;stroke-width:19.2;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;paint-order:stroke markers fill"
-       d="M 169.04436,166.75114 107.66229,123.40952 72.022521,194.89696 84.558336,122.80779 17.357196,143.26868 74.343288,102.62659 9.1963628,76.455096 76.752828,76.585781 25.506977,9.1607259 90.558734,56.886576 128.4388,5.1038465 117.61489,67.61975 190.80427,9.7082609 125.19743,87.380724 l 54.8594,13.843646 -54.60125,6.70712 z"
+       style="fill:#ffff00;fill-rule:evenodd;stroke:#ff0000;stroke-width:25.6;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;paint-order:stroke markers fill"
+       d="M 169.04436,166.75114 106.81389,122.27833 79.940884,182.17102 84.558336,122.80779 17.357196,143.26868 74.343288,102.62659 9.1963628,76.455096 76.752828,76.585781 13.063835,2.9391548 90.558734,56.886576 121.36883,-7.904893 117.61489,67.61975 190.80427,9.7082609 125.19743,87.380724 l 65.04015,16.954436 -64.782,3.59633 z"
        sodipodi:nodetypes="ccccccccccccccccc" />
   </g>
 </svg>
