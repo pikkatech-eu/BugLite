@@ -249,6 +249,71 @@
       "StepsToReproduce": "",
       "AdditionalInformation": "",
       "Notes": []
+    },
+    "20": {
+      "IssueId": 20,
+      "Title": "Colors and Fonts -\u003E Settings",
+      "Details": "User may be able to choose her/his fonts and colors for priorities, severities, statuses",
+      "SubmittedOn": "0001-01-01T00:00:00",
+      "LastUpdated": "2025-12-11T22:13:21.8371149+01:00",
+      "Status": "Open",
+      "Severity": "Feature",
+      "Priority": "Low",
+      "StepsToReproduce": "",
+      "AdditionalInformation": "",
+      "Notes": []
+    },
+    "21": {
+      "IssueId": 21,
+      "Title": "Store kind of issue ordering in settings",
+      "Details": "",
+      "SubmittedOn": "0001-01-01T00:00:00",
+      "LastUpdated": "2025-12-11T22:15:31.5794326+01:00",
+      "Status": "Open",
+      "Severity": "Feature",
+      "Priority": "Normal",
+      "StepsToReproduce": "",
+      "AdditionalInformation": "",
+      "Notes": []
+    },
+    "22": {
+      "IssueId": 22,
+      "Title": "Creation of an issue: sets wrong date/time ",
+      "Details": "0001-01-01",
+      "SubmittedOn": "0001-01-01T00:00:00",
+      "LastUpdated": "2025-12-11T22:16:51.0670401+01:00",
+      "Status": "Open",
+      "Severity": "Critical",
+      "Priority": "High",
+      "StepsToReproduce": "",
+      "AdditionalInformation": "",
+      "Notes": []
+    },
+    "23": {
+      "IssueId": 23,
+      "Title": "Store last window state in settings",
+      "Details": "normal / maximized\r\nposition and size",
+      "SubmittedOn": "0001-01-01T00:00:00",
+      "LastUpdated": "2025-12-11T22:18:05.3687251+01:00",
+      "Status": "Open",
+      "Severity": "Feature",
+      "Priority": "Normal",
+      "StepsToReproduce": "",
+      "AdditionalInformation": "",
+      "Notes": []
+    },
+    "24": {
+      "IssueId": 24,
+      "Title": "Filter: show only \u0022Open\u0022",
+      "Details": "",
+      "SubmittedOn": "0001-01-01T00:00:00",
+      "LastUpdated": "2025-12-11T22:19:25.0454435+01:00",
+      "Status": "Open",
+      "Severity": "Feature",
+      "Priority": "Normal",
+      "StepsToReproduce": "",
+      "AdditionalInformation": "",
+      "Notes": []
     }
   }
 }
