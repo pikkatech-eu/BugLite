@@ -83,18 +83,22 @@ namespace BugLite.Library.Gui.Controls
 				switch (issue.Status)
 				{
 					case Domain.Enumerations.IssueStatus.Open:
-						subItems[2].ForeColor = Color.Red;
+						subItems[2].BackColor = Color.Red;
+						subItems[2].ForeColor = Color.White;
 						break;
 
 					case Domain.Enumerations.IssueStatus.InProgress:
-						subItems[2].ForeColor = Color.Blue;
+						subItems[2].BackColor = Color.Blue;
+						subItems[2].ForeColor = Color.White;
 						break;
 
 					case Domain.Enumerations.IssueStatus.Resolved:
-						subItems[2].ForeColor = Color.Green;
+						subItems[2].BackColor = Color.Green;
+						subItems[2].ForeColor = Color.White;
 						break;
 
 					case Domain.Enumerations.IssueStatus.Closed:
+						subItems[2].BackColor = Color.White;
 						subItems[2].ForeColor = Color.Gray;
 						break;
 
@@ -208,12 +212,12 @@ namespace BugLite.Library.Gui.Controls
 		{
 			if (this._lvIssues.SelectedItems.Count == 1)
 			{
-				Issue issue = this._lvIssues.SelectedItems[0].Tag as Issue;
+				Issue issue			= this._lvIssues.SelectedItems[0].Tag as Issue;
 
-				int issueID = issue.IssueId;
+				int issueID			= issue.IssueId;
 
-				IssueDialog dialog = new IssueDialog();
-				dialog.Issue = issue;
+				IssueDialog dialog	= new IssueDialog();
+				dialog.Issue		= issue;
 
 				if (dialog.ShowDialog() == DialogResult.OK)
 				{

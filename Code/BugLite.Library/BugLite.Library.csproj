@@ -5,7 +5,7 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
-    <BaseOutputPath>C:\pikkatech.eu\Projects\BugLite\Binary</BaseOutputPath>
+    <BaseOutputPath>C:\pikkatech.eu\Projects\Active\BugLite\Binary</BaseOutputPath>
     <Win32Resource></Win32Resource>
   </PropertyGroup>
 

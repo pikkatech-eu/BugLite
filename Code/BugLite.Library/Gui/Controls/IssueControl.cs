@@ -20,6 +20,8 @@ namespace BugLite.Library.Gui.Controls
 	/// </summary>
 	public partial class IssueControl : UserControl, IIssueDevice
 	{
+		private DateTime	_creationDateTime;
+
 		#region Construction
 		/// <summary>
 		/// Default constructor.
@@ -54,6 +56,7 @@ namespace BugLite.Library.Gui.Controls
 				issue.IssueId				= Int32.Parse(this._lblIssue.Text);
 
 				issue.LastUpdated			= DateTime.Now;
+
 				issue.Status				= (IssueStatus)this._cxStatus.SelectedItem;
 
 				issue.Severity				= (Severity)this._cxSeverity.SelectedItem;
@@ -76,21 +79,22 @@ namespace BugLite.Library.Gui.Controls
 					issue.Notes.Add(note);
 				}
 
+				issue.SubmittedOn			= this._creationDateTime;
 				return issue;
 			}
 
 			set
 			{
-				this._lblIssue.Text = value.IssueId.ToString();
+				this._lblIssue.Text					= value.IssueId.ToString();
 
-				this._cxStatus.SelectedItem = value.Status;
-				this._cxSeverity.SelectedItem = value.Severity;
-				this._cxPriority.SelectedItem = value.Priority;
-				this._txTitle.Text = value.Title;
-				this._txDescription.Text = value.Details;
-
-				this._txStepsToReproduce.Text = value.StepsToReproduce;
-				this._txAdditionalInformation.Text = value.AdditionalInformation;
+				this._cxStatus.SelectedItem			= value.Status;
+				this._cxSeverity.SelectedItem		= value.Severity;
+				this._cxPriority.SelectedItem		= value.Priority;
+				this._txTitle.Text					= value.Title;
+				this._txDescription.Text			= value.Details;
+				this._txStepsToReproduce.Text		= value.StepsToReproduce;
+				this._txAdditionalInformation.Text	= value.AdditionalInformation;
+				this._creationDateTime				= value.SubmittedOn;
 
 				this.DisplayNotes(value);
 			}

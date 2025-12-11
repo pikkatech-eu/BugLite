@@ -6,7 +6,7 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
-    <BaseOutputPath>C:\pikkatech.eu\Projects\BugLite\Binary\</BaseOutputPath>
+    <BaseOutputPath>C:\pikkatech.eu\Projects\Active\BugLite\Binary</BaseOutputPath>
     <PackageIcon>bugLite.png</PackageIcon>
     <ApplicationIcon>bugLite.ico</ApplicationIcon>
   </PropertyGroup>

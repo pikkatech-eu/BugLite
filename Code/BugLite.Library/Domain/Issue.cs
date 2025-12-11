@@ -39,6 +39,11 @@ namespace BugLite.Library.Domain
 		public DateTime		SubmittedOn	{get;set;} = DateTime.Now;
 
 		/// <summary>
+		/// Date/Time of last submittance.
+		/// </summary>
+        public DateTime		LastUpdated	{get;set;} = DateTime.Now;
+
+		/// <summary>
 		/// The status of the issue.
 		/// </summary>
 		public IssueStatus	Status	{get;set;}	= IssueStatus.Open;
@@ -47,10 +52,7 @@ namespace BugLite.Library.Domain
 
 		public Priority		Priority	{get;set;}	= Priority.Normal;
 
-		/// <summary>
-		/// Date/Time of last submittance.
-		/// </summary>
-        public DateTime		LastUpdated	{get;set;} = DateTime.Now;
+
 
 		/// <summary>
 		/// Optional description how to reproduce the issue. 
