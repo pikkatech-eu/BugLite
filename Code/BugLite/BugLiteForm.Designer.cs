@@ -33,6 +33,7 @@
 			this.projectToolStripMenuItem = new ToolStripMenuItem();
 			this.newToolStripMenuItem = new ToolStripMenuItem();
 			this.loadToolStripMenuItem = new ToolStripMenuItem();
+			this._menuItemRecentProjects = new ToolStripMenuItem();
 			this.saveAsToolStripMenuItem = new ToolStripMenuItem();
 			this.closeToolStripMenuItem = new ToolStripMenuItem();
 			this.toolStripSeparator1 = new ToolStripSeparator();
@@ -52,7 +53,6 @@
 			this.statusStrip1 = new StatusStrip();
 			this._tlpBugLite = new TableLayoutPanel();
 			this._ctrlIssueCollection = new BugLite.Library.Gui.Controls.IssueCollectionControl();
-			this._menuItemRecentProjects = new ToolStripMenuItem();
 			this._msBugLite.SuspendLayout();
 			this._tsBugLite.SuspendLayout();
 			this._tlpBugLite.SuspendLayout();
@@ -66,7 +66,7 @@
 			this._msBugLite.Items.AddRange(new ToolStripItem[] { this.projectToolStripMenuItem, this.issueToolStripMenuItem, this.toolsToolStripMenuItem, this.helpToolStripMenuItem });
 			this._msBugLite.Location = new Point(0, 0);
 			this._msBugLite.Name = "_msBugLite";
-			this._msBugLite.Size = new Size(1115, 32);
+			this._msBugLite.Size = new Size(1262, 32);
 			this._msBugLite.TabIndex = 0;
 			this._msBugLite.Text = "menuStrip1";
 			// 
@@ -90,6 +90,12 @@
 			this.loadToolStripMenuItem.Size = new Size(259, 28);
 			this.loadToolStripMenuItem.Text = "&Load";
 			this.loadToolStripMenuItem.Click += this.OnProjectLoad;
+			// 
+			// _menuItemRecentProjects
+			// 
+			this._menuItemRecentProjects.Name = "_menuItemRecentProjects";
+			this._menuItemRecentProjects.Size = new Size(259, 28);
+			this._menuItemRecentProjects.Text = "&Recent Projects";
 			// 
 			// saveAsToolStripMenuItem
 			// 
@@ -192,7 +198,7 @@
 			this._tsBugLite.Items.AddRange(new ToolStripItem[] { this._lblProjectInfo });
 			this._tsBugLite.Location = new Point(0, 32);
 			this._tsBugLite.Name = "_tsBugLite";
-			this._tsBugLite.Size = new Size(1115, 40);
+			this._tsBugLite.Size = new Size(1262, 40);
 			this._tsBugLite.TabIndex = 1;
 			this._tsBugLite.Text = "toolStrip1";
 			// 
@@ -206,9 +212,9 @@
 			// statusStrip1
 			// 
 			this.statusStrip1.ImageScalingSize = new Size(20, 20);
-			this.statusStrip1.Location = new Point(0, 554);
+			this.statusStrip1.Location = new Point(0, 731);
 			this.statusStrip1.Name = "statusStrip1";
-			this.statusStrip1.Size = new Size(1115, 22);
+			this.statusStrip1.Size = new Size(1262, 22);
 			this.statusStrip1.TabIndex = 2;
 			this.statusStrip1.Text = "statusStrip1";
 			// 
@@ -223,7 +229,7 @@
 			this._tlpBugLite.Name = "_tlpBugLite";
 			this._tlpBugLite.RowCount = 1;
 			this._tlpBugLite.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-			this._tlpBugLite.Size = new Size(1115, 482);
+			this._tlpBugLite.Size = new Size(1262, 659);
 			this._tlpBugLite.TabIndex = 3;
 			// 
 			// _ctrlIssueCollection
@@ -235,20 +241,14 @@
 			this._ctrlIssueCollection.Location = new Point(0, 0);
 			this._ctrlIssueCollection.Margin = new Padding(0);
 			this._ctrlIssueCollection.Name = "_ctrlIssueCollection";
-			this._ctrlIssueCollection.Size = new Size(1115, 482);
+			this._ctrlIssueCollection.Size = new Size(1262, 659);
 			this._ctrlIssueCollection.TabIndex = 0;
-			// 
-			// _menuItemRecentProjects
-			// 
-			this._menuItemRecentProjects.Name = "_menuItemRecentProjects";
-			this._menuItemRecentProjects.Size = new Size(259, 28);
-			this._menuItemRecentProjects.Text = "&Recent Projects";
 			// 
 			// BugLiteForm
 			// 
 			this.AutoScaleDimensions = new SizeF(9F, 20F);
 			this.AutoScaleMode = AutoScaleMode.Font;
-			this.ClientSize = new Size(1115, 576);
+			this.ClientSize = new Size(1262, 753);
 			this.Controls.Add(this._tlpBugLite);
 			this.Controls.Add(this.statusStrip1);
 			this.Controls.Add(this._tsBugLite);
@@ -257,8 +257,8 @@
 			this.Icon = (Icon)resources.GetObject("$this.Icon");
 			this.MainMenuStrip = this._msBugLite;
 			this.Name = "BugLiteForm";
+			this.StartPosition = FormStartPosition.CenterScreen;
 			this.Text = "Bug Lite (LeanCore) 1.0.0.0";
-			this.WindowState = FormWindowState.Maximized;
 			this._msBugLite.ResumeLayout(false);
 			this._msBugLite.PerformLayout();
 			this._tsBugLite.ResumeLayout(false);
