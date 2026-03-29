@@ -188,7 +188,7 @@ namespace BugLite
 
 				this._lblProjectInfo.Text = JsonBugLiteManager.Instance.CurrentProject.Name;
 
-				this._ctrlIssueCollection.Display(JsonBugLiteManager.Instance.CurrentProject.Issues.Values);
+				this._ctrlIssueCollection.Sort(JsonBugLiteManager.Instance.Settings.IssueSorting);
 			}
 			catch (Exception)
 			{
