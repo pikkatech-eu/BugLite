@@ -21,6 +21,8 @@ namespace BugLite.Library.Gui.Interfaces
 		/// </summary>
 		Issue SelectedIssue		{get;}
 
+		Issue[] SelectedIssues {get;}
+
 		/// <summary>
 		/// Displays a collections of Issues.
 		/// </summary>

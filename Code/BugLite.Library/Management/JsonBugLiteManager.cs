@@ -199,6 +199,21 @@ namespace BugLite.Library.Management
 				this.SaveProject(this.ProjectPath);
 			}
 		}
+
+		public void CopyToClipboard()
+		{
+			Issue[] issues = this.IssueCollectionDevice.SelectedIssues;
+
+			string result = "";
+			foreach (Issue issue in issues)
+			{
+				result += $"[{issue.IssueId}] {issue.Title}\r\n";
+			}
+
+			result = result.TrimEnd();
+
+			Clipboard.SetText(result);
+		}
 		#endregion
 	}
 }

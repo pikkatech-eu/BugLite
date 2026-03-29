@@ -44,6 +44,8 @@
 			this.newToolStripMenuItem1 = new ToolStripMenuItem();
 			this.editToolStripMenuItem1 = new ToolStripMenuItem();
 			this.deleteToolStripMenuItem = new ToolStripMenuItem();
+			this.toolStripSeparator3 = new ToolStripSeparator();
+			this.copyToolStripMenuItem = new ToolStripMenuItem();
 			this.viewToolStripMenuItem = new ToolStripMenuItem();
 			this.sortToolStripMenuItem = new ToolStripMenuItem();
 			this.byIDToolStripMenuItem = new ToolStripMenuItem();
@@ -61,8 +63,10 @@
 			this.statusStrip1 = new StatusStrip();
 			this._tlpBugLite = new TableLayoutPanel();
 			this._ctrlIssueCollection = new BugLite.Library.Gui.Controls.IssueCollectionControl();
+			this._lblInfo = new ToolStripStatusLabel();
 			this._msBugLite.SuspendLayout();
 			this._tsBugLite.SuspendLayout();
+			this.statusStrip1.SuspendLayout();
 			this._tlpBugLite.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -145,7 +149,7 @@
 			// 
 			// issueToolStripMenuItem
 			// 
-			this.issueToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { this.newToolStripMenuItem1, this.editToolStripMenuItem1, this.deleteToolStripMenuItem });
+			this.issueToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { this.newToolStripMenuItem1, this.editToolStripMenuItem1, this.deleteToolStripMenuItem, this.toolStripSeparator3, this.copyToolStripMenuItem });
 			this.issueToolStripMenuItem.Name = "issueToolStripMenuItem";
 			this.issueToolStripMenuItem.Size = new Size(62, 28);
 			this.issueToolStripMenuItem.Text = "&Issue";
@@ -153,23 +157,35 @@
 			// newToolStripMenuItem1
 			// 
 			this.newToolStripMenuItem1.Name = "newToolStripMenuItem1";
-			this.newToolStripMenuItem1.Size = new Size(143, 28);
+			this.newToolStripMenuItem1.Size = new Size(224, 28);
 			this.newToolStripMenuItem1.Text = "&New";
 			this.newToolStripMenuItem1.Click += this.OnIssueNew;
 			// 
 			// editToolStripMenuItem1
 			// 
 			this.editToolStripMenuItem1.Name = "editToolStripMenuItem1";
-			this.editToolStripMenuItem1.Size = new Size(143, 28);
+			this.editToolStripMenuItem1.Size = new Size(224, 28);
 			this.editToolStripMenuItem1.Text = "&Edit";
 			this.editToolStripMenuItem1.Click += this.OnIssueEdit;
 			// 
 			// deleteToolStripMenuItem
 			// 
 			this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-			this.deleteToolStripMenuItem.Size = new Size(143, 28);
+			this.deleteToolStripMenuItem.Size = new Size(224, 28);
 			this.deleteToolStripMenuItem.Text = "&Delete";
 			this.deleteToolStripMenuItem.Click += this.OnIssueDelete;
+			// 
+			// toolStripSeparator3
+			// 
+			this.toolStripSeparator3.Name = "toolStripSeparator3";
+			this.toolStripSeparator3.Size = new Size(221, 6);
+			// 
+			// copyToolStripMenuItem
+			// 
+			this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
+			this.copyToolStripMenuItem.Size = new Size(224, 28);
+			this.copyToolStripMenuItem.Text = "&Copy";
+			this.copyToolStripMenuItem.Click += this.OnIssueCopy;
 			// 
 			// viewToolStripMenuItem
 			// 
@@ -275,10 +291,12 @@
 			// 
 			// statusStrip1
 			// 
+			this.statusStrip1.AutoSize = false;
 			this.statusStrip1.ImageScalingSize = new Size(20, 20);
-			this.statusStrip1.Location = new Point(0, 731);
+			this.statusStrip1.Items.AddRange(new ToolStripItem[] { this._lblInfo });
+			this.statusStrip1.Location = new Point(0, 725);
 			this.statusStrip1.Name = "statusStrip1";
-			this.statusStrip1.Size = new Size(1262, 22);
+			this.statusStrip1.Size = new Size(1262, 28);
 			this.statusStrip1.TabIndex = 2;
 			this.statusStrip1.Text = "statusStrip1";
 			// 
@@ -294,7 +312,7 @@
 			this._tlpBugLite.Name = "_tlpBugLite";
 			this._tlpBugLite.RowCount = 1;
 			this._tlpBugLite.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-			this._tlpBugLite.Size = new Size(1262, 659);
+			this._tlpBugLite.Size = new Size(1262, 653);
 			this._tlpBugLite.TabIndex = 3;
 			// 
 			// _ctrlIssueCollection
@@ -306,8 +324,15 @@
 			this._ctrlIssueCollection.Location = new Point(0, 0);
 			this._ctrlIssueCollection.Margin = new Padding(0);
 			this._ctrlIssueCollection.Name = "_ctrlIssueCollection";
-			this._ctrlIssueCollection.Size = new Size(1262, 659);
+			this._ctrlIssueCollection.Size = new Size(1262, 653);
 			this._ctrlIssueCollection.TabIndex = 4;
+			// 
+			// _lblInfo
+			// 
+			this._lblInfo.Font = new Font("Segoe UI", 10F);
+			this._lblInfo.Name = "_lblInfo";
+			this._lblInfo.Size = new Size(64, 22);
+			this._lblInfo.Text = "ready...";
 			// 
 			// BugLiteForm
 			// 
@@ -328,9 +353,10 @@
 			this._msBugLite.PerformLayout();
 			this._tsBugLite.ResumeLayout(false);
 			this._tsBugLite.PerformLayout();
+			this.statusStrip1.ResumeLayout(false);
+			this.statusStrip1.PerformLayout();
 			this._tlpBugLite.ResumeLayout(false);
 			this.ResumeLayout(false);
-			this.PerformLayout();
 		}
 
 		#endregion
@@ -367,5 +393,8 @@
 		private ToolStripMenuItem severityToolStripMenuItem;
 		private ToolStripMenuItem priorityToolStripMenuItem;
 		private Library.Gui.Controls.IssueCollectionControl _ctrlIssueCollection;
+		private ToolStripSeparator toolStripSeparator3;
+		private ToolStripMenuItem copyToolStripMenuItem;
+		private ToolStripStatusLabel _lblInfo;
 	}
 }

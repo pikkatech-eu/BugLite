@@ -46,6 +46,21 @@ namespace BugLite.Library.Gui.Controls
 				}
 			}
 		}
+
+		public Issue[] SelectedIssues
+		{
+			get
+			{
+				List<Issue> issues = new List<Issue>();
+
+				foreach (ListViewItem item in this._lvIssues.SelectedItems)
+				{
+					issues.Add(item.Tag as Issue);
+				}
+				
+				return issues.ToArray();
+			}
+		}
 		#endregion
 
 		#region Construction

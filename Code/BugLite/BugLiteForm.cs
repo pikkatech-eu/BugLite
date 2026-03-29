@@ -11,7 +11,6 @@ using BugLite.Library.Domain;
 using BugLite.Library.Domain.Enumerations;
 using BugLite.Library.Gui.Dialogs;
 using BugLite.Library.Management;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 
 namespace BugLite
 {
@@ -162,6 +161,15 @@ namespace BugLite
 			}
 		}
 
+		private void OnIssueCopy(object sender, EventArgs e)
+		{
+			JsonBugLiteManager.Instance.CopyToClipboard();
+
+			int numberOfItems = this._ctrlIssueCollection.SelectedIssues.Length;
+
+			this._lblInfo.Text = $"{numberOfItems} issues copied to clipboard";
+		}
+
 		private void OnToolsSettings(object sender, EventArgs e)
 		{
 			SettingsDialog dialog = new SettingsDialog();
@@ -205,6 +213,7 @@ namespace BugLite
 		}
 		#endregion
 
+		#region Sorting
 		private void OnViewSortById(object sender, EventArgs e)
 		{
 			JsonBugLiteManager.Instance.Settings.IssueSorting = IssueSorting.Id;
@@ -246,5 +255,6 @@ namespace BugLite
 			JsonBugLiteManager.Instance.Settings.Save();
 			this._ctrlIssueCollection.Sort(IssueSorting.Priority);
 		}
+		#endregion
 	}
 }
