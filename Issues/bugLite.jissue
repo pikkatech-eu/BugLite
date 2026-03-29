@@ -314,6 +314,19 @@
       "StepsToReproduce": "",
       "AdditionalInformation": "",
       "Notes": []
+    },
+    "25": {
+      "IssueId": 25,
+      "Title": "Save selected issues to clipboard",
+      "Details": "ID \u002B Title (or complete? - later)",
+      "SubmittedOn": "2026-03-29T09:39:09.1631756+02:00",
+      "LastUpdated": "2026-03-29T09:39:09.1624747+02:00",
+      "Status": "Open",
+      "Severity": "Feature",
+      "Priority": "Normal",
+      "StepsToReproduce": "",
+      "AdditionalInformation": "",
+      "Notes": []
     }
   }
 }
