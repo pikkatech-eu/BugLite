@@ -20,6 +20,13 @@ namespace BugLite.Library.Gui.Controls
 	/// </summary>
 	public partial class IssueCollectionControl : UserControl, IIssueCollectionDevice
 	{
+		private Func<Issue, Issue, int> CreationDateComparer = (i1, i2) => {return DateTime.Compare(i1.SubmittedOn, i2.SubmittedOn);};
+		private Func<Issue, Issue, int> ModificationDateComparer = (i1, i2) => {return DateTime.Compare(i1.LastUpdated, i2.LastUpdated);};
+		private Func<Issue, Issue, int> StatusComparer = (i1, i2) => {return i1.Status < i2.Status ? -1 : i1.Status > i2.Status ? +1 : 0;};
+		private Func<Issue, Issue, int> SeverityComparer = (i1, i2) => {return i1.Severity < i2.Severity ? -1 : i1.Severity > i2.Severity ? +1 : 0;};
+		private Func<Issue, Issue, int> PriorityComparer = (i1, i2) => {return i1.Priority < i2.Priority ? -1 : i1.Priority > i2.Priority ? +1 : 0;};
+		private Func<Issue, Issue, int> IdComparer = (i1, i2) => {return i1.IssueId < i2.IssueId ? -1 : i1.IssueId > i2.IssueId ? +1 : 0;};
+
 		#region Properties
 		/// <summary>
 		/// Gets the selected issue in the list view (null if none is selected or more than one).
@@ -278,16 +285,14 @@ namespace BugLite.Library.Gui.Controls
 			{
 				case 1: // date/time
 					issues = JsonBugLiteManager.Instance.CurrentProject.Issues.Values.ToList();
-					issues.Sort(new IssueDateTimeComparer());
-					// issues.Sort((Issue i1, Issue i2) => {return DateTime.Compare(i1.SubmittedOn, i2.SubmittedOn);});
-
+					issues.Sort(this.CreationDateComparer.Invoke);
 					this.Display(issues);
 
 					break;
 
 				case 2:	// status
 					issues = JsonBugLiteManager.Instance.CurrentProject.Issues.Values.ToList();
-					issues.Sort(new IssueStatusComparer());
+					issues.Sort(this.StatusComparer.Invoke);
 
 					this.Display(issues);
 
@@ -295,7 +300,7 @@ namespace BugLite.Library.Gui.Controls
 
 				case 3:	// severity
 					issues = JsonBugLiteManager.Instance.CurrentProject.Issues.Values.ToList();
-					issues.Sort(new IssueSeverityComparer());
+					issues.Sort(this.SeverityComparer.Invoke);
 
 					this.Display(issues);
 
@@ -303,7 +308,7 @@ namespace BugLite.Library.Gui.Controls
 
 				case 4:	// priority
 					issues = JsonBugLiteManager.Instance.CurrentProject.Issues.Values.ToList();
-					issues.Sort(new IssuePriorityComparer());
+					issues.Sort(this.PriorityComparer.Invoke);
 
 					this.Display(issues);
 
