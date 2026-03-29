@@ -8,6 +8,7 @@
 ***********************************************************************************/
 
 using BugLite.Library.Domain;
+using BugLite.Library.Domain.Enumerations;
 using BugLite.Library.Gui.Dialogs;
 using BugLite.Library.Management;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
@@ -19,14 +20,6 @@ namespace BugLite
 		public BugLiteForm()
 		{
 			InitializeComponent();
-
-			//this.ControlAdded += (s, e) =>
-			//{
-			//	if (e.Control == this._ctrlIssueCollection)
-			//	{
-			//		JsonBugLiteManager.Instance.IssueCollectionDevice = this._ctrlIssueCollection;
-			//	}
-			//};
 
 			JsonBugLiteManager.Instance.Settings.RecentlyOpenedProjectsChanged += this.OnRecentlyOpenedProjectsChanged;
 			this.SetTitle();
@@ -214,32 +207,44 @@ namespace BugLite
 
 		private void OnViewSortById(object sender, EventArgs e)
 		{
-			// this._ctrlIssueCollection.
+			JsonBugLiteManager.Instance.Settings.IssueSorting = IssueSorting.Id;
+			JsonBugLiteManager.Instance.Settings.Save();
+			this._ctrlIssueCollection.Sort(IssueSorting.Id);
 		}
 
 		private void OnViewSortBySubmissionDate(object sender, EventArgs e)
 		{
-
+			JsonBugLiteManager.Instance.Settings.IssueSorting = IssueSorting.CreationDate;
+			JsonBugLiteManager.Instance.Settings.Save();
+			this._ctrlIssueCollection.Sort(IssueSorting.CreationDate);
 		}
 
 		private void OnViewSortByModificationDate(object sender, EventArgs e)
 		{
-
+			JsonBugLiteManager.Instance.Settings.IssueSorting = IssueSorting.ModificationDate;
+			JsonBugLiteManager.Instance.Settings.Save();
+			this._ctrlIssueCollection.Sort(IssueSorting.ModificationDate);
 		}
 
 		private void OnViewSortByStatus(object sender, EventArgs e)
 		{
-
+			JsonBugLiteManager.Instance.Settings.IssueSorting = IssueSorting.Status;
+			JsonBugLiteManager.Instance.Settings.Save();
+			this._ctrlIssueCollection.Sort(IssueSorting.Status);
 		}
 
 		private void OnViewSortBySeverity(object sender, EventArgs e)
 		{
-
+			JsonBugLiteManager.Instance.Settings.IssueSorting = IssueSorting.Severity;
+			JsonBugLiteManager.Instance.Settings.Save();
+			this._ctrlIssueCollection.Sort(IssueSorting.Severity);
 		}
 
 		private void OnViewSortByPriority(object sender, EventArgs e)
 		{
-
+			JsonBugLiteManager.Instance.Settings.IssueSorting = IssueSorting.Priority;
+			JsonBugLiteManager.Instance.Settings.Save();
+			this._ctrlIssueCollection.Sort(IssueSorting.Priority);
 		}
 	}
 }

@@ -9,6 +9,7 @@
 
 using System.ComponentModel;
 using System.Text.Json;
+using BugLite.Library.Domain.Enumerations;
 
 namespace BugLite.Library.Management
 {
@@ -26,6 +27,9 @@ namespace BugLite.Library.Management
 
 		[Browsable(false)]
 		public List<string>	RecentlyOpenedProjects	{get;set;}	= new List<string>();
+
+		[Browsable(false)]
+		public IssueSorting	IssueSorting	{get;set;} = IssueSorting.None;
 		#endregion
 
 		#region Recent project management

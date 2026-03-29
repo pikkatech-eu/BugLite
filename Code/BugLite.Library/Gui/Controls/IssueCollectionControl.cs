@@ -8,7 +8,7 @@
 ***********************************************************************************/
 
 using BugLite.Library.Domain;
-using BugLite.Library.Domain.Comparers;
+using BugLite.Library.Domain.Enumerations;
 using BugLite.Library.Gui.Dialogs;
 using BugLite.Library.Gui.Interfaces;
 using BugLite.Library.Management;
@@ -272,51 +272,48 @@ namespace BugLite.Library.Gui.Controls
 		}
 		#endregion
 
-		/// <summary>
-		/// Here - sort by column: id, date, status, severity, pririty
-		/// </summary>
-		/// <param name="sender"></param>
-		/// <param name="e"></param>
-		private void OnColumnClick(object sender, ColumnClickEventArgs e)
+		public void Sort(IssueSorting sorting)
 		{
 			List<Issue> issues = null;
 
-			switch (e.Column)
+			switch (sorting)
 			{
-				case 1: // date/time
+				case IssueSorting.CreationDate:
 					issues = JsonBugLiteManager.Instance.CurrentProject.Issues.Values.ToList();
 					issues.Sort(this.CreationDateComparer.Invoke);
-					this.Display(issues);
-
 					break;
 
-				case 2:	// status
+				case IssueSorting.ModificationDate:
+					issues = JsonBugLiteManager.Instance.CurrentProject.Issues.Values.ToList();
+					issues.Sort(this.ModificationDateComparer.Invoke);
+					break;
+
+				case IssueSorting.Status:
 					issues = JsonBugLiteManager.Instance.CurrentProject.Issues.Values.ToList();
 					issues.Sort(this.StatusComparer.Invoke);
-
-					this.Display(issues);
-
 					break;
 
-				case 3:	// severity
+				case IssueSorting.Severity:
 					issues = JsonBugLiteManager.Instance.CurrentProject.Issues.Values.ToList();
 					issues.Sort(this.SeverityComparer.Invoke);
-
-					this.Display(issues);
-
 					break;
 
-				case 4:	// priority
+				case IssueSorting.Priority:
 					issues = JsonBugLiteManager.Instance.CurrentProject.Issues.Values.ToList();
 					issues.Sort(this.PriorityComparer.Invoke);
-
-					this.Display(issues);
-
 					break;
 
+				case IssueSorting.Id:
+					issues = JsonBugLiteManager.Instance.CurrentProject.Issues.Values.ToList();
+					issues.Sort(this.IdComparer.Invoke);
+					break;
+
+				case IssueSorting.None:
 				default:
 					break;
 			}
+
+			this.Display(issues);
 		}
 	}
 }

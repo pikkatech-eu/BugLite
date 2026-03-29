@@ -18,6 +18,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Domain\Comparers\**" />
+    <EmbeddedResource Remove="Domain\Comparers\**" />
+    <None Remove="Domain\Comparers\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Remove="Domain\Enumerations\IssueResolution.cs" />
     <Compile Remove="Domain\Enumerations\ProjectStatus.cs" />
     <Compile Remove="Domain\Enumerations\Reproducibility.cs" />
