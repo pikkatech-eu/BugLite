@@ -44,6 +44,14 @@
 			this.newToolStripMenuItem1 = new ToolStripMenuItem();
 			this.editToolStripMenuItem1 = new ToolStripMenuItem();
 			this.deleteToolStripMenuItem = new ToolStripMenuItem();
+			this.viewToolStripMenuItem = new ToolStripMenuItem();
+			this.sortToolStripMenuItem = new ToolStripMenuItem();
+			this.byIDToolStripMenuItem = new ToolStripMenuItem();
+			this.submissionDateTimeToolStripMenuItem = new ToolStripMenuItem();
+			this.modificationDateTimeToolStripMenuItem = new ToolStripMenuItem();
+			this.statusToolStripMenuItem = new ToolStripMenuItem();
+			this.severityToolStripMenuItem = new ToolStripMenuItem();
+			this.priorityToolStripMenuItem = new ToolStripMenuItem();
 			this.toolsToolStripMenuItem = new ToolStripMenuItem();
 			this.settingsToolStripMenuItem = new ToolStripMenuItem();
 			this.helpToolStripMenuItem = new ToolStripMenuItem();
@@ -61,9 +69,9 @@
 			// _msBugLite
 			// 
 			this._msBugLite.AutoSize = false;
-			this._msBugLite.Font = new Font("Consolas", 12F);
+			this._msBugLite.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
 			this._msBugLite.ImageScalingSize = new Size(20, 20);
-			this._msBugLite.Items.AddRange(new ToolStripItem[] { this.projectToolStripMenuItem, this.issueToolStripMenuItem, this.toolsToolStripMenuItem, this.helpToolStripMenuItem });
+			this._msBugLite.Items.AddRange(new ToolStripItem[] { this.projectToolStripMenuItem, this.issueToolStripMenuItem, this.viewToolStripMenuItem, this.toolsToolStripMenuItem, this.helpToolStripMenuItem });
 			this._msBugLite.Location = new Point(0, 0);
 			this._msBugLite.Name = "_msBugLite";
 			this._msBugLite.Size = new Size(1262, 32);
@@ -74,64 +82,64 @@
 			// 
 			this.projectToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { this.newToolStripMenuItem, this.loadToolStripMenuItem, this._menuItemRecentProjects, this.saveAsToolStripMenuItem, this.closeToolStripMenuItem, this.toolStripSeparator1, this.editToolStripMenuItem, this.toolStripSeparator2, this.quitToolStripMenuItem });
 			this.projectToolStripMenuItem.Name = "projectToolStripMenuItem";
-			this.projectToolStripMenuItem.Size = new Size(101, 28);
+			this.projectToolStripMenuItem.Size = new Size(77, 28);
 			this.projectToolStripMenuItem.Text = "&Project";
 			// 
 			// newToolStripMenuItem
 			// 
 			this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-			this.newToolStripMenuItem.Size = new Size(259, 28);
+			this.newToolStripMenuItem.Size = new Size(211, 28);
 			this.newToolStripMenuItem.Text = "&New";
 			this.newToolStripMenuItem.Click += this.OnProjectNew;
 			// 
 			// loadToolStripMenuItem
 			// 
 			this.loadToolStripMenuItem.Name = "loadToolStripMenuItem";
-			this.loadToolStripMenuItem.Size = new Size(259, 28);
+			this.loadToolStripMenuItem.Size = new Size(211, 28);
 			this.loadToolStripMenuItem.Text = "&Load";
 			this.loadToolStripMenuItem.Click += this.OnProjectLoad;
 			// 
 			// _menuItemRecentProjects
 			// 
 			this._menuItemRecentProjects.Name = "_menuItemRecentProjects";
-			this._menuItemRecentProjects.Size = new Size(259, 28);
+			this._menuItemRecentProjects.Size = new Size(211, 28);
 			this._menuItemRecentProjects.Text = "&Recent Projects";
 			// 
 			// saveAsToolStripMenuItem
 			// 
 			this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-			this.saveAsToolStripMenuItem.Size = new Size(259, 28);
+			this.saveAsToolStripMenuItem.Size = new Size(211, 28);
 			this.saveAsToolStripMenuItem.Text = "Save &As";
 			this.saveAsToolStripMenuItem.Click += this.OnProjectSaveAs;
 			// 
 			// closeToolStripMenuItem
 			// 
 			this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-			this.closeToolStripMenuItem.Size = new Size(259, 28);
+			this.closeToolStripMenuItem.Size = new Size(211, 28);
 			this.closeToolStripMenuItem.Text = "&Close";
 			this.closeToolStripMenuItem.Click += this.OnProjectClose;
 			// 
 			// toolStripSeparator1
 			// 
 			this.toolStripSeparator1.Name = "toolStripSeparator1";
-			this.toolStripSeparator1.Size = new Size(256, 6);
+			this.toolStripSeparator1.Size = new Size(208, 6);
 			// 
 			// editToolStripMenuItem
 			// 
 			this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-			this.editToolStripMenuItem.Size = new Size(259, 28);
+			this.editToolStripMenuItem.Size = new Size(211, 28);
 			this.editToolStripMenuItem.Text = "&Edit";
 			this.editToolStripMenuItem.Click += this.OnProjectEdit;
 			// 
 			// toolStripSeparator2
 			// 
 			this.toolStripSeparator2.Name = "toolStripSeparator2";
-			this.toolStripSeparator2.Size = new Size(256, 6);
+			this.toolStripSeparator2.Size = new Size(208, 6);
 			// 
 			// quitToolStripMenuItem
 			// 
 			this.quitToolStripMenuItem.Name = "quitToolStripMenuItem";
-			this.quitToolStripMenuItem.Size = new Size(259, 28);
+			this.quitToolStripMenuItem.Size = new Size(211, 28);
 			this.quitToolStripMenuItem.Text = "&Quit";
 			this.quitToolStripMenuItem.Click += this.OnProjectQuit;
 			// 
@@ -139,41 +147,97 @@
 			// 
 			this.issueToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { this.newToolStripMenuItem1, this.editToolStripMenuItem1, this.deleteToolStripMenuItem });
 			this.issueToolStripMenuItem.Name = "issueToolStripMenuItem";
-			this.issueToolStripMenuItem.Size = new Size(79, 28);
+			this.issueToolStripMenuItem.Size = new Size(62, 28);
 			this.issueToolStripMenuItem.Text = "&Issue";
 			// 
 			// newToolStripMenuItem1
 			// 
 			this.newToolStripMenuItem1.Name = "newToolStripMenuItem1";
-			this.newToolStripMenuItem1.Size = new Size(160, 28);
+			this.newToolStripMenuItem1.Size = new Size(143, 28);
 			this.newToolStripMenuItem1.Text = "&New";
 			this.newToolStripMenuItem1.Click += this.OnIssueNew;
 			// 
 			// editToolStripMenuItem1
 			// 
 			this.editToolStripMenuItem1.Name = "editToolStripMenuItem1";
-			this.editToolStripMenuItem1.Size = new Size(160, 28);
+			this.editToolStripMenuItem1.Size = new Size(143, 28);
 			this.editToolStripMenuItem1.Text = "&Edit";
 			this.editToolStripMenuItem1.Click += this.OnIssueEdit;
 			// 
 			// deleteToolStripMenuItem
 			// 
 			this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-			this.deleteToolStripMenuItem.Size = new Size(160, 28);
+			this.deleteToolStripMenuItem.Size = new Size(143, 28);
 			this.deleteToolStripMenuItem.Text = "&Delete";
 			this.deleteToolStripMenuItem.Click += this.OnIssueDelete;
+			// 
+			// viewToolStripMenuItem
+			// 
+			this.viewToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { this.sortToolStripMenuItem });
+			this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
+			this.viewToolStripMenuItem.Size = new Size(60, 28);
+			this.viewToolStripMenuItem.Text = "&View";
+			// 
+			// sortToolStripMenuItem
+			// 
+			this.sortToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { this.byIDToolStripMenuItem, this.submissionDateTimeToolStripMenuItem, this.modificationDateTimeToolStripMenuItem, this.statusToolStripMenuItem, this.severityToolStripMenuItem, this.priorityToolStripMenuItem });
+			this.sortToolStripMenuItem.Name = "sortToolStripMenuItem";
+			this.sortToolStripMenuItem.Size = new Size(148, 28);
+			this.sortToolStripMenuItem.Text = "&Sort by";
+			// 
+			// byIDToolStripMenuItem
+			// 
+			this.byIDToolStripMenuItem.Name = "byIDToolStripMenuItem";
+			this.byIDToolStripMenuItem.Size = new Size(267, 28);
+			this.byIDToolStripMenuItem.Text = "&ID";
+			this.byIDToolStripMenuItem.Click += this.OnViewSortById;
+			// 
+			// submissionDateTimeToolStripMenuItem
+			// 
+			this.submissionDateTimeToolStripMenuItem.Name = "submissionDateTimeToolStripMenuItem";
+			this.submissionDateTimeToolStripMenuItem.Size = new Size(267, 28);
+			this.submissionDateTimeToolStripMenuItem.Text = "&Submission DateTime";
+			this.submissionDateTimeToolStripMenuItem.Click += this.OnViewSortBySubmissionDate;
+			// 
+			// modificationDateTimeToolStripMenuItem
+			// 
+			this.modificationDateTimeToolStripMenuItem.Name = "modificationDateTimeToolStripMenuItem";
+			this.modificationDateTimeToolStripMenuItem.Size = new Size(267, 28);
+			this.modificationDateTimeToolStripMenuItem.Text = "&Modification DateTime";
+			this.modificationDateTimeToolStripMenuItem.Click += this.OnViewSortByModificationDate;
+			// 
+			// statusToolStripMenuItem
+			// 
+			this.statusToolStripMenuItem.Name = "statusToolStripMenuItem";
+			this.statusToolStripMenuItem.Size = new Size(267, 28);
+			this.statusToolStripMenuItem.Text = "Stat&us";
+			this.statusToolStripMenuItem.Click += this.OnViewSortByStatus;
+			// 
+			// severityToolStripMenuItem
+			// 
+			this.severityToolStripMenuItem.Name = "severityToolStripMenuItem";
+			this.severityToolStripMenuItem.Size = new Size(267, 28);
+			this.severityToolStripMenuItem.Text = "Se&verity";
+			this.severityToolStripMenuItem.Click += this.OnViewSortBySeverity;
+			// 
+			// priorityToolStripMenuItem
+			// 
+			this.priorityToolStripMenuItem.Name = "priorityToolStripMenuItem";
+			this.priorityToolStripMenuItem.Size = new Size(267, 28);
+			this.priorityToolStripMenuItem.Text = "&Priority";
+			this.priorityToolStripMenuItem.Click += this.OnViewSortByPriority;
 			// 
 			// toolsToolStripMenuItem
 			// 
 			this.toolsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { this.settingsToolStripMenuItem });
 			this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
-			this.toolsToolStripMenuItem.Size = new Size(79, 28);
+			this.toolsToolStripMenuItem.Size = new Size(62, 28);
 			this.toolsToolStripMenuItem.Text = "&Tools";
 			// 
 			// settingsToolStripMenuItem
 			// 
 			this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-			this.settingsToolStripMenuItem.Size = new Size(182, 28);
+			this.settingsToolStripMenuItem.Size = new Size(155, 28);
 			this.settingsToolStripMenuItem.Text = "&Settings";
 			this.settingsToolStripMenuItem.Click += this.OnToolsSettings;
 			// 
@@ -181,13 +245,13 @@
 			// 
 			this.helpToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { this.aboutToolStripMenuItem });
 			this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-			this.helpToolStripMenuItem.Size = new Size(68, 28);
+			this.helpToolStripMenuItem.Size = new Size(59, 28);
 			this.helpToolStripMenuItem.Text = "&Help";
 			// 
 			// aboutToolStripMenuItem
 			// 
 			this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-			this.aboutToolStripMenuItem.Size = new Size(149, 28);
+			this.aboutToolStripMenuItem.Size = new Size(141, 28);
 			this.aboutToolStripMenuItem.Text = "&About";
 			this.aboutToolStripMenuItem.Click += this.OnHelpAbout;
 			// 
@@ -220,6 +284,7 @@
 			// 
 			// _tlpBugLite
 			// 
+			this._tlpBugLite.BackColor = Color.Salmon;
 			this._tlpBugLite.ColumnCount = 1;
 			this._tlpBugLite.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
 			this._tlpBugLite.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
@@ -242,7 +307,7 @@
 			this._ctrlIssueCollection.Margin = new Padding(0);
 			this._ctrlIssueCollection.Name = "_ctrlIssueCollection";
 			this._ctrlIssueCollection.Size = new Size(1262, 659);
-			this._ctrlIssueCollection.TabIndex = 0;
+			this._ctrlIssueCollection.TabIndex = 4;
 			// 
 			// BugLiteForm
 			// 
@@ -274,7 +339,6 @@
 		private ToolStrip _tsBugLite;
 		private StatusStrip statusStrip1;
 		private TableLayoutPanel _tlpBugLite;
-		// private Library.Gui.Controls.IssueCollectionControl _ctrlIssueCollection;
 		private ToolStripLabel _lblProjectInfo;
 		private ToolStripMenuItem projectToolStripMenuItem;
 		private ToolStripMenuItem newToolStripMenuItem;
@@ -293,7 +357,15 @@
 		private ToolStripMenuItem settingsToolStripMenuItem;
 		private ToolStripMenuItem helpToolStripMenuItem;
 		private ToolStripMenuItem aboutToolStripMenuItem;
-		private Library.Gui.Controls.IssueCollectionControl _ctrlIssueCollection;
 		private ToolStripMenuItem _menuItemRecentProjects;
+		private ToolStripMenuItem viewToolStripMenuItem;
+		private ToolStripMenuItem sortToolStripMenuItem;
+		private ToolStripMenuItem byIDToolStripMenuItem;
+		private ToolStripMenuItem submissionDateTimeToolStripMenuItem;
+		private ToolStripMenuItem modificationDateTimeToolStripMenuItem;
+		private ToolStripMenuItem statusToolStripMenuItem;
+		private ToolStripMenuItem severityToolStripMenuItem;
+		private ToolStripMenuItem priorityToolStripMenuItem;
+		private Library.Gui.Controls.IssueCollectionControl _ctrlIssueCollection;
 	}
 }

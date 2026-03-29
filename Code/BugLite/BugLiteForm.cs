@@ -10,6 +10,7 @@
 using BugLite.Library.Domain;
 using BugLite.Library.Gui.Dialogs;
 using BugLite.Library.Management;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 
 namespace BugLite
 {
@@ -18,6 +19,14 @@ namespace BugLite
 		public BugLiteForm()
 		{
 			InitializeComponent();
+
+			//this.ControlAdded += (s, e) =>
+			//{
+			//	if (e.Control == this._ctrlIssueCollection)
+			//	{
+			//		JsonBugLiteManager.Instance.IssueCollectionDevice = this._ctrlIssueCollection;
+			//	}
+			//};
 
 			JsonBugLiteManager.Instance.Settings.RecentlyOpenedProjectsChanged += this.OnRecentlyOpenedProjectsChanged;
 			this.SetTitle();
@@ -28,6 +37,13 @@ namespace BugLite
 			{
 				this.LoadProject(JsonBugLiteManager.Instance.Settings.RecentlyOpenedProjects[0]);
 			}
+		}
+
+		protected override void OnLoad(EventArgs e)
+		{
+			base.OnLoad(e);
+
+			JsonBugLiteManager.Instance.IssueCollectionDevice = this._ctrlIssueCollection;
 		}
 
 		private void OnRecentlyOpenedProjectsChanged(List<string> paths)
@@ -65,15 +81,10 @@ namespace BugLite
 			// TODO: to iron away #1
 		}
 
-		protected override void OnLoad(EventArgs e)
-		{
-			base.OnLoad(e);
-		}
-
 		private void OnProjectNew(object sender, EventArgs e)
 		{
 			JsonBugLiteManager.Instance.NewProject();
-			this._lblProjectInfo.Text	= JsonBugLiteManager.Instance.CurrentProject.Name;
+			this._lblProjectInfo.Text = JsonBugLiteManager.Instance.CurrentProject.Name;
 			this._ctrlIssueCollection.Clear();
 		}
 
@@ -82,7 +93,7 @@ namespace BugLite
 			if (JsonBugLiteManager.Instance.CurrentProject != null)
 			{
 				JsonBugLiteManager.Instance.EditProject();
-				this._lblProjectInfo.Text	= JsonBugLiteManager.Instance.CurrentProject.Name;
+				this._lblProjectInfo.Text = JsonBugLiteManager.Instance.CurrentProject.Name;
 				JsonBugLiteManager.Instance.SaveProject(JsonBugLiteManager.Instance.CurrentProject.Name);
 			}
 		}
@@ -90,15 +101,15 @@ namespace BugLite
 		private void OnProjectClose(object sender, EventArgs e)
 		{
 			JsonBugLiteManager.Instance.CloseProject();
-			this._lblProjectInfo.Text	= "";
+			this._lblProjectInfo.Text = "";
 			this._ctrlIssueCollection.Clear();
 		}
 
 		private void OnProjectLoad(object sender, EventArgs e)
 		{
-			OpenFileDialog dialog	= new OpenFileDialog();
+			OpenFileDialog dialog = new OpenFileDialog();
 
-			dialog.Filter			= "BugLite issue files (*.jissue)|*.jissue|JSON files (*.json)|*.json";
+			dialog.Filter = "BugLite issue files (*.jissue)|*.jissue|JSON files (*.json)|*.json";
 
 			if (dialog.ShowDialog() == DialogResult.OK)
 			{
@@ -108,8 +119,8 @@ namespace BugLite
 
 		private void OnProjectSaveAs(object sender, EventArgs e)
 		{
-			SaveFileDialog dialog	= new SaveFileDialog();
-			dialog.Filter			= "BugLite issue files (*.jissue)|*.jissue|JSON files (*.json)|*.json";
+			SaveFileDialog dialog = new SaveFileDialog();
+			dialog.Filter = "BugLite issue files (*.jissue)|*.jissue|JSON files (*.json)|*.json";
 
 			if (dialog.ShowDialog() == DialogResult.OK)
 			{
@@ -160,8 +171,8 @@ namespace BugLite
 
 		private void OnToolsSettings(object sender, EventArgs e)
 		{
-			SettingsDialog dialog	= new SettingsDialog();
-			dialog.Settings			= JsonBugLiteManager.Instance.Settings;
+			SettingsDialog dialog = new SettingsDialog();
+			dialog.Settings = JsonBugLiteManager.Instance.Settings;
 
 			if (dialog.ShowDialog() == DialogResult.OK)
 			{
@@ -190,9 +201,9 @@ namespace BugLite
 			{
 				MessageBox.Show
 								(
-									$"Unable to open project {fileName}", 
-									"The project will be removed from Recently Opened Projects", 
-									MessageBoxButtons.OK, 
+									$"Unable to open project {fileName}",
+									"The project will be removed from Recently Opened Projects",
+									MessageBoxButtons.OK,
 									MessageBoxIcon.Warning
 								);
 
@@ -200,5 +211,35 @@ namespace BugLite
 			}
 		}
 		#endregion
+
+		private void OnViewSortById(object sender, EventArgs e)
+		{
+			// this._ctrlIssueCollection.
+		}
+
+		private void OnViewSortBySubmissionDate(object sender, EventArgs e)
+		{
+
+		}
+
+		private void OnViewSortByModificationDate(object sender, EventArgs e)
+		{
+
+		}
+
+		private void OnViewSortByStatus(object sender, EventArgs e)
+		{
+
+		}
+
+		private void OnViewSortBySeverity(object sender, EventArgs e)
+		{
+
+		}
+
+		private void OnViewSortByPriority(object sender, EventArgs e)
+		{
+
+		}
 	}
 }

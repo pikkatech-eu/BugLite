@@ -279,6 +279,7 @@ namespace BugLite.Library.Gui.Controls
 				case 1: // date/time
 					issues = JsonBugLiteManager.Instance.CurrentProject.Issues.Values.ToList();
 					issues.Sort(new IssueDateTimeComparer());
+					// issues.Sort((Issue i1, Issue i2) => {return DateTime.Compare(i1.SubmittedOn, i2.SubmittedOn);});
 
 					this.Display(issues);
 
