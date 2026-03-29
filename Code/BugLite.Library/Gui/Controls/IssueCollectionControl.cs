@@ -289,7 +289,7 @@ namespace BugLite.Library.Gui.Controls
 
 		public void Sort(IssueSorting sorting)
 		{
-			List<Issue> issues = null;
+			List<Issue> issues = new List<Issue>();
 
 			switch (sorting)
 			{
@@ -319,13 +319,12 @@ namespace BugLite.Library.Gui.Controls
 					break;
 
 				case IssueSorting.Id:
+				case IssueSorting.None:
+				default:
 					issues = JsonBugLiteManager.Instance.CurrentProject.Issues.Values.ToList();
 					issues.Sort(this.IdComparer.Invoke);
 					break;
 
-				case IssueSorting.None:
-				default:
-					break;
 			}
 
 			this.Display(issues);

@@ -327,6 +327,19 @@
       "StepsToReproduce": "",
       "AdditionalInformation": "",
       "Notes": []
+    },
+    "26": {
+      "IssueId": 26,
+      "Title": "Release version does not work",
+      "Details": "Says, it cannot open a file which the deboug version opens",
+      "SubmittedOn": "2026-03-29T14:32:14.9798536+02:00",
+      "LastUpdated": "2026-03-29T14:32:14.9793408+02:00",
+      "Status": "Open",
+      "Severity": "Critical",
+      "Priority": "High",
+      "StepsToReproduce": "",
+      "AdditionalInformation": "",
+      "Notes": []
     }
   }
 }
