@@ -70,7 +70,10 @@ namespace BugLite
 
 		private void SetTitle()
 		{
-			// TODO: to iron away #1
+			Factotum.Versioning.Version version = new Factotum.Versioning.Version();
+			version.FromToml();
+
+			this.Text = $"BugLite Version {version}";
 		}
 
 		private void OnProjectNew(object sender, EventArgs e)
@@ -131,7 +134,7 @@ namespace BugLite
 			try
 			{
 				JsonBugLiteManager.Instance.AddIssue();
-				this._ctrlIssueCollection.Display(JsonBugLiteManager.Instance.CurrentProject.Issues.Values);
+				this._ctrlIssueCollection.Sort(JsonBugLiteManager.Instance.Settings.IssueSorting);
 			}
 			catch (NullReferenceException nrx)
 			{
@@ -146,7 +149,7 @@ namespace BugLite
 			if (issue != null)
 			{
 				JsonBugLiteManager.Instance.ReplaceIssue(issue);
-				this._ctrlIssueCollection.Display(JsonBugLiteManager.Instance.CurrentProject.Issues.Values);
+				this._ctrlIssueCollection.Sort(JsonBugLiteManager.Instance.Settings.IssueSorting);
 			}
 		}
 
@@ -157,7 +160,7 @@ namespace BugLite
 			if (issue != null)
 			{
 				JsonBugLiteManager.Instance.DeleteIssue(issue.IssueId);
-				this._ctrlIssueCollection.Display(JsonBugLiteManager.Instance.CurrentProject.Issues.Values);
+				this._ctrlIssueCollection.Sort(JsonBugLiteManager.Instance.Settings.IssueSorting);
 			}
 		}
 

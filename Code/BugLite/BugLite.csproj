@@ -33,6 +33,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Root\Factotum\Code\CSharp\Factotum\Factotum.csproj" />
     <ProjectReference Include="..\BugLite.Library\BugLite.Library.csproj" />
   </ItemGroup>
 
@@ -50,5 +51,9 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="xcopy $(SolutionDir)..\version.toml $(TargetDir) /Y" />
+  </Target>
 
 </Project>

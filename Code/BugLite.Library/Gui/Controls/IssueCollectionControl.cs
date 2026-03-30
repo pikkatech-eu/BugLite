@@ -215,7 +215,7 @@ namespace BugLite.Library.Gui.Controls
 			try
 			{
 				JsonBugLiteManager.Instance.AddIssue();
-				this.Display(JsonBugLiteManager.Instance.CurrentProject.Issues.Values);
+				this.Sort(JsonBugLiteManager.Instance.Settings.IssueSorting);
 			}
 			catch (NullReferenceException nex)
 			{
@@ -247,7 +247,7 @@ namespace BugLite.Library.Gui.Controls
 					issue.IssueId = issueID;
 
 					JsonBugLiteManager.Instance.ReplaceIssue(issue);
-					this.Display(JsonBugLiteManager.Instance.CurrentProject.Issues.Values);
+					this.Sort(JsonBugLiteManager.Instance.Settings.IssueSorting);
 				}
 			}
 		}
@@ -270,7 +270,7 @@ namespace BugLite.Library.Gui.Controls
 				if (MessageBox.Show($"Delete issue {issueID}?", "Geolocation about to be deleted", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
 				{
 					JsonBugLiteManager.Instance.DeleteIssue(issueID);
-					this.Display(JsonBugLiteManager.Instance.CurrentProject.Issues.Values);
+					this.Sort(JsonBugLiteManager.Instance.Settings.IssueSorting);
 				}
 			}
 		}

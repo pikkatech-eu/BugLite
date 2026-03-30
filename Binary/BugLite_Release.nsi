@@ -13,10 +13,9 @@ Section "Files"
   SetOutPath "$INSTDIR"
   
   ; Put files there
-  File /r ".\Release\net9.0-windows\BugLite.Library.dll"
-  File /r ".\Release\net9.0-windows\BugLite.dll"
+  File /r ".\Release\net9.0-windows\*.dll"
   File /r ".\Release\net9.0-windows\BugLite.exe"
   File /r ".\Release\net9.0-windows\*.json"
   File /r ".\Release\net9.0-windows\*.ico"
-  File "..\*.toml"
+  File /r ".\Release\net9.0-windows\*.toml"
 SectionEnd ; end the section
